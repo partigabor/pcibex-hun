@@ -1,166 +1,215 @@
-PennController.ResetPrefix(null); // Keep this here
+PennController.ResetPrefix(null) // Keep this here
+// DebugOff(); // Uncomment this line when you are ready to collect actual data to disable debug mode.
 
-// DebugOff(); // Uncomment this to turn off debug mode for the final version
+// IMPORTANT NOTE: when running this project, the eye-tracker will highlight
+// the element that it estimates the participant is looking at
+// Edit the file PennController.css in the Aesthetics folder to remove highlighting
+//
+// NOTE: this template will not *actually* collect eye-tracking data,
+//       because the command EyeTrackerURL below points to a dummy URL in the
 
-// Preload stimuli
-// Option 1: If you have a ZIP file with all your resources (audio and images)
-// PreloadZip("https://your_server.com/path/to/your_resources.zip");
-// Option 2: If your files are in a 'resources' folder relative to your experiment.html
-// PennController.AddHost("resources/"); // Then just use filenames like "item1_exhaustive.mp3"
+// Resources are hosted as ZIP files on a distant server
+// PreloadZip("https://files.lab.florianschwarz.net/ibexfiles/OnlyCleftsVW/Pictures.zip")
+// PreloadZip("https://files.lab.florianschwarz.net/ibexfiles/OnlyCleftsVW/AudioContext.zip")
+// PreloadZip("https://files.lab.florianschwarz.net/ibexfiles/OnlyCleftsVW/AudioTest.zip")
 
-// IMPORTANT: Configure your EyeTrackerURL
-// This URL should point to a PHP script on your server to save the eye-tracking data.
-// See PCIbex documentation: https://doc.pcibex.net/how-to-guides/collecting-eyetracking-data/
-// EyeTrackerURL("https://your_server.com/path/to/your_eyetracker_script.php");
+// If uploading data to a distant server, uncomment the line below and replace the URL
+// with one that points to a PHP script that you uploaded to your webserver
+// ( see https://doc.pcibex.net/how-to-guides/collecting-eyetracking-data.html#php-script )
+// EyeTrackerURL("https://dummy.url/script.php")
 
+// ***
 
-// Define the sequence of the experiment
-PennController.Sequence( "setup_eyetracker", "preload_stimuli", randomize("experiment_trial"), "send_results", "thank_you" );
+// Define the sequence of the experiment blocks
+Sequence( "welcome", randomize("experiment_trial"), SendResults(), "send_results", "thank_you");
+// "webcam",
 
-// Standard PCIbex item for preloading stimuli if not using PreloadZip or if you want a loading bar
-PennController("preload_stimuli",
-    newText("loading_text", "Loading resources, please wait...")
-        .print()
-    ,
-    newButton("loading_button", "Continue") // Will only appear after loading
-        .print()
-        .wait(PennController.CheckPreloaded()
-            .failure(getText("loading_text").text("Failed to load resources."))
-        )
-    ,
-    getText("loading_text").remove(),
-    getButton("loading_button").remove()
-);
-
-
-// Welcome and Eye-tracker setup
-PennController("setup_eyetracker",
-    newText("<p>Welcome to the experiment!</p><p>This experiment uses eye-tracking technology. Please ensure your webcam is uncovered and you are in a well-lit room.</p><p>We will calibrate the eye-tracker now. Please follow the on-screen instructions.</p>")
-        .print()
-    ,
-    newButton("start_calibration", "I understand, start calibration")
-        .print()
-        .wait()
-    ,
-    fullscreen() // Recommended for eye-tracking
-    ,
-    // Initialize and calibrate the eye-tracker
-    // Adjust calibration accuracy (e.g., 50) and max attempts (e.g., 2) as needed
-    newEyeTracker("tracker").calibrate(50, 2) // [cite: 4]
-        .failure(
-            // Optional: what to do if calibration fails after max attempts
-            clear(),
-            newText("Calibration failed. Please check your lighting and webcam, then refresh to try again.")
-                .color("red")
-                .center()
-                .print(),
-            newButton().wait() // Halt experiment
-        )
-    ,
-    newText("calibration_done", "<p>Calibration successful. You will see a fixation point before each trial. Please look at it to ensure tracking accuracy.</p><p>Click the button to begin the practice trials or the main experiment.</p>")
+// Welcome page
+newTrial("welcome",
+    newText("welcome_message", "<p>Welcome to this experiment!</p>" +
+                             "<p>In this task, you will hear sentences in Hungarian. After the sentence, two images will appear on the screen.</p>" +
+                             "<p>Your task is to click on the image that best matches the sentence you heard.</p>" +
+                             "<p>Please pay attention and respond as quickly and accurately as possible.</p>")
+        .css("width", "80%") // Make text block readable
+        .css("margin", "auto") // Center the text block
+        .css("font-size", "1em") //
         .center()
         .print()
     ,
-    newButton("continue_to_experiment", "Continue")
+    newButton("start_experiment_button", "I understand, continue!")
         .center()
         .print()
         .wait()
 );
 
-// Define the experimental trial structure
-PennController.Template(
-    "experiment_data.csv", // Specifies the CSV file to read trial data from
-    row => PennController( "experiment_trial",
-        // Pre-trial: Eye-tracker check/re-calibration point
-        newEyeTracker("tracker")
-            .calibrate(50, 1) // Quick recalibration/check [cite: 5]
-            .failure( // Fallback to full calibration if check fails
-                getEyeTracker("tracker").calibrate(50,2)
-            )
-        ,
-        newTimer("fixation_duration", 500) // Brief pause after calibration screen
-            .start()
-            .wait()
-        ,
-        // 1. Play audio sentence
-        newAudio("sentence_audio", row.audio_file)
-            .play()
-            // .wait() // Option 1: Wait for audio to finish BEFORE showing images
-
-        ,
-        // 2. Display images (left and right)
-        // Create canvases for positioning and as clickable areas/eye-tracking targets
-        newCanvas("left_image_canvas", "40vw", "60vh") // Adjust size as needed
-            .css("border", "1px solid lightgrey") // Optional: for visibility
-            .add("center at 50%", "middle at 50%", newImage("left_image", row.image_left).size("90%", "90%"))
-            .print("center at 25vw", "middle at 50vh") // Position left image canvas
-        ,
-        newCanvas("right_image_canvas", "40vw", "60vh") // Adjust size as needed
-            .css("border", "1px solid lightgrey") // Optional: for visibility
-            .add("center at 50%", "middle at 50%", newImage("right_image", row.image_right).size("90%", "90%"))
-            .print("center at 75vw", "middle at 50vh") // Position right image canvas
-        ,
-        // Wait for audio to finish if you want images and audio to be co-present before choice
-        // This also means eye-tracking starts *after* audio if placed here.
-        // If you want eye-tracking during audio, start tracker earlier.
-        getAudio("sentence_audio").wait() // Option 2: Audio finishes, images are already on screen
-
-        ,
-        // 3. Start Eye-Tracking
-        getEyeTracker("tracker")
-            .add( getCanvas("left_image_canvas"), getCanvas("right_image_canvas") ) // Elements to track [cite: 12]
-            .log() // Enable data logging for the eye-tracker [cite: 13]
-            .start()
-        ,
-        // 4. Collect participant's choice
-        newSelector("choice_selector")
-            .add( getCanvas("left_image_canvas"), getCanvas("right_image_canvas") )
-            .once() // Participant can only click once
-            .log("all") // Log which element was selected and RT
-            .wait() // Wait for a selection
-        ,
-        // 5. Stop Eye-Tracking
-        getEyeTracker("tracker").stop() // [cite: 16]
-        ,
-        // 6. Log additional trial information
-        // PCIbex automatically logs some general info. Add specific columns from your CSV.
-        PennController.log( "item_number", row.item_number )
-        ,
-        PennController.log( "condition_label", row.condition_label )
-        ,
-        PennController.log( "audio_file", row.audio_file )
-        ,
-        PennController.log( "image_left", row.image_left )
-        ,
-        PennController.log( "image_right", row.image_right )
-        ,
-        PennController.log( "expected_choice_image", row.expected_choice_image )
-        ,
-        newTimer("inter_trial_interval", 1000) // Brief pause before next trial
-            .start()
-            .wait()
-    )
-    .log( "item_number" ,PennController.GetURLParameter("item_number")) // Log from URL if any
-    .log( "condition_label" , PennController.GetURLParameter("condition_label")) // Log from URL if any
-);
-
-// Send results
-PennController( "send_results" ,
-    newText("Please wait while we save your responses...")
-        .print()
-    ,
-    newButton().wait() // Wait for data to be sent (implicit)
-    ,
-    SendResults() // [cite: 17]
-);
-
-// Thank you and end of experiment
-PennController( "thank_you" ,
-    exitFullscreen(),
-    newText("Thank you for your participation! You can now close this window.")
+// Calibration page; we do a first calibration here---meanwhile, the resources are preloading
+newTrial("webcam",
+    newText(`<p>This experiment needs to access your webcam to follow your eye movements.</p>
+            <p>We will only collect data on where on this page your eyes are looking during the experiment.</p>`)
         .center()
         .print()
     ,
-    newButton().wait() // Prevent the experiment from closing automatically
+    newButton("I understand, start the calibration")
+        .center()
+        .print()
+        .wait( newEyeTracker("tracker").test.ready() )
+        .remove()
+    ,
+    clear()
+    ,
+    fullscreen()
+    ,
+    // Start calibrating the eye-tracker, allow for up to 2 attempts
+    // 50 means that calibration succeeds when 50% of the estimates match the click coordinates
+    // Increase the threshold for better accuracy, but more risks of losing participants
+    getEyeTracker("tracker").calibrate(50,2)
+    ,
+    newText(`<p>You will see the same button in the middle of the screen before each trial.</p>
+             <p>Click and fixate it for 3 seconds to check that the tracker is still well calibrated.</p>
+             <p>If it is, the trial will start after 3 seconds. Otherwise, you will go through calibration again.</p>`)
+        .center()
+        .print()
+    ,
+    newButton("Go to the first trial")
+        .center()
+        .print()
+        .wait()
 )
-.setOption("countsForProgressBar",false);
+
+// Wait if the resources have not finished preloading by the time the tracker is calibrated
+CheckPreloaded()
+
+// Experiment 
+Template("experiment_data.csv", row => // Trial structure using data from the CSV file
+    newTrial( "experiment_trial",
+    
+        // 0. Check/recalibrate the tracker before every trial
+        newEyeTracker("tracker").calibrate(50,2),
+        
+        // 250ms delay
+        newTimer(250).start().wait(),
+        
+        // Optional: A brief fixation point or pause before the trial starts
+        newText("fixation_cross", "+").css("font-size", "1em").center().print(),
+        newTimer("fixation_duration", 500).start().wait(), // Show fixation for 500ms
+        getText("fixation_cross").remove(), // Remove fixation cross
+        
+        // 1. Play the audio
+        newAudio("sentence_audio", row.audio_file)
+            .log().play().wait(), // Log when audio playback starts and ends; wait for the audio to finish playing before showing images
+            
+        // 2. Display the images (left and right) AFTER audio has finished
+        // Images are placed on canvases, which serve as clickable regions.
+        // defaultImage.size("20vh", "20vh"),
+        
+        newCanvas("left_image_canvas", "45vw", "70vh") // Canvas for the left image
+            .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
+            .print("center at 25vw", "middle at 50vh") // Position canvas on the left
+        ,
+        newCanvas("right_image_canvas", "45vw", "70vh") // Canvas for the right image
+            .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
+            .print("center at 75vw", "middle at 50vh") // Position canvas on the right
+        ,
+        
+        // Activate tracker
+        getEyeTracker("tracker")
+            .add(   // We track the Canvas elements   
+                getCanvas("left_image_canvas"),
+                getCanvas("right_image_canvas"),
+            )
+            .log()  // If this line is missing, the eye-tracking data won't be sent to the server
+            .start(),
+
+        newTimer(500).start().wait(),
+        
+        // 3. Collect participant's choice by clicking on one of the images
+        newSelector("choice_selector")
+            .add(
+                getCanvas("left_image_canvas"), 
+                getCanvas("right_image_canvas") ) // Define clickable elements
+            .once() // Participant can only click once
+            .log("all") // Log which element was selected (its ID) and the reaction time //"all"?
+            .wait(), // Wait for a selection (click)
+        
+        // Stop tracker to prevent collecting unnecessary data
+        getEyeTracker("tracker").stop(),
+        
+        // Make sure playback is over before moving on
+        getAudio("test").wait("first"),
+        newTimer(250).start().wait(),
+        newTimer("inter_trial_interval", 750).start().wait() // Brief pause (750ms) before the next trial
+    )
+    // Log additional trial information from the CSV file to the results
+    .log("item_number", row.item_number)
+    .log("condition", row.condition)
+    .log("audio_file", row.audio_file)
+    .log("image_left", row.image_left)
+    .log("image_right", row.image_right)
+    .log("expected_choice_image", row.expected_choice_image)
+
+    // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
+    // .log( "participant_id" , PennController.GetURLParameter("id") )
+)
+
+// SendResults()
+
+// 5. Send results to the server
+newTrial( "send_results" ,
+    newText("sending_results_text", "Please wait while we save your responses...")
+        .center()
+        .print()
+    ,
+    
+    // The SendResults command will try to send data to the server.
+    // This is handled by PCIbex farm's infrastructure or your own backend if self-hosting.
+    SendResults("send_results_command") // This command handles sending all collected data.
+    ,
+    newTimer("wait_after_send", 500) // Brief pause to ensure data sending process initiates
+        .start()
+        .wait()
+    ,
+    getText("sending_results_text")
+        .text("Your responses have been saved.") // Update text
+    ,
+    newButton().wait(1500) // Wait 1.5 seconds to show "saved" message before thank you screen
+);
+
+// Thank you screen and end of the experiment
+newTrial( "thank_you",
+    newText("thank_you_text", "<p>Thank you for your participation in this experiment!</p><p>You can now close this window.</p>")
+        .css("width", "80%")
+        .css("margin", "auto")
+        .center()
+        .print()
+    ,
+    // This button is not printed but keeps the page open until the participant closes it.
+    newButton("finish_button").wait()
+)
+
+newTrial(
+    exitFullscreen()
+    ,
+    newText("The is the end of the experiment, you can now close this window. Thank you!")
+        .center()
+        .print()
+    ,
+    newButton("waitforever").wait() // Not printed: wait on this page forever
+)
+
+.setOption("countsForProgressBar", false); // This trial does not count towards the progress bar.
+
+
+
+
+
+// 5. Thank you screen and end of the experiment
+PennController( "thank_you" ,
+    newText("thank_you_text", "<p>Thank you for your participation in this experiment!</p><p>You can now close this window.</p>")
+        .css("width", "80%")
+        .css("margin", "auto")
+        .center()
+        .print()
+    ,
+    // This button is not printed but keeps the page open until the participant closes it.
+    newButton("finish_button").wait()
+)

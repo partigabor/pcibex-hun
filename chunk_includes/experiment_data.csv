@@ -2,3 +2,9 @@ item_number,condition_label,audio_file,image_left,image_right,expected_choice_im
 1,exhaustive,101.mp3,1a.png,1b.png,1a.png
 1,target,102.mp3,1a.png,1b.png,NA
 1,contrastive,103.mp3,1a.png,1b.png,1b.png
+2,exhaustive,201.mp3,2a.png,2b.png,2a.png
+2,target,202.mp3,2a.png,2b.png,NA
+2,contrastive,203.mp3,2a.png,2b.png,2b.png
+3,exhaustive,301.mp3,3a.png,3b.png,3a.png
+3,target,302.mp3,3a.png,3b.png,NA
+3,contrastive,303.mp3,3a.png,3b.png,3b.png
