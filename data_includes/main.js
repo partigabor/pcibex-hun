@@ -36,7 +36,7 @@ newTrial("welcome",
         .center()
         .print()
     ,
-    newButton("start_experiment_button", "I understand, continue!")
+    newButton("start_experiment_button", "I understand, continue.")
         .center()
         .print()
         .wait()
@@ -49,7 +49,7 @@ newTrial("webcam",
         .center()
         .print()
     ,
-    newButton("I understand, start the calibration")
+    newButton("I understand, start the calibration.")
         .center()
         .print()
         .wait( newEyeTracker("tracker").test.ready() )
@@ -89,10 +89,10 @@ Template("experiment_data.csv", row => // Trial structure using data from the CS
         // 250ms delay
         newTimer(250).start().wait(),
         
-        // Optional: A brief fixation point or pause before the trial starts
-        newText("fixation_cross", "+").css("font-size", "1em").center().print(),
-        newTimer("fixation_duration", 500).start().wait(), // Show fixation for 500ms
-        getText("fixation_cross").remove(), // Remove fixation cross
+        // // Optional: A brief fixation point or pause before the trial starts
+        // newText("fixation_cross", "+").css("font-size", "1em").center().print(),
+        // newTimer("fixation_duration", 500).start().wait(), // Show fixation for 500ms
+        // getText("fixation_cross").remove(), // Remove fixation cross
         
         // 1. Play the audio
         newAudio("sentence_audio", row.audio_file)
@@ -128,24 +128,24 @@ Template("experiment_data.csv", row => // Trial structure using data from the CS
                 getCanvas("left_image_canvas"), 
                 getCanvas("right_image_canvas") ) // Define clickable elements
             .once() // Participant can only click once
-            .log("all") // Log which element was selected (its ID) and the reaction time //"all"?
+            .log() // Log which element was selected (its ID) and the reaction time //"all"?
             .wait(), // Wait for a selection (click)
         
         // Stop tracker to prevent collecting unnecessary data
         getEyeTracker("tracker").stop(),
         
         // Make sure playback is over before moving on
-        getAudio("test").wait("first"),
-        newTimer(250).start().wait(),
+        // getAudio("test").wait("first"),
+        // newTimer(250).start().wait(),
         newTimer("inter_trial_interval", 750).start().wait() // Brief pause (750ms) before the next trial
     )
     // Log additional trial information from the CSV file to the results
-    .log("item_number", row.item_number)
-    .log("condition", row.condition)
-    .log("audio_file", row.audio_file)
-    .log("image_left", row.image_left)
-    .log("image_right", row.image_right)
-    .log("expected_choice_image", row.expected_choice_image)
+    // .log("item_number", row.item_number)
+    // .log("condition", row.condition)
+    // .log("audio_file", row.audio_file)
+    // .log("image_left", row.image_left)
+    // .log("image_right", row.image_right)
+    // .log("expected_choice_image", row.expected_choice_image)
 
     // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
     // .log( "participant_id" , PennController.GetURLParameter("id") )
@@ -197,8 +197,6 @@ newTrial(
 )
 
 .setOption("countsForProgressBar", false); // This trial does not count towards the progress bar.
-
-
 
 
 
