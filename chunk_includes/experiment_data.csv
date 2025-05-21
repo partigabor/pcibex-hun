@@ -1,4 +1,4 @@
-item_number,condition_label,audio_file,image_left,image_right,expected_choice_image
+item_number,condition,audio_file,image_left,image_right,expected_choice_image
 1,exhaustive,101.mp3,1a.png,1b.png,1a.png
 1,target,102.mp3,1a.png,1b.png,NA
 1,contrastive,103.mp3,1a.png,1b.png,1b.png
