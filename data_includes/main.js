@@ -21,7 +21,7 @@ PennController.ResetPrefix(null) // Keep this here
 // ***
 
 // Define the sequence of the experiment blocks
-Sequence( "welcome", randomize("experiment_trial"), SendResults(), "send_results", "thank_you");
+Sequence( "welcome", randomize("experiment_trial"), "send_results", SendResults(), "thank_you");
 // "webcam",
 
 // Welcome page
@@ -162,7 +162,7 @@ newTrial( "send_results" ,
     
     // The SendResults command will try to send data to the server.
     // This is handled by PCIbex farm's infrastructure or your own backend if self-hosting.
-    SendResults("send_results_command") // This command handles sending all collected data.
+    SendResults() // This command handles sending all collected data.
     ,
     newTimer("wait_after_send", 500) // Brief pause to ensure data sending process initiates
         .start()

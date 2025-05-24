@@ -1,0 +1,19 @@
+
+
+instructions:
+decide asap
+
+practice
+
+1. see image pair       counterbalancing
+2. read sentence word by word       spr   words in the middle: cumulated window  period in the end. 
+3. fixation point   1s, cannot be skipped
+4. 2 images --> choice
+
+Record:
+RT of words; 
+RT of decision (from fixation time end to choice); choice
+ET records the fixation on images
+
+visual world paradigm sentence comprehension --> check lit
+
