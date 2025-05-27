@@ -1,0 +1,4 @@
+item	condition	r1	r2	r3	r4	r5	r6	r7	image_left	image_right	expected
+p	1	Ez	egy példamondat	kérlek	válaszd	majd	az A betűs	képet.	pa.jpg	pb.jpg	
+p	2	Ez is	csak gyakorlás	kérlek	majd	válaszd	a B betűs	képet.	pa.jpg	pb.jpg	
+p	3	Itt	pedig	válaszd	azt a képet	amelyik	jobboldalt	van.	pa.jpg	pb.jpg	
