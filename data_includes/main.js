@@ -23,90 +23,154 @@ PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this h
 // ***
 
 // // Define the sequence of the experiment blocks
-Sequence( "welcome",  "instructions", "practice", randomize("experiment_trial"), "send_results", SendResults(), "thank_you");
-// "calibration",
+Sequence("welcome", "data", "instructions", "calibration", "practice", "start", randomize("experiment_trial"), "send_results", "thank_you");
 
-// // Welcome page
-// newTrial("welcome",
-//     defaultText
-//         // .css("width", "80%") // Make text block readable
-//         // .css("margin", "auto") // Center the text block
-//         // .css("font-size", "1em") // Font size
-//         .center()
-//         .print()
-//     ,
-//     newText("welcome",  
-//         "<p>Welcome!</p>" +
-//         "<p>This experiment is part of a project supervised by Dr. Yu-Yin Hsu of The Hong Kong Polytechnic University.</p>" +
-//         "<p>· In this online experiment, you will read sentences in Hungarian. <br>· After each sentence, two images will appear on the screen. <br>· Your task will be to click on the image that best fits the sentence you just saw.</p>" +
-//         "<p>You can take part in the experment ONLY if you are using use a <strong>computer</strong> with a <strong>physical keyboard</strong>, and a <strong>webcam</strong>. <br>You should start the experiment ONLY if you have the time to <b>complete it</b> and with <b>no rush</b>, it is <b>not possible</b> to save the current session. <br><u>If you <strong>close</strong> the <strong>browser</strong> window, you will have to <strong>start the experiment over</strong></u>.</p>" +
-//         "<p>The study will take approximately <strong>30 minutes</strong> to complete. </p>" +
-//         "<p>Please pay attention and respond as quickly and accurately as possible.</p>")
-//         .center()
-//         .print()
-//     ,
-//     newText("1","<p>If you agree to take part in this study, you consent that the following data will be collected: demographic data, reading times, eye-tracking data and choices made within the trials. These information will be stored anonymously and will only be used for scientific purposes.</p>")
-//         .cssContainer("width", "80%")
-//         .cssContainer("border", "solid 2px blue")
-//         .cssContainer("padding-left", "10px")
-//     ,
-//     newText("2","<p>If you wish to participate, please select 'I consent to [...]' below. </p>")
-//         .center()
-//         .print()
-//     ,
-//     newScale("consent", " I consent to the collection of my data and I wish to participate in the experiment.")
-//         .labelsPosition("center")
-//         .vertical()
-//         .center()
-//         .print()
-//     ,
-//     newText("3","<p>On the next screens we will show you the instructions, calibrate the eye-tracker, and do a practice round.</p>")
-//     ,
-//     newButton("continue_button", "Continue")
-//         .center()
-//         .print()
-//         .wait(getScale("consent").test.selected())
-//         .css('margin-bottom','20px'),
+// Welcome page
+newTrial("welcome",
+    defaultText
+        // .css("width", "80%") // Make text block readable
+        // .css("margin", "auto") // Center the text block
+        .css("font-size", "110%") // Font size
+        .center()
+        .print()
+        ,
+    newText("welcome", "<p>Welcome!</p>")
+        .css("font-size", "150%")
+        .center()
+        .print()
+        ,
+    newText("welcome_text",  
+        "<p>This experiment is part of a project supervised by Dr. Yu-Yin Hsu of The Hong Kong Polytechnic University.</p>" +
+        "<p>· In this online experiment, you will read sentences in Hungarian. <br>· After each sentence, two images will appear on the screen. <br>· Your task will be to click on the image that best fits the sentence you just saw.</p>" +
+        "<p>You can take part in the experment ONLY if you are using use a <strong>computer</strong> with a <strong>physical keyboard</strong>, and a <strong>webcam</strong>. <br>You should start the experiment ONLY if you have the time to <b>complete it</b> and with <b>no rush</b>, it is <b>not possible</b> to save the current session. <br><u>If you <strong>close</strong> the <strong>browser</strong> window, you will have to <strong>start the experiment over</strong></u>.</p>" +
+        "<p>The study will take approximately <strong>30 minutes</strong> to complete. </p>" +
+        "<p>Please pay attention and respond as quickly and accurately as possible.</p>")
+        .center()
+        .print()
+        ,
+    newText("box","<p>If you agree to take part in this study, you consent that the following data will be collected: demographic data, reading times, eye-tracking data and choices made within the trials. These information will be stored anonymously and will only be used for scientific purposes.</p>")
+        .cssContainer("width", "80%")
+        .cssContainer("border", "solid 2px blue")
+        .cssContainer("padding-left", "10px")
+    ,
+    newText("if","<p>If you wish to participate, please select 'I consent to [...]' below. </p>")
+        .center()
+        .print()
+    ,
+    newScale("consent", " I consent to the collection of my data and I wish to participate in the experiment.")
+        .labelsPosition("center")
+        .vertical()
+        .css("font-size", "110%")
+        .center()
+        .print()
+    ,
+    newText("next","<p>On the next screens we will show you the instructions, calibrate the eye-tracker, and do a practice round.</p>")
+    ,
+    newButton("continue_button", "Continue")
+        .center()
+        .print()
+        .wait(getScale("consent").test.selected())
+        .css('margin-bottom','20px'),
 
-    // fullscreen()
-// );
+    fullscreen()
+);
 
-//    // newText("2","<p>If you have any questions, feel free to contact us at:")
-//    // ,
-//    // newText("7", "gabor.parti@connect.polyu.hk</p>")
-//    //     .color("blue")
-//    // ,
+    // newText("question","<p>If you have any questions, feel free to contact us at:")
+    // ,
+    // newText("email", "gabor.parti@connect.polyu.hk</p>")
+    //     .color("blue")
+    // ,
 
+
+
+// Participant data
+newTrial("data",
+    defaultText
+        .css("font-size", "110%")
+        .print()
+        .center(),
     
+    newText("newline", "<p>...</p>").hidden(),
+        
+    newText("<p>Participant information</p>")
+        .center()
+        .print(),
+
+    newText("<p>Enter your <b>Prolific ID</b>:</p>")
+        .center()
+        .print()
+    ,
+    
+    newText("<p>Fill in the field and press ENTER (↵).</p>")
+        .center()
+        .print()
+    ,
+    
+    newTextInput("input_participant_id")
+        .log()
+        .center()
+        .print()
+        .lines(1)
+        .css('margin-bottom','20px')
+        .wait( getTextInput("input_participant_id").testNot.text("") )
+    ,
+
+    newText("newline", "<p>...</p>").hidden(),
+    
+    newText("<p>Notice: Before payment, we will check the validity of the recorded data.</p>")
+        .css("font-size", "120%")
+        .css("text-align", "center")
+        .center()
+        .print()
+    ,
+    newButton("Send")
+        .print()
+        .center()
+        .wait(getTextInput("input_participant_id").testNot.text(""))
+    ,
+    newVar("participant")
+        .global()
+        .set( getTextInput("input_participant_id") )
+    ,
+)
+    .log("participant" , getVar("participant") )
+
+
     
 // Instructions
 newTrial("instructions",
     defaultText
-        // .css("width", "80%") // Make text block readable
-        // .css("margin", "auto") // Center the text block
-        .css("font-size", "120%") // Font size
+        .css("font-size", "110%")
         .center()
         .print()
     ,
+    
+    newText("newline", "<p>...</p>").hidden(),
+
     newText("<p>In this expriment, you will find Hungarian sentences.</p>"),
     newText("<p>Before each sentence, you will see a cross (+) in the center of the screen. </p>"),
     newText("<p><p>You will not see the full sentences, but <b>one word at a time</b>.</p>"),
     newText("<p>Use the <b>space bar</b> (␣) to move to the next word, which will be shown in the center of your screen.</p>"),
     newText("<p>Make sure you understand the word on the screen before pressing the space bar and moving to the next one.</p>"),
     
-    newText("newline", "<p>/n</p>").hidden(),
+    newText("newline", "<p>...</p>").hidden(),
     
-    newText("space", "____________"),
+    newText("space", "__________________"),
     newText("<p> (Press the space bar to continue) </p>"),
     newKey(" ").wait()
-    )
+);
 
 
 
 // // Calibration page; we do a first calibration here---meanwhile, the resources are preloading
 // newTrial("calibration",
+//     defaultText
+//         .css("font-size", "110%") // Font size
+//         .center()
+//         .print(),
+        
 //     newText(`<p>This experiment needs to access your webcam to follow your eye movements.</p>
-//             <p>We will only collect data on where on this page your eyes are looking during the experiment.</p>`)
+//             <p>We only collect data on where on this page your eyes are looking during the experiment.</p>`)
 //         .center()
 //         .print()
 //     ,
@@ -126,28 +190,31 @@ newTrial("instructions",
 //     getEyeTracker("tracker").calibrate(50,2)
 //     ,
 //     newText(`<p>You will see the same button in the middle of the screen before each trial.</p>
-//              <p>Click and fixate it for 3 seconds to check that the tracker is still well calibrated.</p>
+//              <p>Fixate on it for 3 seconds to check that the tracker is still well calibrated.</p>
 //              <p>If it is, the trial will start after 3 seconds. Otherwise, you will go through calibration again.</p>`)
 //         .center()
 //         .print()
 //     ,
-//     newButton("Go to the practice trial")
+//     newButton("Continue to the practice trials.")
 //         .center()
 //         .print()
 //         .wait()
-// )
+// );
 
 
 
 // Wait if the resources have not finished preloading by the time the tracker is calibrated
 CheckPreloaded()
 
+
+
 // Practice
 Template("practice.csv", row => 
     newTrial("practice",
         defaultText
-        .css("font-size", "120%") // Font size
-        .print("middle at 50vh"),
+        .css("font-size", "110%")
+        .center()
+        .print(),
     
     // // Check/recalibrate the tracker before every trial  ////////
     // newEyeTracker("tracker").calibrate(50,2)             ////////
@@ -158,7 +225,7 @@ Template("practice.csv", row =>
     ,
     
     // Show image pair
-    newText("practice_text", "Practice")
+    newText("practice_text", "Practice " + row.item + "/3")
         .css("font-size", "200%")
         .center()
         .print(),
@@ -170,22 +237,17 @@ Template("practice.csv", row =>
         .add("center at 50%", "middle at 50%", newImage("right_image_stimulus_preview", row.image_right).size("90%", "90%"))
         .print("center at 75vw", "middle at 50vh"),
 
-    newTimer("2000", 2000).start().wait(),
+    newTimer("1000", 1000).start().wait(),
 
     newText("spacebar","<p> (Press the space bar to continue) </p>").center().print("center at 50vw", "middle at 50vh"),
     newKey(" ").wait(),
     getText("spacebar").remove(),
     getCanvas("left_canvas_preview").remove(),
     getCanvas("right_canvas_preview").remove(),
-
-    // // Show sentence
-    // getText("spacebar").center().print("center at 50vw", "middle at 50vh"),
-    // newKey(" ").wait(),    
-    // getText("spacebar").remove(),
     
     // Fixation
     newText("fixation_cross", "+").center().css("font-size", "250%").print("center at 50vw", "middle at 50vh"),
-    newTimer("1000", 1000).start().wait(),
+    getTimer("1000").start().wait(),
     getText("fixation_cross").remove(),
     getTimer("500").start().wait(),
     
@@ -224,58 +286,76 @@ Template("practice.csv", row =>
     // getText("practice_text").remove()
     // ,
     
-    getTimer("500").start().wait(),
-    
-    // Show images (images are placed on canvases, which serve as clickable regions)
-    newCanvas("left_canvas", "30vw", "60vh")
-        .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
-        .print("center at 25vw", "middle at 50vh"),
-    newCanvas("right_canvas", "30vw", "60vh")
-        .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
-        .print("center at 75vw", "middle at 50vh"),
+//     // Show images (images are placed on canvases, which serve as clickable regions)
+//     newCanvas("left_canvas", "30vw", "60vh")
+//         .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
+//         .print("center at 25vw", "middle at 50vh"),
+//     newCanvas("right_canvas", "30vw", "60vh")
+//         .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
+//         .print("center at 75vw", "middle at 50vh"),
 
-        // Activate tracker
-        getEyeTracker("tracker")
-            .add(   // We track the Canvas elements   
-                getCanvas("left_canvas"),
-                getCanvas("right_canvas"),
-                )
-                .log()  // If this line is missing, the eye-tracking data won't be sent to the server
-                .start(),
+//         // Activate tracker
+//         getEyeTracker("tracker")
+//             .add(   // We track the Canvas elements   
+//                 getCanvas("left_canvas"),
+//                 getCanvas("right_canvas"),
+//                 )
+//                 .log()  // If this line is missing, the eye-tracking data won't be sent to the server
+//                 .start(),
 
-        getTimer("500").start().wait(),
+//         getTimer("500").start().wait(),
         
-        // Collect participant's choice by clicking on one of the images
-        newSelector("choice_selector")
-            .add(
-                getCanvas("left_canvas"), 
-                getCanvas("right_canvas")) // Define clickable elements
-            .shuffle()
-            .once() // Participant can only click once
-            .log() // Log which element was selected (its ID) and the reaction time //"all"?
-            .wait(), // Wait for a selection (click)
+//         // Collect participant's choice by clicking on one of the images
+//         newSelector("choice_selector")
+//             .add(
+//                 getCanvas("left_canvas"), 
+//                 getCanvas("right_canvas")) // Define clickable elements
+//             // .shuffle() // Always shuffles!
+//             .once() // Participant can only click once
+//             .log() // Log which element was selected (its ID) and the reaction time //"all"?
+//             .wait(), // Wait for a selection (click)
         
-        // Stop tracker to prevent collecting unnecessary data
-        getEyeTracker("tracker").stop(),
+//         // Stop tracker to prevent collecting unnecessary data
+//         getEyeTracker("tracker").stop(),
         
-        // Wait
-        getTimer("500").start().wait(),
+//         // Wait before next round
+//         getTimer("500").start().wait(),
     )
+//     // Log additional trial information from the CSV file to the results
+//     // .log("item_number", row.item_number)
+//     // .log("condition", row.condition)
+//     // .log("audio_file", row.audio_file)
+//     // .log("image_left", row.image_left)
+//     // .log("image_right", row.image_right)
+//     // .log("expected_choice_image", row.expected_choice_image)
+
+//     // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
+//     // .log( "participant_id" , PennController.GetURLParameter("id") )
+);
+
+
     
-    // Log additional trial information from the CSV file to the results
-    // .log("item_number", row.item_number)
-    // .log("condition", row.condition)
-    // .log("audio_file", row.audio_file)
-    // .log("image_left", row.image_left)
-    // .log("image_right", row.image_right)
-    // .log("expected_choice_image", row.expected_choice_image)
-
-    // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
-    // .log( "participant_id" , PennController.GetURLParameter("id") )
-
-)
-
-
+// Start message
+newTrial("start",
+    defaultText
+        .css("font-size", "110%") // Font size
+        .center()
+        .print()
+    ,
+    newText("<p>That's it, now we move on to the real experiment.</p>")
+        .center()
+        .print("center at 50vw", "middle at 25vh"),
+    
+    newText("<p>Live trials will start now! </p>")
+        .css("font-size", "300%") // Font size
+        .center()
+        .print("center at 50vw", "middle at 50vh")
+    ,
+    newButton("Continue to the live trials.")
+        .center()
+        .print("center at 50vw", "middle at 75vh")
+        .wait()
+);
 
 // // Experiment 
 // Template("experiment_data.csv", row => // Trial structure using data from the CSV file
@@ -347,65 +427,43 @@ Template("practice.csv", row =>
 
 //     // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
 //     // .log( "participant_id" , PennController.GetURLParameter("id") )
-// )
+//
 
-// // SendResults()
 
-// // 5. Send results to the server
-// newTrial( "send_results" ,
-//     newText("sending_results_text", "Please wait while we save your responses...")
-//         .center()
-//         .print()
-//     ,
+
+// Send results to the server
+newTrial("send_results",
+    defaultText
+        .css("font-size", "110%")
+        .center()
+        .print(),
+
+    // The SendResults command will try to send data to the server.
+    // This is handled by PCIbex farm's infrastructure or your own backend if self-hosting.
+    SendResults(), // This command handles sending all collected data.
     
-//     // The SendResults command will try to send data to the server.
-//     // This is handled by PCIbex farm's infrastructure or your own backend if self-hosting.
-//     SendResults() // This command handles sending all collected data.
-//     ,
-//     newTimer("wait_after_send", 500) // Brief pause to ensure data sending process initiates
-//         .start()
-//         .wait()
-//     ,
-//     getText("sending_results_text")
-//         .text("Your responses have been saved.") // Update text
-//     ,
-//     newButton().wait(1500) // Wait 1.5 seconds to show "saved" message before thank you screen
-// );
+    newText("sending_results_text", "Please wait while we save your responses...").center().print(),
+    newTimer("wait_after_send", 1000).start().wait(), // Brief pause to ensure data sending process initiates
+    getText("sending_results_text").text("Your responses have been saved.").center().print(), // Update text
+    getTimer("wait_after_send", 1000).start().wait(), // Brief pause to ensure data sending process completes
+    newText("newline", "<p>...</p>").hidden(),
+    newButton("Done.").center().print().wait(),
+    
+    exitFullscreen(),
+)
 
-// // Thank you screen and end of the experiment
-// newTrial( "thank_you",
-//     newText("thank_you_text", "<p>Thank you for your participation in this experiment!</p><p>You can now close this window.</p>")
-//         .css("width", "80%")
-//         .css("margin", "auto")
-//         .center()
-//         .print()
-//     ,
-//     // This button is not printed but keeps the page open until the participant closes it.
-//     newButton("finish_button").wait()
-// )
-
-// newTrial(
-//     exitFullscreen()
-//     ,
-//     newText("The is the end of the experiment, you can now close this window. Thank you!")
-//         .center()
-//         .print()
-//     ,
-//     newButton("waitforever").wait() // Not printed: wait on this page forever
-// )
+// Thank you screen and end of the experiment
+newTrial( "thank_you",
+    defaultText
+    .css("font-size", "110%")
+    .center()
+    .print(),
+    
+    newText("thank_you_text", "<p>This is the end of the experiment, thank you for your participation!</p>").print(),
+    newText("close_text", "<p>You can now close this window.</p>").print(),
+    
+    // This button is not printed but keeps the page open until the participant closes it.
+    newButton("finish_button").wait(),
+)
 
 // .setOption("countsForProgressBar", false); // This trial does not count towards the progress bar.
-
-
-
-// // 5. Thank you screen and end of the experiment
-// PennController( "thank_you" ,
-//     newText("thank_you_text", "<p>Thank you for your participation in this experiment!</p><p>You can now close this window.</p>")
-//         .css("width", "80%")
-//         .css("margin", "auto")
-//         .center()
-//         .print()
-//     ,
-//     // This button is not printed but keeps the page open until the participant closes it.
-//     newButton("finish_button").wait()
-// )
