@@ -41,26 +41,33 @@ newTrial("welcome",
         ,
     newText("welcome_text",  
         "<p>This experiment is part of a project supervised by Dr. Yu-Yin Hsu of The Hong Kong Polytechnic University.</p>" +
-        "<p>· In this online experiment, you will read sentences in Hungarian. <br>· After each sentence, two images will appear on the screen. <br>· Your task will be to click on the image that best fits the sentence you just saw.</p>" +
-        "<p>You can take part in the experment ONLY if you are using use a <strong>computer</strong> with a <strong>physical keyboard</strong>, and a <strong>webcam</strong>. <br>You should start the experiment ONLY if you have the time to <b>complete it</b> and with <b>no rush</b>, it is <b>not possible</b> to save the current session. <br><u>If you <strong>close</strong> the <strong>browser</strong> window, you will have to <strong>start the experiment over</strong></u>.</p>" +
+        "<p> · In this online experiment, you will read sentences in Hungarian. <br> · After each sentence, two images will appear on the screen. <br> · Your task will be to click on the image that best fits the sentence you just saw.</p>" +
+        "<p>You can take part in the experment ONLY if you are using use a <strong>computer</strong> with a <strong>physical keyboard</strong>, and a <strong>webcam</strong>. <br><br>You should start the experiment ONLY if you have the time to <b>complete it</b> and with <b>no rush</b>; it is <b>not possible</b> to save the current session. <br><br><u>If you <b>close the browser window</b>, you will have to <b>start over</b></u>.</p>" +
         "<p>The study will take approximately <strong>30 minutes</strong> to complete. </p>" +
-        "<p>Please pay attention and respond as quickly and accurately as possible.</p>")
+        "<p>Please pay attention and respond as quickly and accurately as possible!</p>")
         .center()
         .print()
         ,
-    newText("box","<p>If you agree to take part in this study, you consent that the following data will be collected: demographic data, reading times, eye-tracking data and choices made within the trials. These information will be stored anonymously and will only be used for scientific purposes.</p>")
+    newText("box","<p>If you agree to take part in this study, you consent that the following data will be collected: demographic data, reading times, eye movement within this window and the choices you made during the trials. These information will be stored anonymously and will only be used for scientific purposes.</p>")
         .cssContainer("width", "80%")
         .cssContainer("border", "solid 2px blue")
         .cssContainer("padding-left", "10px")
     ,
-    newText("if","<p>If you wish to participate, please select 'I consent to [...]' below. </p>")
-        .center()
-        .print()
-    ,
-    newScale("consent", " I consent to the collection of my data and I wish to participate in the experiment.")
-        .labelsPosition("center")
-        .vertical()
+    // newText("if","<p>If you wish to participate, please select 'I consent to [...]' below. </p>")
+    //     .center()
+    //     .print()
+    // ,
+    // newScale("consent", " I consent to the collection of my data and I wish to participate in the experiment.")
+    //     .labelsPosition("center")
+    //     .vertical()
+    //     .css("font-size", "110%")
+    //     .center()
+    //     .print()
+    // ,
+    newHtml("consent_form", "consent.html")
         .css("font-size", "110%")
+        .cssContainer({"width":"720px"})
+        .checkboxWarning("You must consent before continuing.")
         .center()
         .print()
     ,
@@ -69,11 +76,17 @@ newTrial("welcome",
     newButton("continue_button", "Continue")
         .center()
         .print()
-        .wait(getScale("consent").test.selected())
+        // .wait(getScale("consent").test.selected())
+        .wait(getHtml("consent_form")
+        .test.complete()
+        .failure(getHtml("consent_form").warn()
         .css('margin-bottom','20px'),
-
+        )
+        ),
+    
     fullscreen()
 );
+
 
     // newText("question","<p>If you have any questions, feel free to contact us at:")
     // ,
@@ -92,10 +105,11 @@ newTrial("data",
     
     newText("newline", "<p>...</p>").hidden(),
         
-    newText("<p>Participant information</p>")
+    newText("welcome", "<p>Participant information</p>")
+        .css("font-size", "150%")
         .center()
-        .print(),
-
+        .print()
+        ,
     newText("<p>Enter your <b>Prolific ID</b>:</p>")
         .center()
         .print()
@@ -145,10 +159,17 @@ newTrial("instructions",
         .print()
     ,
     
+    newText("welcome", "<p>Instructions</p>")
+        .css("font-size", "150%")
+        .center()
+        .print()
+        ,
+        
     newText("newline", "<p>...</p>").hidden(),
 
-    newText("<p>In this expriment, you will find Hungarian sentences.</p>"),
-    newText("<p>Before each sentence, you will see a cross (+) in the center of the screen. </p>"),
+    newText("<p>In this experiment, you will read Hungarian sentences.</p>"),
+    newText("<p>Before each sentence, you will see an image pair that gives some context.</p>"),
+    newText("<p>Before each sentence, you will see a fixation cross (+) in the center of the screen. </p>"),
     newText("<p><p>You will not see the full sentences, but <b>one word at a time</b>.</p>"),
     newText("<p>Use the <b>space bar</b> (␣) to move to the next word, which will be shown in the center of your screen.</p>"),
     newText("<p>Make sure you understand the word on the screen before pressing the space bar and moving to the next one.</p>"),
@@ -156,6 +177,12 @@ newTrial("instructions",
     newText("<p>Your task is to <b>choose</b> the image that best fits the sentence you read.</p>"),
     newText("<p>You must <b>click</b> on an image to make a selection and move on to the next item.</p>"),
         
+    newText("newline", "<p>...</p>").hidden(),
+    
+    newText("Try to respond as quckly and accurately as you can!")
+    .css("font-size", "150%")
+    .print(),
+    
     newText("newline", "<p>...</p>").hidden(),
     
     newText("space", "__________________"),
@@ -332,6 +359,11 @@ Template("practice.csv", row =>
 //     // .log("image_right", row.image_right)
 //     // .log("expected_choice_image", row.expected_choice_image)
 
+    // .log("group", row.group)
+    // .log("item", row.item)
+    // .log("condition", row.inflection)
+    // .log("ID", getVar("ID"))
+    
 //     // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
 //     // .log( "participant_id" , PennController.GetURLParameter("id") )
 );

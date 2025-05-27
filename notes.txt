@@ -3,8 +3,6 @@
 instructions:
 decide asap
 
-practice
-
 1. see image pair       counterbalancing
 2. read sentence word by word       spr   words in the middle: cumulated window  period in the end. 
 3. fixation point   1s, cannot be skipped
