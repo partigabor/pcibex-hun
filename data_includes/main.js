@@ -123,7 +123,7 @@ newTrial("data",
         .center()
         .print()
     ,
-    newButton("Send")
+    newButton("Continue")
         .print()
         .center()
         .wait(getTextInput("input_participant_id").testNot.text(""))
@@ -152,7 +152,10 @@ newTrial("instructions",
     newText("<p><p>You will not see the full sentences, but <b>one word at a time</b>.</p>"),
     newText("<p>Use the <b>space bar</b> (␣) to move to the next word, which will be shown in the center of your screen.</p>"),
     newText("<p>Make sure you understand the word on the screen before pressing the space bar and moving to the next one.</p>"),
-    
+    newText("<p>After each sentence, you will see <b>two images</b> on the left and right side of the screen.</p>"),
+    newText("<p>Your task is to <b>choose</b> the image that best fits the sentence you read.</p>"),
+    newText("<p>You must <b>click</b> on an image to make a selection and move on to the next item.</p>"),
+        
     newText("newline", "<p>...</p>").hidden(),
     
     newText("space", "__________________"),
@@ -356,6 +359,132 @@ newTrial("start",
         .print("center at 50vw", "middle at 75vh")
         .wait()
 );
+
+
+
+
+// // Real Experiment 
+// Template("experiment_data.csv", row => // Trial structure using data from the CSV file
+//     newTrial( "experiment_trial",
+
+// Experiment
+Template("practice.csv", row => 
+    newTrial("experiment_trial",
+        defaultText
+        .css("font-size", "110%")
+        .center()
+        .print(),
+    
+    // // Check/recalibrate the tracker before every trial  ////////
+    // newEyeTracker("tracker").calibrate(50,2)             ////////
+    // ,                                                    ////////
+    
+    // Delay
+    newTimer("500", 500).start().wait()
+    ,
+    
+    // Show image pair
+    newCanvas("left_canvas_preview", "30vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("left_image_stimulus_preview", row.image_left).size("90%", "90%"))
+        .print("center at 25vw", "middle at 50vh"),
+    newCanvas("right_canvas_preview", "30vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("right_image_stimulus_preview", row.image_right).size("90%", "90%"))
+        .print("center at 75vw", "middle at 50vh"),
+
+    newTimer("1000", 1000).start().wait(),
+
+    newText("spacebar","<p> (Press the space bar to continue) </p>").center().print("center at 50vw", "middle at 50vh"),
+    newKey(" ").wait(),
+    getText("spacebar").remove(),
+    getCanvas("left_canvas_preview").remove(),
+    getCanvas("right_canvas_preview").remove(),
+    
+    // Fixation
+    newText("fixation_cross", "+").center().css("font-size", "250%").print("center at 50vw", "middle at 50vh"),
+    getTimer("1000").start().wait(),
+    getText("fixation_cross").remove(),
+    getTimer("500").start().wait(),
+    
+    //Show regions
+    newText("vspace", "").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    
+    newText("r1", row.r1).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r1").remove(),
+    
+    newText("r2", row.r2).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r2").remove(),
+    
+    newText("r3", row.r3).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r3").remove(),
+    
+    newText("r4", row.r4).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r4").remove(),
+    
+    newText("r5", row.r5).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r5").remove(),
+    
+    newText("r6", row.r6).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r6").remove(),
+    
+    newText("r7", row.r7).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r7").remove(),
+    
+    // // Show images (images are placed on canvases, which serve as clickable regions)
+    // newCanvas("left_canvas", "30vw", "60vh")
+    //     .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
+    //     .print("center at 25vw", "middle at 50vh"),
+    // newCanvas("right_canvas", "30vw", "60vh")
+    //     .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
+    //     .print("center at 75vw", "middle at 50vh"),
+
+    //     // Activate tracker
+    //     getEyeTracker("tracker")
+    //         .add(   // We track the Canvas elements   
+    //             getCanvas("left_canvas"),
+    //             getCanvas("right_canvas"),
+    //             )
+    //             .log()  // If this line is missing, the eye-tracking data won't be sent to the server
+    //             .start(),
+
+    //     getTimer("500").start().wait(),
+        
+    //     // Collect participant's choice by clicking on one of the images
+    //     newSelector("choice_selector")
+    //         .add(
+    //             getCanvas("left_canvas"), 
+    //             getCanvas("right_canvas")) // Define clickable elements
+    //         // .shuffle() // Always shuffles!
+    //         .once() // Participant can only click once
+    //         .log() // Log which element was selected (its ID) and the reaction time //"all"?
+    //         .wait(), // Wait for a selection (click)
+        
+    //     // Stop tracker to prevent collecting unnecessary data
+    //     getEyeTracker("tracker").stop(),
+        
+    //     // Wait before next round
+    //     getTimer("500").start().wait(),
+    )
+//     // Log additional trial information from the CSV file to the results
+//     // .log("item", row.item_number)
+//     // .log("condition", row.condition)
+//     // .log("image_left", row.image_left)
+//     // .log("image_right", row.image_right)
+//     // .log("expected_choice", row.expected_choice)
+
+//     // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
+//     // .log( "participant_id" , PennController.GetURLParameter("id") )
+);
+
+
+////////////////////////
 
 // // Experiment 
 // Template("experiment_data.csv", row => // Trial structure using data from the CSV file
