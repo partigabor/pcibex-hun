@@ -1,6 +1,8 @@
 PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this here
 // DebugOff(); // Uncomment this line when you are ready to collect actual data to disable debug mode.
 
+// FROM GH
+
 // IMPORTANT NOTE: when running this project, the eye-tracker will highlight
 // the element that it estimates the participant is looking at
 // Edit the file PennController.css in the Aesthetics folder to remove highlighting
@@ -122,7 +124,7 @@ newTrial("instructions",
         .center()
         .print()
     ,
-    newText("instructions",
+    newText(
         "<p>In this expriment, you will find Hungarian sentences.</p>" +
         "<p>Before each sentence, you will see a cross (+) in the center of the screen. </p>" +
         "<p><p>You will not see the full sentences, but <b>one word at a time</b>.</p>" +
@@ -149,7 +151,6 @@ newTrial("instructions",
 // Wait if the resources have not finished preloading by the time the tracker is calibrated
 CheckPreloaded()
 
-
 // // Experiment 
 // Template("experiment_data.csv", row => // Trial structure using data from the CSV file
 //     newTrial( "experiment_trial",
@@ -165,30 +166,42 @@ CheckPreloaded()
 // Practice
 Template("practice.csv", row => 
     newTrial("practice_1",
-    
     // // Check/recalibrate the tracker before every trial  ////////
     // newEyeTracker("tracker").calibrate(50,2)             ////////
     // ,
+    
     // Delay
     newTimer("500", 500).start().wait()
     ,
+    
+    // Show situation
+    newCanvas("left_image_canvas", "45vw", "70vh") // Canvas for the left image
+        .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
+        .print("center at 25vw", "middle at 50vh") // Position canvas on the left
+    ,
+    newCanvas("right_image_canvas", "45vw", "70vh")
+        .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
+        .print("center at 75vw", "middle at 50vh")
+    ,
+    
+    // Show sentence
     newText("practice_sentence", "Practice sentence:")
         .css("font-size", "250%") // Make text large
         .center() // Center the text
         .print()
     ,
-    newText("vspace", "<br><br><br><br>").print() // Adds two line breaks
+    newText("vspace", "<br><br><br><br><br><br>").print() // Adds two line breaks
     ,
     newText("spacebar","<p> (Press the space bar to continue) </p>")
         .center().print()
     ,
-    newKey(" ").wait()
+    newKey("response", " ").wait()
     ,    
     getText("spacebar").remove()
     ,
     // Fixation
     newText("fixation_cross", "+").center().css("font-size", "250%").print(),
-    getTimer("500"),
+    newTimer("1000", 1000).start().wait(),
     getText("fixation_cross").remove()
     ,
     //Show regions
@@ -276,23 +289,19 @@ Template("practice.csv", row =>
     getText("r7")
         .remove()
     ,
-    newText("done", 
-    "<p>DONE<p/>")
-        .css("font-size", "250%")
-        .center()
-        .print()
+    getText("practice_sentence").remove()
     ,
-
-    // SHow images (images are placed on canvases, which serve as clickable regions)
+    getTimer("500").start().wait()
+    ,
+    // Show images (images are placed on canvases, which serve as clickable regions)
     // defaultImage.size("20vh", "20vh"),
-
     newCanvas("left_image_canvas", "45vw", "70vh") // Canvas for the left image
         .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
         .print("center at 25vw", "middle at 50vh") // Position canvas on the left
     ,
-    newCanvas("right_image_canvas", "45vw", "70vh") // Canvas for the right image
+    newCanvas("right_image_canvas", "45vw", "70vh")
         .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
-        .print("center at 75vw", "middle at 50vh") // Position canvas on the right
+        .print("center at 75vw", "middle at 50vh")
     ,
 
 //         // Activate tracker
