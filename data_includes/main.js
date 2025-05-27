@@ -1,7 +1,7 @@
 PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this here
 // DebugOff(); // Uncomment this line when you are ready to collect actual data to disable debug mode.
 
-// FROM GH
+// FROM PCIBEX
 
 // IMPORTANT NOTE: when running this project, the eye-tracker will highlight
 // the element that it estimates the participant is looking at
@@ -23,10 +23,8 @@ PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this h
 // ***
 
 // // Define the sequence of the experiment blocks
-// Sequence( "welcome", randomize("experiment_trial"), "send_results", SendResults(), "thank_you");
-// // "webcam",
-
-
+Sequence( "welcome",  "instructions", "practice", randomize("experiment_trial"), "send_results", SendResults(), "thank_you");
+// "calibration",
 
 // // Welcome page
 // newTrial("welcome",
@@ -62,25 +60,51 @@ PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this h
 //         .center()
 //         .print()
 //     ,
-//     newText("3","<p>On the next screen we will calibrate the eye-tracker, show you will the instructions, and do a practice round.</p>")
+//     newText("3","<p>On the next screens we will show you the instructions, calibrate the eye-tracker, and do a practice round.</p>")
 //     ,
 //     newButton("continue_button", "Continue")
 //         .center()
 //         .print()
 //         .wait(getScale("consent").test.selected())
-//         .css('margin-bottom','20px')
+//         .css('margin-bottom','20px'),
+
+    // fullscreen()
 // );
 
-//     // newText("2","<p>If you have any questions, feel free to contact us at:")
-//     // ,
-//     // newText("7", "gabor.parti@connect.polyu.hk</p>")
-//     //     .color("blue")
-//     // ,
+//    // newText("2","<p>If you have any questions, feel free to contact us at:")
+//    // ,
+//    // newText("7", "gabor.parti@connect.polyu.hk</p>")
+//    //     .color("blue")
+//    // ,
+
     
     
+// Instructions
+newTrial("instructions",
+    defaultText
+        // .css("width", "80%") // Make text block readable
+        // .css("margin", "auto") // Center the text block
+        .css("font-size", "120%") // Font size
+        .center()
+        .print()
+    ,
+    newText("<p>In this expriment, you will find Hungarian sentences.</p>"),
+    newText("<p>Before each sentence, you will see a cross (+) in the center of the screen. </p>"),
+    newText("<p><p>You will not see the full sentences, but <b>one word at a time</b>.</p>"),
+    newText("<p>Use the <b>space bar</b> (␣) to move to the next word, which will be shown in the center of your screen.</p>"),
+    newText("<p>Make sure you understand the word on the screen before pressing the space bar and moving to the next one.</p>"),
+    
+    newText("newline", "<p>/n</p>").hidden(),
+    
+    newText("space", "____________"),
+    newText("<p> (Press the space bar to continue) </p>"),
+    newKey(" ").wait()
+    )
+
+
 
 // // Calibration page; we do a first calibration here---meanwhile, the resources are preloading
-// newTrial("webcam",
+// newTrial("calibration",
 //     newText(`<p>This experiment needs to access your webcam to follow your eye movements.</p>
 //             <p>We will only collect data on where on this page your eyes are looking during the experiment.</p>`)
 //         .center()
@@ -107,245 +131,148 @@ PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this h
 //         .center()
 //         .print()
 //     ,
-//     newButton("Go to the first trial")
+//     newButton("Go to the practice trial")
 //         .center()
 //         .print()
 //         .wait()
 // )
 
-    
-    
-// Instructions
-newTrial("instructions",
-    defaultText
-        // .css("width", "80%") // Make text block readable
-        // .css("margin", "auto") // Center the text block
-        // .css("font-size", "1em") // Font size
-        .center()
-        .print()
-    ,
-    newText(
-        "<p>In this expriment, you will find Hungarian sentences.</p>" +
-        "<p>Before each sentence, you will see a cross (+) in the center of the screen. </p>" +
-        "<p><p>You will not see the full sentences, but <b>one word at a time</b>.</p>" +
-        "<p>Use the <b>space bar</b> (␣) to move to the next word, which will be shown in the center of your screen.</p>" +
-        "<p>Make sure you understand the word on the screen before pressing the space bar and moving to the next one.</p>"
-    )
-    ,
-    newText("newline",
-        "<p>/n</p>"
-        )
-        .hidden()
-     ,
-    newText("space",
-        "____________"
-        )
-    ,
-    newText("<p> (Press the space bar to continue) </p>"
-    )
-    ,
-    newKey(" ")
-        .wait()
-)
+
 
 // Wait if the resources have not finished preloading by the time the tracker is calibrated
 CheckPreloaded()
 
-// // Experiment 
-// Template("experiment_data.csv", row => // Trial structure using data from the CSV file
-//     newTrial( "experiment_trial",
-
-//         // 1. Play the audio
-//         newAudio("sentence_audio", row.audio_file)
-//             .log().play().wait(), // Log when audio playback starts and ends; wait for the audio to finish playing before showing images
-            
-//         // 2. Display the images (left and right) AFTER audio has finished
-//         // Images are placed on canvases, which serve as clickable regions.
-//         // defaultImage.size("20vh", "20vh"),
-
 // Practice
 Template("practice.csv", row => 
-    newTrial("practice_1",
+    newTrial("practice",
+        defaultText
+        .css("font-size", "120%") // Font size
+        .print("middle at 50vh"),
+    
     // // Check/recalibrate the tracker before every trial  ////////
     // newEyeTracker("tracker").calibrate(50,2)             ////////
-    // ,
+    // ,                                                    ////////
     
     // Delay
     newTimer("500", 500).start().wait()
     ,
     
-    // Show situation
-    newCanvas("left_image_canvas", "45vw", "70vh") // Canvas for the left image
-        .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
-        .print("center at 25vw", "middle at 50vh") // Position canvas on the left
-    ,
-    newCanvas("right_image_canvas", "45vw", "70vh")
-        .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
-        .print("center at 75vw", "middle at 50vh")
-    ,
+    // Show image pair
+    newText("practice_text", "Practice")
+        .css("font-size", "200%")
+        .center()
+        .print(),
+        
+    newCanvas("left_canvas_preview", "30vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("left_image_stimulus_preview", row.image_left).size("90%", "90%"))
+        .print("center at 25vw", "middle at 50vh"),
+    newCanvas("right_canvas_preview", "30vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("right_image_stimulus_preview", row.image_right).size("90%", "90%"))
+        .print("center at 75vw", "middle at 50vh"),
+
+    newTimer("2000", 2000).start().wait(),
+
+    newText("spacebar","<p> (Press the space bar to continue) </p>").center().print("center at 50vw", "middle at 50vh"),
+    newKey(" ").wait(),
+    getText("spacebar").remove(),
+    getCanvas("left_canvas_preview").remove(),
+    getCanvas("right_canvas_preview").remove(),
+
+    // // Show sentence
+    // getText("spacebar").center().print("center at 50vw", "middle at 50vh"),
+    // newKey(" ").wait(),    
+    // getText("spacebar").remove(),
     
-    // Show sentence
-    newText("practice_sentence", "Practice sentence:")
-        .css("font-size", "250%") // Make text large
-        .center() // Center the text
-        .print()
-    ,
-    newText("vspace", "<br><br><br><br><br><br>").print() // Adds two line breaks
-    ,
-    newText("spacebar","<p> (Press the space bar to continue) </p>")
-        .center().print()
-    ,
-    newKey("response", " ").wait()
-    ,    
-    getText("spacebar").remove()
-    ,
     // Fixation
-    newText("fixation_cross", "+").center().css("font-size", "250%").print(),
+    newText("fixation_cross", "+").center().css("font-size", "250%").print("center at 50vw", "middle at 50vh"),
     newTimer("1000", 1000).start().wait(),
-    getText("fixation_cross").remove()
-    ,
-    //Show regions
-    newText("r1", row.r1)
-        .center()
-        .css("font-size", "250%")
-        .print()
-    ,
-    newKey(" ")
-        .log()
-        .wait()
-    ,
-    getText("r1")
-        .remove()
-    ,
-    newText("r2",row.r2)
-        .css("font-size", "250%")
-        .center()
-        .print()
-    ,
-    newKey(" ")
-        .log()
-        .wait()
-    ,
-    getText("r2")
-        .remove()
-    ,
-    newText("r3", row.r3)
-        .css("font-size", "250%")
-        .center()
-        .print()
-    ,
-    newKey(" ")
-        .log()
-        .wait()
-    ,
-    getText("r3")
-        .remove()
-    ,
-    newText("r4",row.r4)
-        .css("font-size", "250%")
-        .center()
-        .print()
-    ,
-    newKey(" ")
-        .log()
-        .wait()
-    ,
-    getText("r4")
-        .remove()
-    ,
-    newText("r5", row.r5)
-        .css("font-size", "250%")
-        .center()
-        .print()
-    ,
-    newKey(" ")
-        .log()
-        .wait()
-    ,
-    getText("r5")
-        .remove()
-    ,
-    newText("r6", row.r6)
-        .css("font-size", "250%")
-        .center()
-        .print()
-    ,
-    newKey(" ")
-        .log()
-        .wait()
-    ,
-    getText("r6")
-        .remove()
-    , 
-    newText("r7", row.r7)
-        .css("font-size", "250%")
-        .center()
-        .print()
-    ,
-    newKey(" ")
-        .log()
-        .wait()
-    ,
-    getText("r7")
-        .remove()
-    ,
-    getText("practice_sentence").remove()
-    ,
-    getTimer("500").start().wait()
-    ,
-    // Show images (images are placed on canvases, which serve as clickable regions)
-    // defaultImage.size("20vh", "20vh"),
-    newCanvas("left_image_canvas", "45vw", "70vh") // Canvas for the left image
-        .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
-        .print("center at 25vw", "middle at 50vh") // Position canvas on the left
-    ,
-    newCanvas("right_image_canvas", "45vw", "70vh")
-        .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
-        .print("center at 75vw", "middle at 50vh")
-    ,
-
-//         // Activate tracker
-//         getEyeTracker("tracker")
-//             .add(   // We track the Canvas elements   
-//                 getCanvas("left_image_canvas"),
-//                 getCanvas("right_image_canvas"),
-//             )
-//             .log()  // If this line is missing, the eye-tracking data won't be sent to the server
-//             .start(),
-
-//         newTimer(500).start().wait(),
-        
-//         // 3. Collect participant's choice by clicking on one of the images
-//         newSelector("choice_selector")
-//             .add(
-//                 getCanvas("left_image_canvas"), 
-//                 getCanvas("right_image_canvas") ) // Define clickable elements
-//             .once() // Participant can only click once
-//             .log() // Log which element was selected (its ID) and the reaction time //"all"?
-//             .wait(), // Wait for a selection (click)
-        
-//         // Stop tracker to prevent collecting unnecessary data
-//         getEyeTracker("tracker").stop(),
-        
-//         // Make sure playback is over before moving on
-//         // getAudio("test").wait("first"),
-//         // newTimer(250).start().wait(),
-//         newTimer("inter_trial_interval", 750).start().wait() // Brief pause (750ms) before the next trial
-//     )
-//     // Log additional trial information from the CSV file to the results
-//     // .log("item_number", row.item_number)
-//     // .log("condition", row.condition)
-//     // .log("audio_file", row.audio_file)
-//     // .log("image_left", row.image_left)
-//     // .log("image_right", row.image_right)
-//     // .log("expected_choice_image", row.expected_choice_image)
-
-//     // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
-//     // .log( "participant_id" , PennController.GetURLParameter("id") )
-// )
-
+    getText("fixation_cross").remove(),
+    getTimer("500").start().wait(),
     
+    //Show regions
+    newText("vspace", "").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    
+    newText("r1", row.r1).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r1").remove(),
+    
+    newText("r2", row.r2).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r2").remove(),
+    
+    newText("r3", row.r3).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r3").remove(),
+    
+    newText("r4", row.r4).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r4").remove(),
+    
+    newText("r5", row.r5).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r5").remove(),
+    
+    newText("r6", row.r6).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r6").remove(),
+    
+    newText("r7", row.r7).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey(" ").log().wait(),
+    getText("r7").remove(),
+    
+    // getText("practice_text").remove()
+    // ,
+    
+    getTimer("500").start().wait(),
+    
+    // Show images (images are placed on canvases, which serve as clickable regions)
+    newCanvas("left_canvas", "30vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
+        .print("center at 25vw", "middle at 50vh"),
+    newCanvas("right_canvas", "30vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
+        .print("center at 75vw", "middle at 50vh"),
+
+        // Activate tracker
+        getEyeTracker("tracker")
+            .add(   // We track the Canvas elements   
+                getCanvas("left_canvas"),
+                getCanvas("right_canvas"),
+                )
+                .log()  // If this line is missing, the eye-tracking data won't be sent to the server
+                .start(),
+
+        getTimer("500").start().wait(),
+        
+        // Collect participant's choice by clicking on one of the images
+        newSelector("choice_selector")
+            .add(
+                getCanvas("left_canvas"), 
+                getCanvas("right_canvas")) // Define clickable elements
+            .shuffle()
+            .once() // Participant can only click once
+            .log() // Log which element was selected (its ID) and the reaction time //"all"?
+            .wait(), // Wait for a selection (click)
+        
+        // Stop tracker to prevent collecting unnecessary data
+        getEyeTracker("tracker").stop(),
+        
+        // Wait
+        getTimer("500").start().wait(),
     )
+    
+    // Log additional trial information from the CSV file to the results
+    // .log("item_number", row.item_number)
+    // .log("condition", row.condition)
+    // .log("audio_file", row.audio_file)
+    // .log("image_left", row.image_left)
+    // .log("image_right", row.image_right)
+    // .log("expected_choice_image", row.expected_choice_image)
+
+    // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
+    // .log( "participant_id" , PennController.GetURLParameter("id") )
+
 )
 
 
