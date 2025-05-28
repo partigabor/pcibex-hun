@@ -22,15 +22,20 @@ PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this h
 
 // ***
 
+// Sequence("consent","participant_ID","setcounter","introduction","introduction2","practice1","practice2","pract2attention","practice3","pract3attention",
+//         "start_experiment",rshuffle("exp1-fema", "exp1-femb","exp1-masa","exp1-masb","exp1-attentiona","exp1-attentionb"),"break", 
+//         rshuffle("exp2-fema", "exp2-femb","exp2-masa","exp2-masb","exp2-attentiona","exp2-attentionb"),
+//         "audioconfirm","posttest1","posttest1_gender1","posttest2","posttest2_gender2","posttest3","posttest3_gender3","posttest4","posttest4_gender4","Final-Q",SendResults(), "survey", "end");
+        
 // // Define the sequence of the experiment blocks
-Sequence("welcome", "data", "instructions", "calibration", "practice", "start", randomize("experiment_trial"), "send_results", "thank_you");
+Sequence("welcome", "calibration", "data", "instructions", "check_preloaded", "practice", "start", randomize("experiment_trial"), "send_results", "thank_you");
 
 // Welcome page
 newTrial("welcome",
     defaultText
         // .css("width", "80%") // Make text block readable
         // .css("margin", "auto") // Center the text block
-        .css("font-size", "110%") // Font size
+        // .css("font-size", "100%") // Font size
         .center()
         .print()
         ,
@@ -39,40 +44,41 @@ newTrial("welcome",
         .center()
         .print()
         ,
-    newText("welcome_text",  
+    newText(  
         "<p>This experiment is part of a project supervised by Dr. Yu-Yin Hsu of The Hong Kong Polytechnic University.</p>" +
         "<p> · In this online experiment, you will read sentences in Hungarian. <br> · After each sentence, two images will appear on the screen. <br> · Your task will be to click on the image that best fits the sentence you just saw.</p>" +
-        "<p>You can take part in the experment ONLY if you are using use a <strong>computer</strong> with a <strong>physical keyboard</strong>, and a <strong>webcam</strong>. <br><br>You should start the experiment ONLY if you have the time to <b>complete it</b> and with <b>no rush</b>; it is <b>not possible</b> to save the current session. <br><br><u>If you <b>close the browser window</b>, you will have to <b>start over</b></u>.</p>" +
-        "<p>The study will take approximately <strong>30 minutes</strong> to complete. </p>" +
+        "<p>You can take part in the experment ONLY if you are using use a <b>computer</b> with a <b>physical keyboard</b>, and a <b>webcam</b>. <br>You should start the experiment ONLY if you have the time to <b>complete it</b> and with <b>no rush</b>; it is <b>not possible</b> to save the current session. <br><u>If you <b>close the browser window</b>, you will have to <b>start over</b></u>.</p>" +
+        "<p>The study will take approximately <b>30 minutes</b> to complete; the next screen will show the instructions, perform calbiration, and conduct a practice round. </p>" +
         "<p>Please pay attention and respond as quickly and accurately as possible!</p>")
         .center()
         .print()
         ,
-    newText("box","<p>If you agree to take part in this study, you consent that the following data will be collected: demographic data, reading times, eye movement within this window and the choices you made during the trials. These information will be stored anonymously and will only be used for scientific purposes.</p>")
+    newText("<p>If you agree to take part in this study, you consent that the following data will be collected: demographic data, reading times, eye movement within this window and the choices you made during the trials. These information will be stored anonymously and will only be used for scientific purposes.</p>")
         .cssContainer("width", "80%")
         .cssContainer("border", "solid 2px blue")
         .cssContainer("padding-left", "10px")
-    ,
-    // newText("if","<p>If you wish to participate, please select 'I consent to [...]' below. </p>")
+        ,
+    // newText("<p>If you wish to participate, please select 'I consent to [...]' below. </p>")
     //     .center()
     //     .print()
     // ,
-    // newScale("consent", " I consent to the collection of my data and I wish to participate in the experiment.")
+    // newScale(" I consent to the collection of my data and I wish to participate in the experiment.")
     //     .labelsPosition("center")
     //     .vertical()
-    //     .css("font-size", "110%")
+    //     .css("font-size", "100%")
     //     .center()
     //     .print()
     // ,
-    newHtml("consent_form", "consent.html")
-        .css("font-size", "110%")
-        .cssContainer({"width":"720px"})
+    
+    newHtml("consent_form", `<p><input type="checkbox" class="obligatory"> I have read the above, I consent to the collection of my data, and I wish to participate in the experiment.</p>`)
+        // .cssContainer({"margin":"1em"})
+        // .cssContainer({"width":"720px"})
         .checkboxWarning("You must consent before continuing.")
         .center()
         .print()
-    ,
-    newText("next","<p>On the next screens we will show you the instructions, calibrate the eye-tracker, and do a practice round.</p>")
-    ,
+        .log()
+        ,
+
     newButton("continue_button", "Continue")
         .center()
         .print()
@@ -80,7 +86,7 @@ newTrial("welcome",
         .wait(getHtml("consent_form")
         .test.complete()
         .failure(getHtml("consent_form").warn()
-        .css('margin-bottom','20px'),
+        // .css('margin-bottom','20px'),
         )
         ),
     
@@ -96,10 +102,54 @@ newTrial("welcome",
 
 
 
+
+// // Calibration page; we do a first calibration here---meanwhile, the resources are preloading
+// newTrial("calibration",
+//     defaultText
+//         .center()
+//         .print()
+//         ,
+//     newText("calibration_title", "<p>Calibration</p>")
+//         .css("font-size", "150%")
+//         .center()
+//         .print()
+//         ,
+//     newText(`<p>This experiment needs to access your webcam to follow your eye movements.</p>
+//             <p>We only collect data on where on this page your eyes are looking during the experiment.</p>`)
+//         .center()
+//         .print()
+//         ,
+//     newButton("I understand, start the calibration")
+//         .center()
+//         .print()
+//         .wait( newEyeTracker("tracker").test.ready() )
+//         .remove()
+//         ,
+//     clear(),
+//     fullscreen(),
+    
+//     // Start calibrating the eye-tracker, allow for up to 2 attempts
+//     // 50 means that calibration succeeds when 50% of the estimates match the click coordinates
+//     // Increase the threshold for better accuracy, but more risks of losing participants
+//     getEyeTracker("tracker").calibrate(50,2)
+//     ,
+//     newText(`<p>You will see the same button in the middle of the screen before each trial.</p>
+//              <p>Fixate on it for 3 seconds to check that the tracker is still well calibrated.</p>
+//              <p>If it is, the trial will start after 3 seconds. Otherwise, you will go through calibration again.</p>`)
+//         .center()
+//         .print()
+//     ,
+//     newButton("Continue")
+//         .center()
+//         .print()
+//         .wait()
+// );
+
+
+
 // Participant data
 newTrial("data",
     defaultText
-        .css("font-size", "110%")
         .print()
         .center(),
     
@@ -129,10 +179,10 @@ newTrial("data",
         .wait( getTextInput("input_participant_id").testNot.text("") )
     ,
 
-    newText("newline", "<p>...</p>").hidden(),
+    getText("newline").hidden(),
     
     newText("<p>Notice: Before payment, we will check the validity of the recorded data.</p>")
-        .css("font-size", "120%")
+        .css("font-size", "110%")
         .css("text-align", "center")
         .center()
         .print()
@@ -154,95 +204,57 @@ newTrial("data",
 // Instructions
 newTrial("instructions",
     defaultText
-        .css("font-size", "110%")
         .center()
         .print()
     ,
     
-    newText("welcome", "<p>Instructions</p>")
+    newText("instruction_title", "<p>Instructions</p>")
         .css("font-size", "150%")
         .center()
         .print()
         ,
         
-    newText("newline", "<p>...</p>").hidden(),
-
-    newText("<p>In this experiment, you will read Hungarian sentences.</p>"),
-    newText("<p>Before each sentence, you will see an image pair that gives some context.</p>"),
-    newText("<p>Before each sentence, you will see a fixation cross (+) in the center of the screen. </p>"),
-    newText("<p><p>You will not see the full sentences, but <b>one word at a time</b>.</p>"),
-    newText("<p>Use the <b>space bar</b> (␣) to move to the next word, which will be shown in the center of your screen.</p>"),
-    newText("<p>Make sure you understand the word on the screen before pressing the space bar and moving to the next one.</p>"),
-    newText("<p>After each sentence, you will see <b>two images</b> on the left and right side of the screen.</p>"),
-    newText("<p>Your task is to <b>choose</b> the image that best fits the sentence you read.</p>"),
-    newText("<p>You must <b>click</b> on an image to make a selection and move on to the next item.</p>"),
-        
+    newText("<p>In this experiment, you will read Hungarian sentences.</p>" + 
+    "<p>Before each sentence, you will see an image pair that gives you some context.</p>" + 
+    "<p>Before each sentence, you will see a fixation cross (+) in the center of the screen. </p>" + 
+    "<p>You will not see the full sentences, but <b>one word at a time</b>.</p>" + 
+    "<p>Use the <b>space bar</b> (␣) to move to the next word, which will be shown in the center of your screen.</p>" + 
+    "<p>Make sure you understand the word on the screen before pressing the space bar and moving to the next one.</p>" + 
+    "<p>After each sentence, you will see <b>two images</b> on the left and right side of the screen.</p>" + 
+    "<p>Your task is to <b>choose</b> the image that best fits the sentence you read.</p>" + 
+    "<p>You must <b>click</b> on an image to make a selection and move on to the next item.</p>"
+    ),
+    
     newText("newline", "<p>...</p>").hidden(),
     
     newText("Try to respond as quckly and accurately as you can!")
-    .css("font-size", "150%")
-    .print(),
+        .css("font-size", "120%")
+        .print(),
     
-    newText("newline", "<p>...</p>").hidden(),
-    
-    newText("space", "__________________"),
+    getText("newline").hidden(),
+        
+    newText("space", "_______________"),
     newText("<p> (Press the space bar to continue) </p>"),
-    newKey(" ").wait()
+    newKey("space", " ").wait()
 );
 
 
-
-// // Calibration page; we do a first calibration here---meanwhile, the resources are preloading
-// newTrial("calibration",
-//     defaultText
-//         .css("font-size", "110%") // Font size
-//         .center()
-//         .print(),
+newTrial("check_preloaded",
+    // Wait if the resources have not finished preloading by the time the tracker is calibrated
+    CheckPreloaded(),
+    newText("Loading experiment data...")
+        .center()
+        .print()
+        ,
         
-//     newText(`<p>This experiment needs to access your webcam to follow your eye movements.</p>
-//             <p>We only collect data on where on this page your eyes are looking during the experiment.</p>`)
-//         .center()
-//         .print()
-//     ,
-//     newButton("I understand, start the calibration.")
-//         .center()
-//         .print()
-//         .wait( newEyeTracker("tracker").test.ready() )
-//         .remove()
-//     ,
-//     clear()
-//     ,
-//     fullscreen()
-//     ,
-//     // Start calibrating the eye-tracker, allow for up to 2 attempts
-//     // 50 means that calibration succeeds when 50% of the estimates match the click coordinates
-//     // Increase the threshold for better accuracy, but more risks of losing participants
-//     getEyeTracker("tracker").calibrate(50,2)
-//     ,
-//     newText(`<p>You will see the same button in the middle of the screen before each trial.</p>
-//              <p>Fixate on it for 3 seconds to check that the tracker is still well calibrated.</p>
-//              <p>If it is, the trial will start after 3 seconds. Otherwise, you will go through calibration again.</p>`)
-//         .center()
-//         .print()
-//     ,
-//     newButton("Continue to the practice trials.")
-//         .center()
-//         .print()
-//         .wait()
-// );
-
-
-
-// Wait if the resources have not finished preloading by the time the tracker is calibrated
-CheckPreloaded()
-
+    newTimer("1000", 1000).start().wait(),
+    ),
 
 
 // Practice
 Template("practice.csv", row => 
     newTrial("practice",
         defaultText
-        .css("font-size", "110%")
         .center()
         .print(),
     
@@ -255,15 +267,15 @@ Template("practice.csv", row =>
     ,
     
     // Show image pair
-    newText("practice_text", "Practice " + row.item + "/3")
-        .css("font-size", "200%")
+    newText("practice_text", "PRACTICE ROUND " + row.item + "/3")
+        .css("font-size", "150%")
         .center()
         .print(),
         
-    newCanvas("left_canvas_preview", "30vw", "60vh")
+    newCanvas("left_canvas_preview", "30vw", "50vh")
         .add("center at 50%", "middle at 50%", newImage("left_image_stimulus_preview", row.image_left).size("90%", "90%"))
         .print("center at 25vw", "middle at 50vh"),
-    newCanvas("right_canvas_preview", "30vw", "60vh")
+    newCanvas("right_canvas_preview", "30vw", "50vh")
         .add("center at 50%", "middle at 50%", newImage("right_image_stimulus_preview", row.image_right).size("90%", "90%"))
         .print("center at 75vw", "middle at 50vh"),
 
@@ -279,48 +291,47 @@ Template("practice.csv", row =>
     newText("fixation_cross", "+").center().css("font-size", "250%").print("center at 50vw", "middle at 50vh"),
     getTimer("1000").start().wait(),
     getText("fixation_cross").remove(),
-    getTimer("500").start().wait(),
     
     //Show regions
     newText("vspace", "").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r0", " ").log().wait(),
     
     newText("r1", row.r1).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r1", " ").log().wait(),
     getText("r1").remove(),
     
     newText("r2", row.r2).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r2", " ").log().wait(),
     getText("r2").remove(),
     
     newText("r3", row.r3).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r3", " ").log().wait(),
     getText("r3").remove(),
     
     newText("r4", row.r4).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r4", " ").log().wait(),
     getText("r4").remove(),
     
     newText("r5", row.r5).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r5", " ").log().wait(),
     getText("r5").remove(),
     
     newText("r6", row.r6).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r6", " ").log().wait(),
     getText("r6").remove(),
     
     newText("r7", row.r7).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r7", " ").log().wait(),
     getText("r7").remove(),
     
     // getText("practice_text").remove()
     // ,
     
 //     // Show images (images are placed on canvases, which serve as clickable regions)
-//     newCanvas("left_canvas", "30vw", "60vh")
+//     newCanvas("left_canvas", "30vw", "50vh")
 //         .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
 //         .print("center at 25vw", "middle at 50vh"),
-//     newCanvas("right_canvas", "30vw", "60vh")
+//     newCanvas("right_canvas", "30vw", "50vh")
 //         .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
 //         .print("center at 75vw", "middle at 50vh"),
 
@@ -373,7 +384,6 @@ Template("practice.csv", row =>
 // Start message
 newTrial("start",
     defaultText
-        .css("font-size", "110%") // Font size
         .center()
         .print()
     ,
@@ -386,7 +396,7 @@ newTrial("start",
         .center()
         .print("center at 50vw", "middle at 50vh")
     ,
-    newButton("Continue to the live trials.")
+    newButton("Continue")
         .center()
         .print("center at 50vw", "middle at 75vh")
         .wait()
@@ -398,12 +408,13 @@ newTrial("start",
 // // Real Experiment 
 // Template("experiment_data.csv", row => // Trial structure using data from the CSV file
 //     newTrial( "experiment_trial",
+// Grouping
+// newTrial( "exp1-"+row.cond+row.group,
 
 // Experiment
-Template("practice.csv", row => 
+Template("experiment_data.csv", row => 
     newTrial("experiment_trial",
         defaultText
-        .css("font-size", "110%")
         .center()
         .print(),
     
@@ -416,10 +427,10 @@ Template("practice.csv", row =>
     ,
     
     // Show image pair
-    newCanvas("left_canvas_preview", "30vw", "60vh")
+    newCanvas("left_canvas_preview", "30vw", "50vh")
         .add("center at 50%", "middle at 50%", newImage("left_image_stimulus_preview", row.image_left).size("90%", "90%"))
         .print("center at 25vw", "middle at 50vh"),
-    newCanvas("right_canvas_preview", "30vw", "60vh")
+    newCanvas("right_canvas_preview", "30vw", "50vh")
         .add("center at 50%", "middle at 50%", newImage("right_image_stimulus_preview", row.image_right).size("90%", "90%"))
         .print("center at 75vw", "middle at 50vh"),
 
@@ -439,34 +450,34 @@ Template("practice.csv", row =>
     
     //Show regions
     newText("vspace", "").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r0", " ").log().wait(),
     
     newText("r1", row.r1).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r1", " ").log().wait(),
     getText("r1").remove(),
     
     newText("r2", row.r2).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r2", " ").log().wait(),
     getText("r2").remove(),
     
     newText("r3", row.r3).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r3", " ").log().wait(),
     getText("r3").remove(),
     
     newText("r4", row.r4).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r4", " ").log().wait(),
     getText("r4").remove(),
     
     newText("r5", row.r5).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r5", " ").log().wait(),
     getText("r5").remove(),
     
     newText("r6", row.r6).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r6", " ").log().wait(),
     getText("r6").remove(),
     
     newText("r7", row.r7).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey(" ").log().wait(),
+    newKey("r7", " ").log().wait(),
     getText("r7").remove(),
     
     // // Show images (images are placed on canvases, which serve as clickable regions)
@@ -516,9 +527,8 @@ Template("practice.csv", row =>
 );
 
 
-////////////////////////
-
-// // Experiment 
+/////////////////////////////////////////////////////////////////////////////////////////
+// // Experiment with audio
 // Template("experiment_data.csv", row => // Trial structure using data from the CSV file
 //     newTrial( "experiment_trial",
     
@@ -595,7 +605,6 @@ Template("practice.csv", row =>
 // Send results to the server
 newTrial("send_results",
     defaultText
-        .css("font-size", "110%")
         .center()
         .print(),
 
@@ -616,7 +625,6 @@ newTrial("send_results",
 // Thank you screen and end of the experiment
 newTrial( "thank_you",
     defaultText
-    .css("font-size", "110%")
     .center()
     .print(),
     
