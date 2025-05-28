@@ -1,17 +1,58 @@
+// Notes on Hungarian Experiment
 
+# Experiment
 
-instructions:
-decide asap
+## Design
 
-1. see image pair       counterbalancing
-2. read sentence word by word       spr   words in the middle: cumulated window  period in the end. 
-3. fixation point   1s, cannot be skipped
-4. 2 images --> choice
+- Show the 2 images (a and b) at the same time
+- Show the sentence word by word (SPR)
+- After the sentence, ask the participant to choose between the 2 images
 
-Record:
-RT of words; 
-RT of decision (from fixation time end to choice); choice
-ET records the fixation on images
+## Record data
 
-visual world paradigm sentence comprehension --> check lit
+- RT of each word/region in the sentence
+- RT of decision (from fixation time end to choice)
+- Choice of image (a or b)
+- Eye tracking data (gaze on regions, durations, etc.)
+
+## Results and their interpretation
+
+- What does the RT of each word/region tell us?
+- What does the RT of decision tell us?
+- What does the choice of image tell us?
+- How do the RTs and choices relate to each other?
+- What does the eye tracking data tell us...
+
+# Literature
+
+## Visual World Paradigm
+- Almost exclusively used in speech processing studies with audio stimuli
+
+## Self-paced reading
+
+## Sentence comprehension / verification
+
+## Sentence--picture verification
+
+# TODO
+
+## Counterbalancing
+
+shuffle vs rshuffle vs randomize
+
+## Fillers
+
+- Gender? Hungarian ő (he/she)
+- Noun phrases?
+- Every one 
+Every kid climbs a tree
+Minden gyerek egy fara maszott.
+Minden gyerek fara maszott.
+A kid climbed every tree
+
+# Q&A
+
+- Why we show image before the sentence?
+  - To provide context...
+  - Yes, but this way they will quickly learn to examine the image before they read the sentence.
 
