@@ -5,3 +5,6 @@ item	condition	group	r1	r2	r3	r4	r5	r6	r7	image_left	image_right
 3	exclusive	c	Ami	az innivalót	illeti	mi	csak	ÁSVÁNYVIZET	hoztunk.	3a.png	3b.png
 3	focus	a	Ami	az innivalót	illeti	mi	tegnap	ÁSVÁNYVIZET	hoztunk.	3a.png	3b.png
 3	contrastive	b	Tegnap	a boltból	mi	többek	között	ÁSVÁNYVIZET	hoztunk.	3a.png	3b.png
+5	exclusive	b	Ami	a kilátást	illeti	az utasok	csak	a HEGYEKET	látták.	5a.png	5b.png
+5	focus	c	Ami	a kilátást	illeti	az utasok	este	a HEGYEKET	látták.	5a.png 	5b.png
+5	contrastive	a	Este	a vonatból	az utasok	többek	között	a HEGYEKET	látták.	5a.png	5b.png
