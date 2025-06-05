@@ -28,8 +28,8 @@ PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this h
 //         "audioconfirm","posttest1","posttest1_gender1","posttest2","posttest2_gender2","posttest3","posttest3_gender3","posttest4","posttest4_gender4","Final-Q",SendResults(), "survey", "end");
         
 // // Define the sequence of the experiment blocks
-Sequence("welcome", "calibration", "data", "instructions", "check_preloaded", "practice", "start", randomize("experiment_trial"), "send_results", "thank_you");
-
+Sequence( "check_preloaded", "start", randomize("experiment_trial"), "send_results", "thank_you");
+// "welcome", "calibration", "data", "instructions", "practice",
 // Welcome page
 newTrial("welcome",
     defaultText
@@ -273,10 +273,10 @@ Template("practice.csv", row =>
         .print(),
         
     newCanvas("left_canvas_preview", "30vw", "50vh")
-        .add("center at 50%", "middle at 50%", newImage("left_image_stimulus_preview", row.image_left).size("90%", "90%"))
+        .add("center at 50%", "middle at 50%", newImage("left_image_stimulus_preview", row.image_left + ".png").size("90%", "90%"))
         .print("center at 25vw", "middle at 50vh"),
     newCanvas("right_canvas_preview", "30vw", "50vh")
-        .add("center at 50%", "middle at 50%", newImage("right_image_stimulus_preview", row.image_right).size("90%", "90%"))
+        .add("center at 50%", "middle at 50%", newImage("right_image_stimulus_preview", row.image_right + ".png").size("90%", "90%"))
         .print("center at 75vw", "middle at 50vh"),
 
     newTimer("1000", 1000).start().wait(),
@@ -327,48 +327,48 @@ Template("practice.csv", row =>
     // getText("practice_text").remove()
     // ,
     
-//     // Show images (images are placed on canvases, which serve as clickable regions)
-//     newCanvas("left_canvas", "30vw", "50vh")
-//         .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
-//         .print("center at 25vw", "middle at 50vh"),
-//     newCanvas("right_canvas", "30vw", "50vh")
-//         .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
-//         .print("center at 75vw", "middle at 50vh"),
+    // Show images (images are placed on canvases, which serve as clickable regions)
+    newCanvas("left_canvas", "30vw", "50vh")
+        .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left + ".png").size("90%", "90%"))
+        .print("center at 25vw", "middle at 50vh"),
+    newCanvas("right_canvas", "30vw", "50vh")
+        .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right + ".png").size("90%", "90%"))
+        .print("center at 75vw", "middle at 50vh"),
 
-//         // Activate tracker
-//         getEyeTracker("tracker")
-//             .add(   // We track the Canvas elements   
-//                 getCanvas("left_canvas"),
-//                 getCanvas("right_canvas"),
-//                 )
-//                 .log()  // If this line is missing, the eye-tracking data won't be sent to the server
-//                 .start(),
+        // Activate tracker
+        getEyeTracker("tracker")
+            .add(   // We track the Canvas elements   
+                getCanvas("left_canvas"),
+                getCanvas("right_canvas"),
+                )
+                .log()  // If this line is missing, the eye-tracking data won't be sent to the server
+                .start(),
 
-//         getTimer("500").start().wait(),
+        getTimer("500").start().wait(),
         
-//         // Collect participant's choice by clicking on one of the images
-//         newSelector("choice_selector")
-//             .add(
-//                 getCanvas("left_canvas"), 
-//                 getCanvas("right_canvas")) // Define clickable elements
-//             // .shuffle() // Always shuffles!
-//             .once() // Participant can only click once
-//             .log() // Log which element was selected (its ID) and the reaction time //"all"?
-//             .wait(), // Wait for a selection (click)
+        // Collect participant's choice by clicking on one of the images
+        newSelector("choice_selector")
+            .add(
+                getCanvas("left_canvas"), 
+                getCanvas("right_canvas")) // Define clickable elements
+            .shuffle() // Always shuffles?!
+            .once() // Participant can only click once
+            .log() // Log which element was selected (its ID) and the reaction time //"all"?
+            .wait(), // Wait for a selection (click)
         
-//         // Stop tracker to prevent collecting unnecessary data
-//         getEyeTracker("tracker").stop(),
+        // Stop tracker to prevent collecting unnecessary data
+        getEyeTracker("tracker").stop(),
         
-//         // Wait before next round
-//         getTimer("500").start().wait(),
+        // Wait before next round
+        getTimer("500").start().wait(),
     )
 //     // Log additional trial information from the CSV file to the results
-//     // .log("item_number", row.item_number)
-//     // .log("condition", row.condition)
-//     // .log("audio_file", row.audio_file)
-//     // .log("image_left", row.image_left)
-//     // .log("image_right", row.image_right)
-//     // .log("expected_choice_image", row.expected_choice_image)
+    // .log("item_number", row.item_number)
+    // .log("condition", row.condition)
+    // .log("audio_file", row.audio_file)
+    // .log("image_left", row.image_left)
+    // .log("image_right", row.image_right)
+    // .log("expected_choice_image", row.expected_choice_image)
 
     // .log("group", row.group)
     // .log("item", row.item)
@@ -404,12 +404,13 @@ newTrial("start",
 
 
 
-
 // // Real Experiment 
 // Template("experiment_data.csv", row => // Trial structure using data from the CSV file
 //     newTrial( "experiment_trial",
 // Grouping
 // newTrial( "exp1-"+row.cond+row.group,
+
+
 
 // Experiment
 Template("experiment_data.csv", row => 
@@ -481,10 +482,10 @@ Template("experiment_data.csv", row =>
     getText("r7").remove(),
     
     // // Show images (images are placed on canvases, which serve as clickable regions)
-    // newCanvas("left_canvas", "30vw", "60vh")
+    // newCanvas("left_canvas", "30vw", "50vh")
     //     .add("center at 50%", "middle at 50%", newImage("left_image_stimulus", row.image_left).size("90%", "90%"))
     //     .print("center at 25vw", "middle at 50vh"),
-    // newCanvas("right_canvas", "30vw", "60vh")
+    // newCanvas("right_canvas", "30vw", "50vh")
     //     .add("center at 50%", "middle at 50%", newImage("right_image_stimulus", row.image_right).size("90%", "90%"))
     //     .print("center at 75vw", "middle at 50vh"),
 
@@ -504,7 +505,7 @@ Template("experiment_data.csv", row =>
     //         .add(
     //             getCanvas("left_canvas"), 
     //             getCanvas("right_canvas")) // Define clickable elements
-    //         // .shuffle() // Always shuffles!
+    //         // .shuffle() // Always shuffles?!
     //         .once() // Participant can only click once
     //         .log() // Log which element was selected (its ID) and the reaction time //"all"?
     //         .wait(), // Wait for a selection (click)
