@@ -45,7 +45,8 @@
 
 - Gender? Hungarian ő (he/she)
 - Noun phrases?
-- Every one 
+- Every one
+
 Every kid climbs a tree
 Minden gyerek egy fara maszott.
 Minden gyerek fara maszott.
@@ -53,38 +54,25 @@ A kid climbed every tree
 
 # Q&A
 
-- Why we show image before the sentence?
-  - To provide context...
-  - Yes, but this way they will quickly learn to examine the image before they read the sentence.
-
 # Notes
-
-sírok
-sírom
-
-érkezek
-érkezem
-
-ugrok
-ugrom
-
-eszek
-eszem
-megeszek
-megeszem
-eszegetek
-eszegetem
-
-küldök egy levelet
-küdöm a levelet
-
-no proper names!!!!!! Common nouns target only object!!!!! No modals!! No adj, no verbs.
 
 adjunct
 modification structure
 super big model
 
+A minimalist image of an elephant and a giraffe, and some kids looking at them. With white background.
 
+2 sets.
 
+1st is the generic masculine, no gender bias sentences, only checking verbal reference.
 
-A minimalist drawing of three zoo enclosures next to each other, with savanna trees, first one with an elephant, the second one with zebras, and third with giraffes. There are groups of children in front of each enclosure. No background.
+2nd one has gender, with male and femalse subjects, and we switch up.
+
+verbs, self or other directed verbs
+
+2 variable: 
+1. verbal preference, 
+2. gender preference,
+
+if we change the gender or status of subjects, would the interpretation of the sentence change?
+examining verbal ambiguitz
