@@ -1,4 +1,4 @@
-item	condition	group	r1	r2	r3	r4	r5	r6	r7	image_left	image_right
-1	exclusive	0	Ez	egy példamondat	kérlek	válaszd	majd	az A betűs	képet.	pa.png	pb.png
-2	focus	0	Ez is	csak gyakorlás	kérlek	majd	válaszd	a B betűs	képet.	pa.png	pb.png
-3	contrastive	0	Itt	pedig	válaszd	azt a képet	amelyik	jobboldalt	van.	pa.png	pb.png
+item,condition,group,r1,r2,r3,r4,r5,r6,r7,image_left,image_right
+1,exclusive,0,Ez,egy példamondat,kérlek,válaszd,majd,az A betűs,képet.,pa.png,pb.png
+2,focus,0,Ez is,csak gyakorlás,kérlek,majd,válaszd,a B betűs,képet.,pa.png,pb.png
+3,contrastive,0,Itt,pedig,válaszd,azt a képet,amelyik,jobboldalt,van.,pa.png,pb.png
