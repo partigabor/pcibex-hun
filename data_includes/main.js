@@ -4,7 +4,7 @@ PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this h
 Header(
    // void
 )
-.log( "PROLIFIC_ID" , GetURLParameter("id") )
+.log("PROLIFIC_ID", GetURLParameter("id") )
 
 // IMPORTANT NOTE: when running this project, the eye-tracker will highlight
 // the element that it estimates the participant is looking at
@@ -14,7 +14,7 @@ Header(
 //       because the command EyeTrackerURL below points to a dummy URL in the
 
 // Resources are hosted as ZIP files on a distant server
-// PreloadZip("https://files.lab.florianschwarz.net/ibexfiles/OnlyCleftsVW/Pictures.zip")
+PreloadZip("https://files.lab.florianschwarz.net/ibexfiles/OnlyCleftsVW/Pictures.zip")
 // PreloadZip("https://files.lab.florianschwarz.net/ibexfiles/OnlyCleftsVW/AudioContext.zip")
 // PreloadZip("https://files.lab.florianschwarz.net/ibexfiles/OnlyCleftsVW/AudioTest.zip")
 
