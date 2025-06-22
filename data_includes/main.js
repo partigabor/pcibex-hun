@@ -1,12 +1,15 @@
 PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this here
 // DebugOff(); // Uncomment this line when you are ready to collect actual data to disable debug mode.
 
-// FROM PCIBEX
+Header(
+   // void
+)
+.log( "PROLIFIC_ID" , GetURLParameter("id") )
 
 // IMPORTANT NOTE: when running this project, the eye-tracker will highlight
 // the element that it estimates the participant is looking at
 // Edit the file PennController.css in the Aesthetics folder to remove highlighting
-//
+
 // NOTE: this template will not *actually* collect eye-tracking data,
 //       because the command EyeTrackerURL below points to a dummy URL in the
 
@@ -17,8 +20,8 @@ PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this h
 
 // If uploading data to a distant server, uncomment the line below and replace the URL
 // with one that points to a PHP script that you uploaded to your webserver
-// ( see https://doc.pcibex.net/how-to-guides/collecting-eyetracking-data.html#php-script )
-// EyeTrackerURL("https://dummy.url/script.php")
+// (see https://doc.pcibex.net/how-to-guides/collecting-eyetracking-data.html#php-script)
+EyeTrackerURL("https://mondo1.dreamhosters.com/script.php")
 
 // ***
 
@@ -28,8 +31,8 @@ PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this h
 //         "audioconfirm","posttest1","posttest1_gender1","posttest2","posttest2_gender2","posttest3","posttest3_gender3","posttest4","posttest4_gender4","Final-Q",SendResults(), "survey", "end");
         
 // // Define the sequence of the experiment blocks
-Sequence("welcome", "calibration", "participant_data", "instructions", "practice", "check_preloaded", "start", randomize("experiment_trial"), "send_results", "thank_you");
-// 
+Sequence("start", randomize("experiment_trial"), "send_results", "thank_you");
+// "welcome", "calibration", "check_preloaded", "participant_data", "instructions", "practice", 
 
 // Welcome page
 newTrial("welcome",
@@ -117,10 +120,10 @@ newTrial("calibration",
         .center()
         .print()
         ,
-    newButton("I understand, start the calibration")
+    newButton("I understand, start the calibration", "I understand, start the calibration")
         .center()
         .print()
-        .wait( newEyeTracker("tracker").test.ready() )
+        .wait(newEyeTracker("tracker").test.ready())
         .remove()
         ,
     clear(),
@@ -129,7 +132,7 @@ newTrial("calibration",
     // Start calibrating the eye-tracker, allow for up to 2 attempts
     // 50 means that calibration succeeds when 50% of the estimates match the click coordinates
     // Increase the threshold for better accuracy, but more risks of losing participants
-    getEyeTracker("tracker").calibrate(50,2)
+    getEyeTracker("tracker").calibrate(60,2)
     ,
     newText(`<p>You will see the same button in the middle of the screen before each trial.</p>
              <p>Fixate on it for 3 seconds to check that the tracker is still well calibrated.</p>
@@ -143,6 +146,20 @@ newTrial("calibration",
         .wait()
 );
 
+
+
+// Check preloaded
+newTrial("check_preloaded",
+    // Wait if the resources have not finished preloading by the time the tracker is calibrated
+    CheckPreloaded(),
+    newText("Loading experiment data...")
+        .center()
+        .print()
+        ,
+        
+    newTimer("1000", 1000).start().wait(),
+    ),
+    
 
 
 // Participant data
@@ -231,24 +248,10 @@ newTrial("instructions",
     
     getText("newline").hidden(),
         
-    newText("space", "___________"),
+    newText("space", "__________"),
     newText("<p> (Press the space bar to continue) </p>"),
     newKey("space", " ").wait()
 );
-
-
-
-// Check preloaded
-newTrial("check_preloaded",
-    // Wait if the resources have not finished preloading by the time the tracker is calibrated
-    CheckPreloaded(),
-    newText("Loading experiment data...")
-        .center()
-        .print()
-        ,
-        
-    newTimer("1000", 1000).start().wait(),
-    ),
 
 
 
@@ -260,25 +263,22 @@ Template("practice.csv", row =>
         .print(),
     
     // Check/recalibrate the tracker before every trial  ////////
-    newEyeTracker("tracker").calibrate(50,2),            ////////
+    newEyeTracker("tracker").calibrate(60,2),            ////////
     
     // Text
     newText("practice_text", "PRACTICE ROUND " + row.item + "/3")
         .css("font-size", "150%")
         .center()
         .print(),
-        
-    // Delay
-    newTimer("500", 500).start().wait(),
     
     // Show image pair
-    newCanvas("left_canvas_practice", "30vw", "50vh")
-        .add("center at 50%", "middle at 50%", newImage("left_image_practice", row.image_left + ".png" || row.image_left + ".jpg").size("90%", "90%"))
+    newCanvas("left_canvas_practice", "30vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("left_image", row.image_left + ".png" || row.image_left + ".jpg").size("90%", "90%"))
         .print("center at 25vw", "middle at 50vh"),
-    newCanvas("right_canvas_practice", "30vw", "50vh")
-        .add("center at 50%", "middle at 50%", newImage("right_image_practice", row.image_right + ".png" || row.image_right + ".jpg").size("90%", "90%"))
-        .print("center at 75vw", "middle at 50vh"),
-    
+    newCanvas("right_canvas_practice", "30vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("right_image", row.image_right + ".png" || row.image_right + ".jpg").size("90%", "90%"))
+        .print("center at 77.5vw", "middle at 50vh"),
+
     // Delay
     newTimer("1000", 1000).start().wait(),
 
@@ -329,12 +329,12 @@ Template("practice.csv", row =>
     // ,
     
     // Show images (images are placed on canvases, which serve as clickable regions)
-    getCanvas("left_canvas_practice", "30vw", "50vh")
-        .add("center at 50%", "middle at 50%", getImage("left_image_practice", row.image_left + ".png" || row.image_left + ".jpg").size("90%", "90%"))
+    getCanvas("left_canvas_practice", "30vw", "60vh")
+        .add("center at 50%", "middle at 50%", getImage("left_image", row.image_left + ".png" || row.image_left + ".jpg").size("90%", "90%"))
         .print("center at 25vw", "middle at 50vh"),
-    getCanvas("right_canvas_practice", "30vw", "50vh")
-        .add("center at 50%", "middle at 50%", getImage("right_image_practice", row.image_right + ".png" || row.image_right + ".jpg").size("90%", "90%"))
-        .print("center at 75vw", "middle at 50vh"),
+    getCanvas("right_canvas_practice", "30vw", "60vh")
+        .add("center at 50%", "middle at 50%", getImage("right_image", row.image_right + ".png" || row.image_right + ".jpg").size("90%", "90%"))
+        .print("center at 77.5vw", "middle at 50vh"),
 
         // Activate tracker
         getEyeTracker("tracker")
@@ -345,14 +345,15 @@ Template("practice.csv", row =>
                 .log()  // If this line is missing, the eye-tracking data won't be sent to the server
                 .start(),
 
-        // getTimer("500").start().wait(),
+        // // Delay
+        // newTimer("500", 500).start().wait(),
+        getTimer("1000").start().wait(),
         
         // Collect participant's choice by clicking on one of the images
         newSelector("choice_selector")
             .add(
                 getCanvas("left_canvas_practice"), 
                 getCanvas("right_canvas_practice")) // Define clickable elements
-            .shuffle() // Always shuffles?!
             .once() // Participant can only click once
             .log() // Log which element was selected (its ID) and the reaction time //"all"?
             .wait(), // Wait for a selection (click)
@@ -361,7 +362,7 @@ Template("practice.csv", row =>
         getEyeTracker("tracker").stop(),
         
         // Wait before next round
-        getTimer("500").start().wait(),
+        getTimer("1000").start().wait(),
     )
 //     // Log additional trial information from the CSV file to the results
     // .log("item_number", row.item_number)
@@ -421,18 +422,15 @@ Template("experiment_data.csv", row =>
         .print(),
     
     // Check/recalibrate the tracker before every trial  ////////
-    newEyeTracker("tracker").calibrate(50,2),            ////////
-    
-    // Delay
-    newTimer("500", 500).start().wait(),
+    newEyeTracker("tracker").calibrate(60,2),            ////////
     
     // Show image pair
-    newCanvas("left_canvas", "30vw", "50vh")
+    newCanvas("left_canvas", "30vw", "60vh")
         .add("center at 50%", "middle at 50%", newImage("left_image", row.image_left + ".png" || row.image_left + ".jpg").size("90%", "90%"))
         .print("center at 25vw", "middle at 50vh"),
-    newCanvas("right_canvas", "30vw", "50vh")
+    newCanvas("right_canvas", "30vw", "60vh")
         .add("center at 50%", "middle at 50%", newImage("right_image", row.image_right + ".png" || row.image_right + ".jpg").size("90%", "90%"))
-        .print("center at 75vw", "middle at 50vh"),
+        .print("center at 77.5vw", "middle at 50vh"),
 
     newTimer("1000", 1000).start().wait(),
 
@@ -471,13 +469,17 @@ Template("experiment_data.csv", row =>
     newKey("r5", " ").log().wait(),
     getText("r5").remove(),
     
-    newText("r6", row.r6)
-    .testNot.text("")
-    .success(
-        getText("r6").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-        newKey("r6", " ").log().wait(),
-        getText("r6").remove()
-    ),
+    newText("r6", row.r6).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    newKey("r6", " ").log().wait(),
+    getText("r6").remove(),
+    
+    // newText("r6", row.r6)
+    // .testNot.text("")
+    // .success(
+    //     getText("r6").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    //     newKey("r6", " ").log().wait(),
+    //     getText("r6").remove()
+    // ),
     
     // (row.r7!='none'? 
     // [
@@ -497,13 +499,33 @@ Template("experiment_data.csv", row =>
         getText("r7").remove()
     ),
     
+    //
+    newTimer("500", 500).start().wait(),
+    
+    // Test if the 'question' field is not empty
+    (row.question.trim() !== "" ?
+        newText("questionText", row.question)
+            .css("font-size", "150%")
+            .css("max-width", "20vw")
+            .css("overflow-wrap", "break-word")
+            .css("text-align", "center")
+            .print("center at 50vw", "middle at 50vh")
+            .log()
+            .after(getTimer("500").start().wait())
+      :
+      null
+    ),
+    newKey("question_read", " ").log().wait(),
+
+    
+    
     // Show images (images are placed on canvases, which serve as clickable regions)
-    getCanvas("left_canvas", "30vw", "50vh")
+    getCanvas("left_canvas", "30vw", "60vh")
         .add("center at 50%", "middle at 50%", getImage("left_image", row.image_left + ".png" || row.image_left + ".jpg").size("90%", "90%"))
         .print("center at 25vw", "middle at 50vh"),
-    getCanvas("right_canvas", "30vw", "50vh")
+    getCanvas("right_canvas", "30vw", "60vh")
         .add("center at 50%", "middle at 50%", getImage("right_image", row.image_right + ".png" || row.image_right + ".jpg").size("90%", "90%"))
-        .print("center at 75vw", "middle at 50vh"),
+        .print("center at 77.5vw", "middle at 50vh"),
 
         // Activate tracker
         getEyeTracker("tracker")
@@ -514,14 +536,16 @@ Template("experiment_data.csv", row =>
                 .log()  // If this line is missing, the eye-tracking data won't be sent to the server
                 .start(),
 
-        getTimer("500").start().wait(),
+        // // Delay
+        // newTimer("500", 500).start().wait(),
+        getTimer("1000").start().wait(),
         
         // Collect participant's choice by clicking on one of the images
         newSelector("choice_selector")
             .add(
                 getCanvas("left_canvas"), 
                 getCanvas("right_canvas")) // Define clickable elements
-            .shuffle() // Always shuffles?!
+            // .shuffle() // Always shuffles and also adds a delay, hardcode it instead!
             .once() // Participant can only click once
             .log() // Log which element was selected (its ID) and the reaction time //"all"?
             .wait(), // Wait for a selection (click)
@@ -530,7 +554,7 @@ Template("experiment_data.csv", row =>
         getEyeTracker("tracker").stop(),
         
         // Wait before next round
-        getTimer("500").start().wait(),
+        getTimer("1000").start().wait(),
     )
     // Log additional trial information from the CSV file to the results
     // .log("item", row.item_number)
