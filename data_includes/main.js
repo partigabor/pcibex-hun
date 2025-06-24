@@ -14,9 +14,7 @@ Header(
 //       because the command EyeTrackerURL below points to a dummy URL in the
 
 // Resources are hosted as ZIP files on a distant server
-PreloadZip("https://files.lab.florianschwarz.net/ibexfiles/OnlyCleftsVW/Pictures.zip")
-// PreloadZip("https://files.lab.florianschwarz.net/ibexfiles/OnlyCleftsVW/AudioContext.zip")
-// PreloadZip("https://files.lab.florianschwarz.net/ibexfiles/OnlyCleftsVW/AudioTest.zip")
+// PreloadZip("https://github.com/partigabor/pcibex-hun/blob/main/images.zip")
 
 // If uploading data to a distant server, uncomment the line below and replace the URL
 // with one that points to a PHP script that you uploaded to your webserver
@@ -31,8 +29,8 @@ EyeTrackerURL("https://mondo1.dreamhosters.com/script.php")
 //         "audioconfirm","posttest1","posttest1_gender1","posttest2","posttest2_gender2","posttest3","posttest3_gender3","posttest4","posttest4_gender4","Final-Q",SendResults(), "survey", "end");
         
 // // Define the sequence of the experiment blocks
-Sequence("start", randomize("experiment_trial"), "send_results", "thank_you");
-// "welcome", "calibration", "check_preloaded", "participant_data", "instructions", "practice", 
+Sequence("welcome", "check_preloaded", "participant_data", "instructions", "practice", "start", randomize("experiment_trial"), "send_results", "thank_you");
+// "calibration",
 
 // Welcome page
 newTrial("welcome",
@@ -43,30 +41,37 @@ newTrial("welcome",
         .center()
         .print()
         ,
-    newText("welcome", "<p>Welcome!</p>")
+    // newText("welcome", "<p>Welcome!</p>")
+    newText("welcome", "<p>Üdv!</p>")
         .css("font-size", "150%")
         .center()
         .print()
         ,
     newText(  
-        "<p>This experiment is part of a project supervised by Dr. Yu-Yin Hsu of The Hong Kong Polytechnic University.</p>" +
-        "<p>In this online experiment, you will read sentences in Hungarian and make some simple decisions. You will see detailed instructions later.</p>" +
-        "<p>You can take part in the experment ONLY if you are using use a <b>computer</b> with a <b>physical keyboard</b>, and a <b>webcam</b>. <br>You should start the experiment ONLY if you have the time to <b>complete it</b> and with <b>no rush</b>; it is <b>not possible</b> to save the current session. <br><u>If you <b>close the browser window</b>, you will have to <b>start over</b></u>. Firefox and Chrome are recommended. </p>" +
-        "<p>The study will take approximately <b>30 minutes</b> to complete; on the next screens we will walk you though calbiration, instructions, and conduct a practice round. </p>" +
-        "<p>Please pay attention and respond as quickly and accurately as possible!</p>" +
-        "<p>If you have any questions, you can contact us at: gabor.parti@connect.polyu.hk</p>"
+        // "<p>This experiment is part of a project supervised by Dr. Yu-Yin Hsu of The Hong Kong Polytechnic University.</p>" +
+        // "<p>In this online experiment, you will read sentences in Hungarian and make some simple decisions. You will see detailed instructions later.</p>" +
+        // "<p>You can take part in the experment ONLY if you are using use a <b>computer</b> with a <b>physical keyboard</b>, and a <b>webcam</b>. <br>You should start the experiment ONLY if you have the time to <b>complete it</b> and with <b>no rush</b>; it is <b>not possible</b> to save the current session. <br><u>If you <b>close the browser window</b>, you will have to <b>start over</b></u>. Firefox and Chrome are recommended. </p>" +
+        // "<p>The study will take approximately <b>30 minutes</b> to complete; on the next screens we will walk you though calbiration, instructions, and conduct a practice round. </p>" +
+        // "<p>Please pay attention and respond as quickly and accurately as possible!</p>" +
+        // "<p>If you have any questions, you can contact us at: gabor.parti@connect.polyu.hk</p>"
+        "<p>Ez a kísérlet a The Hong Kong Polytechnic University intézményében dolgozó Dr. Yu-Yin Hsu felügyelete alatt zajlik.</p>" +
+        "<p>Ebben az online kísérletben magyar nyelvű mondatokat fog olvasni, majd egyszerű döntéseket kell hoznia. A részletes instrukciók a következő oldalon jelennek meg.</p>" +
+        "<p>Csak akkor vehet részt a kísérletben, ha <b>számítógépet</b> használ <b>fizikai billentyűzettel</b>, valamint <b>webkamerával</b>. <br>Kérjük, csak akkor kezdje el a kísérletet, ha van ideje azt <b>befejezni</b> és <b>nem siet</b>; a munkamenet <b>nem menthető</b>. <br><u>Ha <b>bezárja a böngészőablakot</b>, újra kell <b>kezdenie</b></u>. A Firefox és a Chrome használata ajánlott.</p>" + 
+        "<p>A vizsgálat körülbelül <b>30 percet</b> vesz igénybe; a következő képernyőkön végigvezetjük az <i>kalibráción</i>, az <i>utasításokon</i> és egy <i>gyakorló körön</i>.</p>" +
+        "<p>Kérjük, figyeljen és válaszoljon a lehető leggyorsabban és legpontosabban!</p>" +
+        "<p>Ha bármilyen kérdése van, forduljon hozzánk a következő e-mail címen: gabor.parti@connect.polyu.hk</p>"
         )
         .center()
         .print()
         ,
-    // newText("question","<p>If you have any questions, feel free to contact us at:"),
-    // newText("email", "gabor.parti@connect.polyu.hk</p>").color("blue"),
     
-    newText("<p>If you agree to take part in this study, you consent that the following data will be collected: demographic data, reading times, eye movement within this window and the choices you made during the trials. These information will be stored anonymously and will only be used for scientific purposes.</p>")
+        // newText("<p>If you agree to take part in this study, you consent that the following data will be collected: demographic data, reading times, eye movement within this window and the choices you made during the trials. These information will be stored anonymously and will only be used for scientific purposes.</p>")
+        newText("<p>Ha beleegyezel, hogy részt vegyen ebben a kísérletben, hozzájárulsz a következő adatok gyűjtésébe: demográfiai adatok, olvasási idők, szemmozgás ezen az ablakon belül és a vizsgálatok során hozott döntések. Ezeket az információkat anonim módon tároljuk, és csak tudományos célokra használjuk fel.</p>")
         .cssContainer("width", "80%")
         .cssContainer("border", "solid 2px blue")
         .cssContainer("padding-left", "10px")
         ,
+
     // newText("<p>If you wish to participate, please select 'I consent to [...]' below. </p>")
     //     .center()
     //     .print()
@@ -78,17 +83,19 @@ newTrial("welcome",
     //     .center()
     //     .print()
     // ,
-    
-    newHtml("consent_form", `<p><input type="checkbox" class="obligatory"> I have read the above, I consent to the collection of my data, and I wish to participate in the experiment.</p>`)
+    // newHtml("consent_form", `<p><input type="checkbox" class="obligatory"> I have read the above, I consent to the collection of my data, and I wish to participate in the experiment.</p>`)
+    newHtml("consent_form", `<p><input type="checkbox" class="obligatory"> Elolvastam és megértettem a fentieket, hozzájárulok az adatok gyűjtéséhez, és szeretnék részt venni a kísérletben.</p>`)
         // .cssContainer({"margin":"1em"})
         // .cssContainer({"width":"720px"})
-        .checkboxWarning("You must consent before continuing.")
+        // .checkboxWarning("You must indicate your consent if you wish to continue.")
+        .checkboxWarning("A folytatáshoz beleegyezés szükséges.")
         .center()
         .print()
         .log()
         ,
 
-    newButton("continue_button", "Continue")
+    // newButton("continue_button", "Continue")
+    newButton("continue_button", "Tovább")
         .center()
         .print()
         // .wait(getScale("consent").test.selected())
@@ -110,17 +117,21 @@ newTrial("calibration",
         .center()
         .print()
         ,
-    newText("calibration_title", "<p>Calibration</p>")
+    // newText("calibration_title", "<p>Calibration</p>")
+    newText("calibration_title", "<p>Kalibrálás</p>")
         .css("font-size", "150%")
         .center()
         .print()
         ,
-    newText(`<p>This experiment needs to access your webcam to follow your eye movements.</p>
-            <p>We only collect data on where on this page your eyes are looking during the experiment.</p>`)
+    // newText(`<p>This experiment needs to access your webcam to follow your eye movements.</p>
+    //         <p>We only collect data on where on this page your eyes are looking during the experiment.</p>`)
+    newText(`<p>Ez a kísérlet hozzáférést kér a webkamerádhoz, hogy nyomon követhesse a szemmozgásodat.</p>
+            <p>Csak arra vonatkozóan gyűjtünk adatokat, hogy az oldalon belül hová nézel a kísérlet során.</p>`)
         .center()
         .print()
         ,
-    newButton("I understand, start the calibration", "I understand, start the calibration")
+    // newButton("I understood, start the calibration", "Understood, continue")
+    newButton("Értettem, tovább a kalibráláshoz", "Értettem, tovább")
         .center()
         .print()
         .wait(newEyeTracker("tracker").test.ready())
@@ -248,7 +259,7 @@ newTrial("instructions",
     
     getText("newline").hidden(),
         
-    newText("space", "__________"),
+    newText("space", "_________"),
     newText("<p> (Press the space bar to continue) </p>"),
     newKey("space", " ").wait()
 );
@@ -262,8 +273,8 @@ Template("practice.csv", row =>
         .center()
         .print(),
     
-    // Check/recalibrate the tracker before every trial  ////////
-    newEyeTracker("tracker").calibrate(60,2),            ////////
+    // // Check/recalibrate the tracker before every trial  ////////
+    // newEyeTracker("tracker").calibrate(60,2),            ////////
     
     // Text
     newText("practice_text", "PRACTICE ROUND " + row.item + "/3")
@@ -272,10 +283,10 @@ Template("practice.csv", row =>
         .print(),
     
     // Show image pair
-    newCanvas("left_canvas_practice", "30vw", "60vh")
+    newCanvas("left_canvas_practice", "30vw", "50vh")
         .add("center at 50%", "middle at 50%", newImage("left_image", row.image_left + ".png" || row.image_left + ".jpg").size("90%", "90%"))
         .print("center at 25vw", "middle at 50vh"),
-    newCanvas("right_canvas_practice", "30vw", "60vh")
+    newCanvas("right_canvas_practice", "30vw", "50vh")
         .add("center at 50%", "middle at 50%", newImage("right_image", row.image_right + ".png" || row.image_right + ".jpg").size("90%", "90%"))
         .print("center at 77.5vw", "middle at 50vh"),
 
