@@ -21,8 +21,6 @@ Header(
 // (see https://doc.pcibex.net/how-to-guides/collecting-eyetracking-data.html#php-script)
 EyeTrackerURL("https://mondo1.dreamhosters.com/script.php")
 
-// ***
-
 // Sequence("consent","participant_ID","setcounter","introduction","introduction2","practice1","practice2","pract2attention","practice3","pract3attention",
 //         "start_experiment",rshuffle("exp1-fema", "exp1-femb","exp1-masa","exp1-masb","exp1-attentiona","exp1-attentionb"),"break", 
 //         rshuffle("exp2-fema", "exp2-femb","exp2-masa","exp2-masb","exp2-attentiona","exp2-attentionb"),
