@@ -34,7 +34,7 @@ require("ggplot2")
 require("tidyr")
 
 # The URL where the data is stored
-ETURL = "http://files.lab.florianschwarz.net/ibexfiles/RecordingsFromIbex/EyeTracker.php?experiment="
+ETURL = "https://mondo1.dreamhosters.com/script.php?experiment="
 # Time-window to bin the looks
 BIN_DURATION = 100
 

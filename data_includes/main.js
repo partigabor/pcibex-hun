@@ -4,31 +4,28 @@ PennController.ResetPrefix(null) // Removes PennController prefixes, kkep this h
 Header(
    // void
 )
-.log("PROLIFIC_ID", GetURLParameter("id") )
+.log("prolific_id", GetURLParameter("id") )
 
 // IMPORTANT NOTE: when running this project, the eye-tracker will highlight
 // the element that it estimates the participant is looking at
 // Edit the file PennController.css in the Aesthetics folder to remove highlighting
 
-// NOTE: this template will not *actually* collect eye-tracking data,
-//       because the command EyeTrackerURL below points to a dummy URL in the
-
-// Resources are hosted as ZIP files on a distant server
+// Resources if hosted as ZIP files on a distant server (why tho?)
 // PreloadZip("https://github.com/partigabor/pcibex-hun/blob/main/images.zip")
 
-// If uploading data to a distant server, uncomment the line below and replace the URL
-// with one that points to a PHP script that you uploaded to your webserver
-// (see https://doc.pcibex.net/how-to-guides/collecting-eyetracking-data.html#php-script)
 EyeTrackerURL("https://mondo1.dreamhosters.com/script.php")
+
+
 
 // Sequence("consent","participant_ID","setcounter","introduction","introduction2","practice1","practice2","pract2attention","practice3","pract3attention",
 //         "start_experiment",rshuffle("exp1-fema", "exp1-femb","exp1-masa","exp1-masb","exp1-attentiona","exp1-attentionb"),"break", 
 //         rshuffle("exp2-fema", "exp2-femb","exp2-masa","exp2-masb","exp2-attentiona","exp2-attentionb"),
 //         "audioconfirm","posttest1","posttest1_gender1","posttest2","posttest2_gender2","posttest3","posttest3_gender3","posttest4","posttest4_gender4","Final-Q",SendResults(), "survey", "end");
-        
+
 // // Define the sequence of the experiment blocks
-Sequence("welcome", "check_preloaded", "participant_data", "instructions", "practice", "start", randomize("experiment_trial"), "send_results", "thank_you");
-// "calibration",
+Sequence("welcome", "calibration", "check_preloaded", "participant_data", "instructions", "practice", "start", randomize("experiment"), "send_results", "thank_you");
+
+
 
 // Welcome page
 newTrial("welcome",
@@ -52,19 +49,18 @@ newTrial("welcome",
         // "<p>The study will take approximately <b>30 minutes</b> to complete; on the next screens we will walk you though calbiration, instructions, and conduct a practice round. </p>" +
         // "<p>Please pay attention and respond as quickly and accurately as possible!</p>" +
         // "<p>If you have any questions, you can contact us at: gabor.parti@connect.polyu.hk</p>"
-        "<p>Ez a kísérlet a The Hong Kong Polytechnic University intézményében dolgozó Dr. Yu-Yin Hsu felügyelete alatt zajlik.</p>" +
-        "<p>Ebben az online kísérletben magyar nyelvű mondatokat fog olvasni, majd egyszerű döntéseket kell hoznia. A részletes instrukciók a következő oldalon jelennek meg.</p>" +
-        "<p>Csak akkor vehet részt a kísérletben, ha <b>számítógépet</b> használ <b>fizikai billentyűzettel</b>, valamint <b>webkamerával</b>. <br>Kérjük, csak akkor kezdje el a kísérletet, ha van ideje azt <b>befejezni</b> és <b>nem siet</b>; a munkamenet <b>nem menthető</b>. <br><u>Ha <b>bezárja a böngészőablakot</b>, újra kell <b>kezdenie</b></u>. A Firefox és a Chrome használata ajánlott.</p>" + 
-        "<p>A vizsgálat körülbelül <b>30 percet</b> vesz igénybe; a következő képernyőkön végigvezetjük az <i>kalibráción</i>, az <i>utasításokon</i> és egy <i>gyakorló körön</i>.</p>" +
-        "<p>Kérjük, figyeljen és válaszoljon a lehető leggyorsabban és legpontosabban!</p>" +
-        "<p>Ha bármilyen kérdése van, forduljon hozzánk a következő e-mail címen: gabor.parti@connect.polyu.hk</p>"
+        "<p>Ebben a kísérletben magyar nyelvű mondatokat fogsz olvasni, amikről majd döntéseket kell hoznod. A részletes instrukciókat később mutatjuk. <br>Ez a kísérlet a Hongkongi Műszaki Egyetemen zajlik (The Hong Kong Polytechnic University), Dr. Yu-Yin Hsu felügyelete alatt.</p>" +
+        "<p>Csak akkor vegyél részt a kísérletben, ha <b>számítógépet/laptopot</b> használsz, <b>billentyűzettel, egérrel és webkamerával</b>. <br>Kérjük, csak akkor kezdd el a kísérletet, ha <b>befejezni</b> is van időd és <b>nem sietsz</b>, a munkamenet <b>nem menthető</b>; <br><u> Ha bezárod a böngészőablakot, újra kell kezdened!</u> Firefox vagy Chrome használata ajánlott.</p>" +
+        "<p>A kísérlet körülbelül <b>30 percet</b> vesz igénybe; a következő oldalakon végigvesszük a webkamera/szemkövetés kalibrálását, az instrukciókat, és egy gyakorló kört is csinálunk.</p>" +
+        "<p>Kérjük, figyelj oda és válassz a lehető leggyorsabban és legpontosabban!</p>" +
+        "<p>Ha bármilyen kérdésed van, a következő e-mail címen elérsz minket: gabor.parti@connect.polyu.hk</p>"
         )
         .center()
         .print()
         ,
     
         // newText("<p>If you agree to take part in this study, you consent that the following data will be collected: demographic data, reading times, eye movement within this window and the choices you made during the trials. These information will be stored anonymously and will only be used for scientific purposes.</p>")
-        newText("<p>Ha beleegyezel, hogy részt vegyen ebben a kísérletben, hozzájárulsz a következő adatok gyűjtésébe: demográfiai adatok, olvasási idők, szemmozgás ezen az ablakon belül és a vizsgálatok során hozott döntések. Ezeket az információkat anonim módon tároljuk, és csak tudományos célokra használjuk fel.</p>")
+        newText("<p>Ha beleegyezel, hogy részt vegyél ebben a kísérletben, hozzájárulsz a következő adatok gyűjtéséhez: demográfiai adatok, olvasási idők, szemmozgás ezen az ablakon belül, és a teszt során hozott döntések. Ezeket az információkat anonim módon tároljuk, és csak tudományos célokra használjuk fel.</p>")
         .cssContainer("width", "80%")
         .cssContainer("border", "solid 2px blue")
         .cssContainer("padding-left", "10px")
@@ -123,8 +119,10 @@ newTrial("calibration",
         ,
     // newText(`<p>This experiment needs to access your webcam to follow your eye movements.</p>
     //         <p>We only collect data on where on this page your eyes are looking during the experiment.</p>`)
-    newText(`<p>Ez a kísérlet hozzáférést kér a webkamerádhoz, hogy nyomon követhesse a szemmozgásodat.</p>
-            <p>Csak arra vonatkozóan gyűjtünk adatokat, hogy az oldalon belül hová nézel a kísérlet során.</p>`)
+    newText(
+        `<p>Ez a kísérlet hozzáférést kér a webkamerádhoz, hogy nyomon követhesse a szemmozgásodat.</p>
+        <p>Ahhoz, hogy ez működjön, kérjük, egy fényes jól megvilágított helyen végezd el a kísérletet.</p>
+        <p>Csak arra vonatkozóan gyűjtünk adatokat, hogy az oldalon belül hová nézel a kísérlet során.</p>`)
         .center()
         .print()
         ,
@@ -143,13 +141,17 @@ newTrial("calibration",
     // Increase the threshold for better accuracy, but more risks of losing participants
     getEyeTracker("tracker").calibrate(60,2)
     ,
-    newText(`<p>You will see the same button in the middle of the screen before each trial.</p>
-             <p>Fixate on it for 3 seconds to check that the tracker is still well calibrated.</p>
-             <p>If it is, the trial will start after 3 seconds. Otherwise, you will go through calibration again.</p>`)
+    // newText(`<p>You will see the same button in the middle of the screen before each trial.</p>
+            // <p>Fixate on it for 3 seconds to check that the tracker is still well calibrated.</p>
+            // <p>If it is, the trial will start after 3 seconds. Otherwise, you will go through calibration again.</p>`)
+    newText(`<p>Minden próba előtt ugyanez a zöld gomb jelenik majd meg a képernyő közepén.</p>
+            <p>Fixáld rá a tekinteted 3 másodpercig, ez ellenőrzi, hogy jól működik-e még a követő.</p>
+            <p>Ha igen, a feladat 3 másodperc múlva elindul, ha nem, újrakalibrálás következik.</p>`)
         .center()
         .print()
     ,
-    newButton("Continue")
+    // newButton("Continue")
+    newButton("Tovább")
         .center()
         .print()
         .wait()
@@ -161,7 +163,8 @@ newTrial("calibration",
 newTrial("check_preloaded",
     // Wait if the resources have not finished preloading by the time the tracker is calibrated
     CheckPreloaded(),
-    newText("Loading experiment data...")
+    // newText("<p>Loading experiment data...</p>")
+    newText("<p>Kísérleti adatok betöltése...</p>")
         .center()
         .print()
         ,
@@ -179,17 +182,20 @@ newTrial("participant_data",
     
     newText("newline", "<p>...</p>").hidden(),
         
-    newText("welcome", "<p>Participant information</p>")
+    // newText("title", "<p>Participant information</p>")
+    newText("title", "<p>Résztvevői információk</p>")
         .css("font-size", "150%")
         .center()
         .print()
         ,
-    newText("<p>Enter your <b>Prolific ID</b>:</p>")
+    // newText("<p>Enter your <b>Prolific ID</b>:</p>")
+    newText("<p>Írd be a <b>Prolific ID-dat</b>:</p>")
         .center()
         .print()
     ,
     
-    newText("<p>Fill in the field and press ENTER (↵).</p>")
+    // newText("<p>Fill in the field and press ENTER (↵).</p>")
+    newText("<p>Töltsd ki a mezőt, majd nyomd meg az ENTER (↵) gombot a folytatáshoz.</p>")
         .center()
         .print()
     ,
@@ -205,13 +211,15 @@ newTrial("participant_data",
 
     getText("newline").hidden(),
     
-    newText("<p>Notice: Before payment, we will check the validity of the recorded data.</p>")
+    // newText("<p>Notice: Before payment, we will check the validity of the recorded data.</p>")
+    newText("<p>Figyelem: A kifizetés előtt ellenőrizzük a rögzített adatok érvényességét.</p>")
         .css("font-size", "110%")
         .css("text-align", "center")
         .center()
         .print()
     ,
-    newButton("Continue")
+    // newButton("Continue")
+    newButton("Tovább")
         .print()
         .center()
         .wait(getTextInput("input_participant_id").testNot.text(""))
@@ -232,33 +240,48 @@ newTrial("instructions",
         .print()
         ,
     
-    newText("instruction_title", "<p>Instructions</p>")
+    // newText("instruction_title", "<p>Instructions</p>")
+    newText("instruction_title", "<p>Instrukciók</p>")
         .css("font-size", "150%")
         .center()
         .print()
         ,
         
-    newText("<p>In this experiment, you will read Hungarian sentences.</p>" + 
-    "<p>Before each sentence, you will see an image pair that gives you some context.</p>" + 
-    "<p>Before each sentence, you will see a fixation cross (+) in the center of the screen. </p>" + 
-    "<p>You will not see the full sentences, but <b>one word at a time</b>.</p>" + 
-    "<p>Use the <b>space bar</b> (␣) to move to the next word, which will be shown in the center of your screen.</p>" + 
-    "<p>Make sure you understand the word on the screen before pressing the space bar and moving to the next one.</p>" + 
-    "<p>After each sentence, you will see <b>two images</b> on the left and right side of the screen.</p>" + 
-    "<p>Your task is to <b>choose</b> the image that best fits the sentence you read.</p>" + 
-    "<p>You must <b>click</b> on an image to make a selection and move on to the next item.</p>"
+    // newText("<p>In this experiment, you will read Hungarian sentences.</p>" + 
+    // "<p>Before each sentence, you will see an image pair that gives you some context.</p>" + 
+    // "<p>Before each sentence, you will see a fixation cross (+) in the center of the screen. </p>" + 
+    // "<p>You will not see the full sentences, but <b>one word at a time</b>.</p>" + 
+    // "<p>Use the <b>space bar</b> (␣) to move to the next word, which will be shown in the center of your screen.</p>" + 
+    // "<p>Make sure you understand the word on the screen before pressing the space bar and moving to the next one.</p>" + 
+    // "<p>After each sentence, you will see <b>two images</b> on the left and right side of the screen.</p>" + 
+    // "<p>Your task is to <b>choose</b> the image that best fits the sentence you read.</p>" + 
+    // "<p>You must <b>click</b> on an image to make a selection and move on to the next item.</p>"
+    // ),
+    newText(
+    "<p>Ebben a kísérletben magyar mondatokat fogsz olvasni.</p>" + 
+    "<p>A mondatok előtt egy fikszáló keresztet (+) fogsz látni a képernyő közepén.</p>" + 
+    "<p>Nem fogod látni a teljes mondatot egyben, hanem egyszerre csak egy-egy szót.</p>" + 
+    "<p>Használd a <b>szóköz/space billentyűt (␣)</b> a továbblépéshez!</p>" + 
+    "<p>Győződj meg róla, hogy megértetted a képernyőn lévő szót, mielőtt továbbmész a következőre!</p>" +
+    "<p>Minden mondat után <b>két képet vagy két szót</b> fogsz látni a képernyő bal és jobb oldalán.</p>" + 
+    "<p>A feladatod az, hogy <b>kiválaszd</b> azt a képet, amelyik a legjobban illik az éppen látott mondatra.</p>" + 
+    "<p>Néhány mondat előtt egy képpárt fogsz látni, amely némi kontextust ad.</p>" +  
+    "<p>Néhány mondat után pedig egy kérdést teszünk fel amire válaszul kell meghoznod a döntést.</p>" +  
+    "<p>Döntésedet az egérrel kell jelezned, csak <b>kattints</b> arra a képre/szóra amelyiket választottad.</p>"
     ),
     
     newText("newline", "<p>...</p>").hidden(),
-    
-    newText("Try to respond as quckly and accurately as you can!")
+
+    // newText("Try to respond as quickly and accurately as you can!")
+    newText("Próbálj meg gyorsan és pontosan válaszolni!")
         .css("font-size", "120%")
         .print(),
     
     getText("newline").hidden(),
         
     newText("space", "_________"),
-    newText("<p> (Press the space bar to continue) </p>"),
+    // newText("<p> (Press the space bar to continue) </p>"),
+    newText("<p> (Nyomd meg a szóközt a folytatáshoz) </p>"),
     newKey("space", " ").wait()
 );
 
@@ -271,35 +294,39 @@ Template("practice.csv", row =>
         .center()
         .print(),
     
-    // // Check/recalibrate the tracker before every trial  ////////
-    // newEyeTracker("tracker").calibrate(60,2),            ////////
+    // Check/recalibrate the tracker before every trial  ////////
+    newEyeTracker("tracker").calibrate(60,2),            ////////
     
     // Text
-    newText("practice_text", "PRACTICE ROUND " + row.item + "/3")
+    newText("practice_text", "Gyakorlás " + row.item + "/3")
         .css("font-size", "150%")
         .center()
         .print(),
-    
-    // Show image pair
-    newCanvas("left_canvas_practice", "30vw", "50vh")
-        .add("center at 50%", "middle at 50%", newImage("left_image", row.image_left + ".png" || row.image_left + ".jpg").size("90%", "90%"))
-        .print("center at 25vw", "middle at 50vh"),
-    newCanvas("right_canvas_practice", "30vw", "50vh")
-        .add("center at 50%", "middle at 50%", newImage("right_image", row.image_right + ".png" || row.image_right + ".jpg").size("90%", "90%"))
-        .print("center at 77.5vw", "middle at 50vh"),
 
-    // Delay
+    // Show images (images are placed on canvases, which serve as clickable regions)
+    defaultImage.size("40vh", "40vh"),
+
+    newCanvas("left_canvas_practice_pv", "40vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("left_image_pv", row.image_left + ".png" || row.image_left + ".jpg"))
+        .print("center at 25vw", "middle at 50vh"),
+    newCanvas("right_canvas_practice_pv", "40vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("right_image_pv", row.image_right + ".png" || row.image_right + ".jpg"))
+        .print("center at 75vw", "middle at 50vh"),
+
+    // Delay after images preview
     newTimer("1000", 1000).start().wait(),
 
-    newText("spacebar","<p> (Press the space bar to continue) </p>").center().print("center at 50vw", "middle at 50vh"),
+    // newText("spacebar","<p> (Press the space bar to continue) </p>").center().print("center at 50vw", "middle at 50vh"),
+    newText("spacebar","<p> (Nyomd meg a szóközt a folytatáshoz) </p>").center().print("center at 50vw", "middle at 50vh"),
     newKey(" ").wait(),
     getText("spacebar").remove(),
-    getCanvas("left_canvas_practice").remove(),
-    getCanvas("right_canvas_practice").remove(),
+    getCanvas("left_canvas_practice_pv").remove(),
+    getCanvas("right_canvas_practice_pv").remove(),
     
     // Fixation
+    newTimer("500", 500).start().wait(),
     newText("fixation_cross", "+").center().css("font-size", "250%").print("center at 50vw", "middle at 50vh"),
-    getTimer("1000").start().wait(),
+    getTimer("500").start().wait(),
     getText("fixation_cross").remove(),
     
     //Show regions
@@ -326,24 +353,50 @@ Template("practice.csv", row =>
     newKey("r5", " ").log().wait(),
     getText("r5").remove(),
     
-    newText("r6", row.r6).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey("r6", " ").log().wait(),
-    getText("r6").remove(),
+    newText("r6", row.r6)
+    .testNot.text("")
+    .success(
+        getText("r6").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+        newKey("r6", " ").log().wait(),
+        getText("r6").remove()
+    ),
     
-    newText("r7", row.r7).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey("r7", " ").log().wait(),
-    getText("r7").remove(),
+    newText("r7", row.r7)
+    .testNot.text("")
+    .success(
+        getText("r7").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+        newKey("r7", " ").log().wait(),
+        getText("r7").remove()
+    ),
     
-    // getText("practice_text").remove()
-    // ,
+    // Wait before showing the question
+    getTimer("500").start().wait(),
     
-    // Show images (images are placed on canvases, which serve as clickable regions)
-    getCanvas("left_canvas_practice", "30vw", "60vh")
-        .add("center at 50%", "middle at 50%", getImage("left_image", row.image_left + ".png" || row.image_left + ".jpg").size("90%", "90%"))
+    // Test if the 'question' field is not empty and show it if it's not
+    (row.question.trim() !== "" ?
+        newText("question_text", row.question)
+            .css("font-size", "150%")
+            .css("max-width", "20vw")
+            .css("overflow-wrap", "break-word")
+            .css("text-align", "center")
+            .print("center at 50vw", "middle at 50vh")
+            .log()
+            .after(getTimer("500").start().wait())
+        :
+        newText("question_text", " ")
+    ),
+    newKey("ready", " ").log().wait(),
+    getText("question_text", " ").remove(),
+    
+    // Show image pair
+    defaultImage.size("40vh", "40vh"),
+
+    newCanvas("left_canvas_practice", "40vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("left_image", row.image_left + ".png" || row.image_left + ".jpg"))
         .print("center at 25vw", "middle at 50vh"),
-    getCanvas("right_canvas_practice", "30vw", "60vh")
-        .add("center at 50%", "middle at 50%", getImage("right_image", row.image_right + ".png" || row.image_right + ".jpg").size("90%", "90%"))
-        .print("center at 77.5vw", "middle at 50vh"),
+    newCanvas("right_canvas_practice", "40vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("right_image", row.image_right + ".png" || row.image_right + ".jpg"))
+        .print("center at 75vw", "middle at 50vh"),
 
         // Activate tracker
         getEyeTracker("tracker")
@@ -354,9 +407,11 @@ Template("practice.csv", row =>
                 .log()  // If this line is missing, the eye-tracking data won't be sent to the server
                 .start(),
 
-        // // Delay
-        // newTimer("500", 500).start().wait(),
+        // Delay after choice appears
         getTimer("1000").start().wait(),
+
+        // newText("spacebar","<p> (Press the space bar to continue) </p>").center().print("center at 50vw", "middle at 50vh"),
+        newText("mouse","<p> (Válassz az egérrel a folytatáshoz) </p>").center().print("center at 50vw", "middle at 50vh"),
         
         // Collect participant's choice by clicking on one of the images
         newSelector("choice_selector")
@@ -371,23 +426,18 @@ Template("practice.csv", row =>
         getEyeTracker("tracker").stop(),
         
         // Wait before next round
-        getTimer("1000").start().wait(),
+        getTimer("500").start().wait(),
     )
-//     // Log additional trial information from the CSV file to the results
-    // .log("item_number", row.item_number)
-    // .log("condition", row.condition)
-    // .log("audio_file", row.audio_file)
-    // .log("image_left", row.image_left)
-    // .log("image_right", row.image_right)
-    // .log("expected_choice_image", row.expected_choice_image)
-
-    // .log("group", row.group)
-    // .log("item", row.item)
-    // .log("condition", row.inflection)
-    // .log("ID", getVar("ID"))
+    // Log additional trial information from the CSV file to the results
+    .log("ID", getVar("ID"))
+    .log("item", row.item)
+    .log("condition", row.condition)
+    .log("group", row.group)
+    .log("image_left", row.image_left)
+    .log("image_right", row.image_right)
     
-//     // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
-//     // .log( "participant_id" , PennController.GetURLParameter("id") )
+    // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
+    .log( "participant_id" , PennController.GetURLParameter("id") )
 );
 
 
@@ -398,16 +448,19 @@ newTrial("start",
         .center()
         .print()
     ,
-    newText("<p>That's it, now we move on to the real experiment.</p>")
+    // newText("<p>That's it, now we move on to the real experiment.</p>")
+    newText("<p>Ennyi az egész, jöhet az igazi kísérlet.</p>")
         .center()
         .print("center at 50vw", "middle at 25vh"),
     
-    newText("<p>Live trials will start now! </p>")
+    // newText("<p>Live trials will start now! </p>")
+    newText("<p>Kezdődik a kísérlet!</p>")
         .css("font-size", "300%") // Font size
         .center()
         .print("center at 50vw", "middle at 50vh")
     ,
-    newButton("Continue")
+    //newButton("Continue")
+    newButton("Tovább")
         .center()
         .print("center at 50vw", "middle at 75vh")
         .wait()
@@ -425,7 +478,7 @@ newTrial("start",
 
 // Experiment
 Template("experiment_data.csv", row => 
-    newTrial("experiment_trial",
+    newTrial("experiment",
         defaultText
         .center()
         .print(),
@@ -434,24 +487,29 @@ Template("experiment_data.csv", row =>
     newEyeTracker("tracker").calibrate(60,2),            ////////
     
     // Show image pair
-    newCanvas("left_canvas", "30vw", "60vh")
-        .add("center at 50%", "middle at 50%", newImage("left_image", row.image_left + ".png" || row.image_left + ".jpg").size("90%", "90%"))
-        .print("center at 25vw", "middle at 50vh"),
-    newCanvas("right_canvas", "30vw", "60vh")
-        .add("center at 50%", "middle at 50%", newImage("right_image", row.image_right + ".png" || row.image_right + ".jpg").size("90%", "90%"))
-        .print("center at 77.5vw", "middle at 50vh"),
+    defaultImage.size("40vh", "40vh"),
 
+    newCanvas("left_canvas_pv", "40vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("left_image_pv", row.image_left + ".png" || row.image_left + ".jpg"))
+        .print("center at 25vw", "middle at 50vh"),
+    newCanvas("right_canvas_pv", "40vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("right_image_pv", row.image_right + ".png" || row.image_right + ".jpg"))
+        .print("center at 75vw", "middle at 50vh"),
+
+    // Delay after images preview
     newTimer("1000", 1000).start().wait(),
 
-    newText("spacebar","<p> (Press the space bar to continue) </p>").center().print("center at 50vw", "middle at 50vh"),
+    // newText("spacebar","<p> (Press the space bar to continue) </p>").center().print("center at 50vw", "middle at 50vh"),
+    // newText("spacebar","<p> (Nyomd meg a szóközt a folytatáshoz) </p>").center().print("center at 50vw", "middle at 50vh"),
     newKey(" ").wait(),
     getText("spacebar").remove(),
-    getCanvas("left_canvas").remove(),
-    getCanvas("right_canvas").remove(),
+    getCanvas("left_canvas_pv").remove(),
+    getCanvas("right_canvas_pv").remove(),
     
     // Fixation
+    newTimer("500", 500).start().wait(),
     newText("fixation_cross", "+").center().css("font-size", "250%").print("center at 50vw", "middle at 50vh"),
-    getTimer("1000").start().wait(),
+    getTimer("500").start().wait(),
     getText("fixation_cross").remove(),
     
     //Show regions
@@ -477,28 +535,14 @@ Template("experiment_data.csv", row =>
     newText("r5", row.r5).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
     newKey("r5", " ").log().wait(),
     getText("r5").remove(),
-    
-    newText("r6", row.r6).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey("r6", " ").log().wait(),
-    getText("r6").remove(),
-    
-    // newText("r6", row.r6)
-    // .testNot.text("")
-    // .success(
-    //     getText("r6").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    //     newKey("r6", " ").log().wait(),
-    //     getText("r6").remove()
-    // ),
-    
-    // (row.r7!='none'? 
-    // [
-    //     newText("r7",row.r7).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    //     newKey("r7", " ").log().wait(),
-    //     getText("r7").remove()
-    // ]
-    // :
-    // []
-    // ),
+
+    newText("r6", row.r6)
+    .testNot.text("")
+    .success(
+        getText("r6").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+        newKey("r6", " ").log().wait(),
+        getText("r6").remove()
+    ),
     
     newText("r7", row.r7)
     .testNot.text("")
@@ -508,12 +552,12 @@ Template("experiment_data.csv", row =>
         getText("r7").remove()
     ),
     
-    //
-    newTimer("500", 500).start().wait(),
+   // Wait before showing the question
+    getTimer("500").start().wait(),
     
-    // Test if the 'question' field is not empty
+    // Test if the 'question' field is not empty and show it if it's not
     (row.question.trim() !== "" ?
-        newText("questionText", row.question)
+        newText("question_text", row.question)
             .css("font-size", "150%")
             .css("max-width", "20vw")
             .css("overflow-wrap", "break-word")
@@ -521,20 +565,21 @@ Template("experiment_data.csv", row =>
             .print("center at 50vw", "middle at 50vh")
             .log()
             .after(getTimer("500").start().wait())
-      :
-      null
+        :
+        newText("question_text", " ")
     ),
-    newKey("question_read", " ").log().wait(),
+    newKey("ready", " ").log().wait(),
+    getText("question_text", " ").remove(),
+    
+    // Show image pair
+    defaultImage.size("40vh", "40vh"),
 
-    
-    
-    // Show images (images are placed on canvases, which serve as clickable regions)
-    getCanvas("left_canvas", "30vw", "60vh")
-        .add("center at 50%", "middle at 50%", getImage("left_image", row.image_left + ".png" || row.image_left + ".jpg").size("90%", "90%"))
+    newCanvas("left_canvas", "40vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("left_image", row.image_left + ".png" || row.image_left + ".jpg"))
         .print("center at 25vw", "middle at 50vh"),
-    getCanvas("right_canvas", "30vw", "60vh")
-        .add("center at 50%", "middle at 50%", getImage("right_image", row.image_right + ".png" || row.image_right + ".jpg").size("90%", "90%"))
-        .print("center at 77.5vw", "middle at 50vh"),
+    newCanvas("right_canvas", "40vw", "60vh")
+        .add("center at 50%", "middle at 50%", newImage("right_image", row.image_right + ".png" || row.image_right + ".jpg"))
+        .print("center at 75vw", "middle at 50vh"),
 
         // Activate tracker
         getEyeTracker("tracker")
@@ -545,9 +590,8 @@ Template("experiment_data.csv", row =>
                 .log()  // If this line is missing, the eye-tracking data won't be sent to the server
                 .start(),
 
-        // // Delay
-        // newTimer("500", 500).start().wait(),
-        getTimer("1000").start().wait(),
+        // Delay
+        getTimer("500").start().wait(),
         
         // Collect participant's choice by clicking on one of the images
         newSelector("choice_selector")
@@ -563,17 +607,18 @@ Template("experiment_data.csv", row =>
         getEyeTracker("tracker").stop(),
         
         // Wait before next round
-        getTimer("1000").start().wait(),
+        getTimer("500").start().wait(),
     )
     // Log additional trial information from the CSV file to the results
-    // .log("item", row.item_number)
-    // .log("condition", row.condition)
-    // .log("image_left", row.image_left)
-    // .log("image_right", row.image_right)
-    // .log("expected_choice", row.expected_choice)
-
+    .log("ID", getVar("ID"))
+    .log("item", row.item)
+    .log("condition", row.condition)
+    .log("group", row.group)
+    .log("image_left", row.image_left)
+    .log("image_right", row.image_right)
+    
     // Log these global variables for each trial result line as well (if needed, e.g., for counterbalancing from URL)
-    // .log( "participant_id" , PennController.GetURLParameter("id") )
+    .log( "participant_id" , PennController.GetURLParameter("id") )
 );
 
 
@@ -588,13 +633,16 @@ newTrial("send_results",
     // This is handled by PCIbex farm's infrastructure or your own backend if self-hosting.
     SendResults(), // This command handles sending all collected data.
     
-    newText("sending_results_text", "Please wait while we save your responses...").center().print(),
+    // newText("sending_results_text", "Please wait while we save your responses...").center().print(),
+    newText("sending_results_text", "Kérjük, várjon, amíg mentjük a válaszait...").center().print(),
     newTimer("wait_after_send", 1000).start().wait(), // Brief pause to ensure data sending process initiates
-    getText("sending_results_text").text("Your responses have been saved.").center().print(), // Update text
+    // getText("sending_results_text").text("Your responses have been saved.").center().print(), // Update text
+    getText("sending_results_text").text("A válaszait elmentettük.").center().print(), // Update text
     getTimer("wait_after_send", 1000).start().wait(), // Brief pause to ensure data sending process completes
     newText("newline", "<p>...</p>").hidden(),
-    newButton("Done.").center().print().wait(),
-    
+    // newButton("Done.").center().print().wait(),
+    newButton("Kész.").center().print().wait(),
+
     exitFullscreen(),
 )
 
@@ -604,9 +652,11 @@ newTrial( "thank_you",
     .center()
     .print(),
     
-    newText("thank_you_text", "<p>This is the end of the experiment, thank you for your participation!</p>").print(),
-    newText("close_text", "<p>You can now close this window.</p>").print(),
-    
+    // newText("thank_you_text", "<p>This is the end of the experiment, thank you for your participation!</p>").print(),
+    newText("thank_you_text", "<p>Ez a kísérlet vége, köszönjük a részvételt!</p>").print(),
+    // newText("close_text", "<p>You can now close this window.</p>").print(),
+    newText("close_text", "<p>Most már bezárhatod ezt az ablakot.</p>").print(),
+
     // This button is not printed but keeps the page open until the participant closes it.
     newButton("finish_button").wait(),
 )
