@@ -1,0 +1,736 @@
+#
+# Results on Sun, 27 Jul 2025 05:13:21 GMT
+# USER AGENT: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+# Design number was non-random = 1
+#
+# Columns below this comment are as follows:
+# 1. Results reception time.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Order number of item.
+# 5. Inner element number.
+# 6. Label.
+# 7. Latin Square Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. prolific_id.
+# 14. Comments.
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,0,0,welcome,NULL,PennController,0,_Trial_,Start,1753592901249,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,0,0,welcome,NULL,PennController,0,_Header_,Start,1753592901249,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,0,0,welcome,NULL,PennController,0,_Header_,End,1753592901249,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,0,0,welcome,NULL,Html,consent_form,,checked,1753592915919,prolific_id,checkbox
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,0,0,welcome,NULL,PennController,0,_Trial_,End,1753592915919,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,1,0,calibration,NULL,PennController,1,_Trial_,Start,1753592915926,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,1,0,calibration,NULL,PennController,1,_Header_,Start,1753592915926,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,1,0,calibration,NULL,PennController,1,_Header_,End,1753592915926,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,1,0,calibration,NULL,EyeTracker,tracker,calibration,80,1753592955804,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,1,0,calibration,NULL,PennController,1,_Trial_,End,1753592959226,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,3,0,check_preloaded,NULL,PennController,2,_Trial_,Start,1753592959230,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,3,0,check_preloaded,NULL,PennController,2,_Header_,Start,1753592959230,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,3,0,check_preloaded,NULL,PennController,2,_Header_,End,1753592959231,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,3,0,check_preloaded,NULL,PennController,2,_Trial_,End,1753592960248,prolific_id,NULL
+# 14. participant.
+# 15. Comments.
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,PennController,3,_Trial_,Start,1753592960252,prolific_id,Gabor,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,PennController,3,_Header_,Start,1753592960252,prolific_id,Gabor,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,PennController,3,_Header_,End,1753592960252,prolific_id,Gabor,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,First,,1753592963018,prolific_id,Gabor,Shift
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,EnterReturn,Gabor,1753592964397,prolific_id,Gabor,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,Final,Gabor,1753592965595,prolific_id,Gabor,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,PennController,3,_Trial_,End,1753592965596,prolific_id,Gabor,NULL
+# 14. Comments.
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,5,0,instructions,NULL,PennController,4,_Trial_,Start,1753592965597,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,5,0,instructions,NULL,PennController,4,_Header_,Start,1753592965597,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,5,0,instructions,NULL,PennController,4,_Header_,End,1753592965597,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,5,0,instructions,NULL,PennController,4,_Trial_,End,1753592966799,prolific_id,NULL
+# 14. ID.
+# 15. item.
+# 16. condition.
+# 17. group.
+# 18. image_left.
+# 19. image_right.
+# 20. participant_id.
+# 21. Comments.
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,PennController,8,_Trial_,Start,1753592966801,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,PennController,8,_Header_,Start,1753592966801,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,PennController,8,_Header_,End,1753592966801,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,EyeTracker,tracker,calibration,80,1753592970838,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r0,PressedKey, ,1753592975016,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r1,PressedKey, ,1753592975480,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r2,PressedKey, ,1753592975773,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r3,PressedKey, ,1753592976071,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r4,PressedKey, ,1753592976417,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r5,PressedKey, ,1753592976768,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r6,PressedKey, ,1753592977116,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r7,PressedKey, ,1753592977533,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,ready,PressedKey, ,1753592978361,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Selector,choice_selector,Selection,left_canvas_practice,1753592980781,prolific_id,undefined,1,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/861f317e-f7f9-0129-c2eb-ce1427215313,1753592981285,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,PennController,8,_Trial_,End,1753592981286,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,PennController,9,_Trial_,Start,1753592981290,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,PennController,9,_Header_,Start,1753592981290,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,PennController,9,_Header_,End,1753592981290,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,EyeTracker,tracker,calibration,78,1753592985314,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r0,PressedKey, ,1753592988755,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r1,PressedKey, ,1753592989181,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r2,PressedKey, ,1753592989554,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r3,PressedKey, ,1753592989931,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r4,PressedKey, ,1753592990302,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r5,PressedKey, ,1753592990679,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r6,PressedKey, ,1753592991099,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r7,PressedKey, ,1753592991674,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,ready,PressedKey, ,1753592992521,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Selector,choice_selector,Selection,right_canvas_practice,1753592995324,prolific_id,undefined,2,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/861f317e-f7f9-0129-c2eb-ce1427215313,1753592995852,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,PennController,9,_Trial_,End,1753592995856,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,PennController,10,_Trial_,Start,1753592995860,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,PennController,10,_Header_,Start,1753592995860,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,PennController,10,_Header_,End,1753592995860,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,EyeTracker,tracker,calibration,82,1753592999880,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r0,PressedKey, ,1753593005047,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r1,PressedKey, ,1753593005420,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r2,PressedKey, ,1753593005740,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r3,PressedKey, ,1753593006024,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r4,PressedKey, ,1753593006188,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r5,PressedKey, ,1753593006371,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r6,PressedKey, ,1753593006624,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r7,PressedKey, ,1753593006980,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Text,question_text,Print,NA,1753593007498,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,ready,PressedKey, ,1753593011548,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Selector,choice_selector,Selection,right_canvas_practice,1753593016152,prolific_id,undefined,3,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/861f317e-f7f9-0129-c2eb-ce1427215313,1753593016661,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,PennController,10,_Trial_,End,1753593016664,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+# 14. Comments.
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,9,0,start,NULL,PennController,5,_Trial_,Start,1753593016670,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,9,0,start,NULL,PennController,5,_Header_,Start,1753593016670,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,9,0,start,NULL,PennController,5,_Header_,End,1753593016670,prolific_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,9,0,start,NULL,PennController,5,_Trial_,End,1753593021441,prolific_id,NULL
+# 14. ID.
+# 15. item.
+# 16. condition.
+# 17. group.
+# 18. image_left.
+# 19. image_right.
+# 20. participant_id.
+# 21. Comments.
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,PennController,14,_Trial_,Start,1753593021445,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,PennController,14,_Header_,Start,1753593021445,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,PennController,14,_Header_,End,1753593021445,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,EyeTracker,tracker,calibration,75,1753593025490,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r0,PressedKey, ,1753593033976,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r1,PressedKey, ,1753593034435,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r2,PressedKey, ,1753593034910,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r3,PressedKey, ,1753593035459,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r4,PressedKey, ,1753593036053,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r5,PressedKey, ,1753593037508,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r7,PressedKey, ,1753593038462,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Text,question_text,Print,NA,1753593038984,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,ready,PressedKey, ,1753593044009,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Selector,choice_selector,Selection,left_canvas,1753593050788,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,left_canvas;right_canvas
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/861f317e-f7f9-0129-c2eb-ce1427215313,1753593051302,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,PennController,14,_Trial_,End,1753593051303,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,PennController,13,_Trial_,Start,1753593051310,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,PennController,13,_Header_,Start,1753593051310,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,PennController,13,_Header_,End,1753593051310,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,EyeTracker,tracker,calibration,76,1753593055338,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r0,PressedKey, ,1753593058715,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r1,PressedKey, ,1753593059101,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r2,PressedKey, ,1753593059395,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r3,PressedKey, ,1753593059682,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r4,PressedKey, ,1753593059971,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r5,PressedKey, ,1753593060276,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r7,PressedKey, ,1753593060605,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Text,question_text,Print,NA,1753593061112,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,ready,PressedKey, ,1753593063559,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Selector,choice_selector,Selection,left_canvas,1753593065563,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,left_canvas;right_canvas
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/861f317e-f7f9-0129-c2eb-ce1427215313,1753593066071,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,PennController,13,_Trial_,End,1753593066074,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,PennController,11,_Trial_,Start,1753593066079,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,PennController,11,_Header_,Start,1753593066079,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,PennController,11,_Header_,End,1753593066079,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,EyeTracker,tracker,calibration,79,1753593070145,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r0,PressedKey, ,1753593074134,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r1,PressedKey, ,1753593074517,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r2,PressedKey, ,1753593074845,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r3,PressedKey, ,1753593075206,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r4,PressedKey, ,1753593075506,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r5,PressedKey, ,1753593075825,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r6,PressedKey, ,1753593076194,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r7,PressedKey, ,1753593076625,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,ready,PressedKey, ,1753593077457,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Selector,choice_selector,Selection,right_canvas,1753593082267,prolific_id,undefined,1,focus,b,1a,1b,participant_id,left_canvas;right_canvas
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/861f317e-f7f9-0129-c2eb-ce1427215313,1753593082775,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,PennController,11,_Trial_,End,1753593082778,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_PreloadFailed_,2a.png,1753593142803,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_PreloadFailed_,2b.png,1753593142803,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_PreloadFailed_,2a.png,1753593142803,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_PreloadFailed_,2b.png,1753593142803,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_Trial_,Start,1753593142804,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_Header_,Start,1753593142804,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_Header_,End,1753593142804,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,EyeTracker,tracker,calibration,83,1753593146853,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r0,PressedKey, ,1753593193519,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r1,PressedKey, ,1753593193920,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r2,PressedKey, ,1753593194126,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r3,PressedKey, ,1753593194300,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r4,PressedKey, ,1753593194458,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r5,PressedKey, ,1753593194624,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r6,PressedKey, ,1753593194785,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r7,PressedKey, ,1753593195075,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,ready,PressedKey, ,1753593197316,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Selector,choice_selector,Selection,left_canvas,1753593200773,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,left_canvas;right_canvas
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/861f317e-f7f9-0129-c2eb-ce1427215313,1753593201297,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753593201,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_Trial_,End,1753593201299,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+#
+# Results on Sun, 27 Jul 2025 05:29:47 GMT
+# USER AGENT: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+# Design number was non-random = 2
+#
+# Columns below this comment are as follows:
+# 1. Results reception time.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Order number of item.
+# 5. Inner element number.
+# 6. Label.
+# 7. Latin Square Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. prolific_id.
+# 14. Comments.
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,0,0,welcome,NULL,PennController,0,_Trial_,Start,1753593914045,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,0,0,welcome,NULL,PennController,0,_Header_,Start,1753593914045,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,0,0,welcome,NULL,PennController,0,_Header_,End,1753593914045,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,0,0,welcome,NULL,Html,consent_form,,checked,1753593929860,prolific_id,checkbox
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,0,0,welcome,NULL,PennController,0,_Trial_,End,1753593929860,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,1,0,calibration,NULL,PennController,1,_Trial_,Start,1753593929878,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,1,0,calibration,NULL,PennController,1,_Header_,Start,1753593929878,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,1,0,calibration,NULL,PennController,1,_Header_,End,1753593929879,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,1,0,calibration,NULL,EyeTracker,tracker,calibration,81,1753593969027,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,1,0,calibration,NULL,PennController,1,_Trial_,End,1753593971639,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,3,0,check_preloaded,NULL,PennController,2,_Trial_,Start,1753593971643,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,3,0,check_preloaded,NULL,PennController,2,_Header_,Start,1753593971643,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,3,0,check_preloaded,NULL,PennController,2,_Header_,End,1753593971644,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,3,0,check_preloaded,NULL,PennController,2,_Trial_,End,1753593972654,prolific_id,NULL
+# 14. participant.
+# 15. Comments.
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,PennController,3,_Trial_,Start,1753593972658,prolific_id,Gabriel,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,PennController,3,_Header_,Start,1753593972658,prolific_id,Gabriel,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,PennController,3,_Header_,End,1753593972659,prolific_id,Gabriel,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,First,,1753593977471,prolific_id,Gabriel,Shift
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,EnterReturn,Gabriel,1753593986640,prolific_id,Gabriel,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,Final,Gabriel,1753593988398,prolific_id,Gabriel,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,4,0,participant_data,NULL,PennController,3,_Trial_,End,1753593988399,prolific_id,Gabriel,NULL
+# 14. Comments.
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,5,0,instructions,NULL,PennController,4,_Trial_,Start,1753593988402,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,5,0,instructions,NULL,PennController,4,_Header_,Start,1753593988402,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,5,0,instructions,NULL,PennController,4,_Header_,End,1753593988403,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,5,0,instructions,NULL,PennController,4,_Trial_,End,1753593995486,prolific_id,NULL
+# 14. ID.
+# 15. item.
+# 16. condition.
+# 17. group.
+# 18. image_left.
+# 19. image_right.
+# 20. participant_id.
+# 21. Comments.
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,PennController,8,_Trial_,Start,1753593995490,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,PennController,8,_Header_,Start,1753593995490,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,PennController,8,_Header_,End,1753593995491,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,EyeTracker,tracker,calibration,83,1753593999503,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r0,PressedKey, ,1753594003342,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r1,PressedKey, ,1753594003866,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r2,PressedKey, ,1753594004233,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r3,PressedKey, ,1753594004567,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r4,PressedKey, ,1753594004899,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r5,PressedKey, ,1753594005219,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r6,PressedKey, ,1753594005558,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,r7,PressedKey, ,1753594005886,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Key,ready,PressedKey, ,1753594007364,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,Selector,choice_selector,Selection,left_canvas_practice,1753594010357,prolific_id,undefined,1,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/999f10fa-e3a3-031e-681b-97bc137c4401,1753594010867,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,6,0,practice,NULL,PennController,8,_Trial_,End,1753594010870,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,PennController,9,_Trial_,Start,1753594010871,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,PennController,9,_Header_,Start,1753594010871,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,PennController,9,_Header_,End,1753594010871,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,EyeTracker,tracker,calibration,84,1753594014916,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r0,PressedKey, ,1753594019211,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r1,PressedKey, ,1753594019630,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r2,PressedKey, ,1753594019981,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r3,PressedKey, ,1753594020371,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r4,PressedKey, ,1753594020732,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r5,PressedKey, ,1753594021176,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r6,PressedKey, ,1753594021647,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,r7,PressedKey, ,1753594022180,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Key,ready,PressedKey, ,1753594022954,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,Selector,choice_selector,Selection,right_canvas_practice,1753594024625,prolific_id,undefined,2,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/999f10fa-e3a3-031e-681b-97bc137c4401,1753594025143,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,7,0,practice,NULL,PennController,9,_Trial_,End,1753594025145,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,PennController,10,_Trial_,Start,1753594025154,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,PennController,10,_Header_,Start,1753594025154,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,PennController,10,_Header_,End,1753594025155,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,EyeTracker,tracker,calibration,82,1753594029221,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r0,PressedKey, ,1753594032777,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r1,PressedKey, ,1753594033197,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r2,PressedKey, ,1753594033630,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r3,PressedKey, ,1753594034098,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r4,PressedKey, ,1753594034599,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r5,PressedKey, ,1753594035112,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r6,PressedKey, ,1753594035628,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,r7,PressedKey, ,1753594036168,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Text,question_text,Print,NA,1753594036684,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Key,ready,PressedKey, ,1753594038306,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,Selector,choice_selector,Selection,right_canvas_practice,1753594040125,prolific_id,undefined,3,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/999f10fa-e3a3-031e-681b-97bc137c4401,1753594040631,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,8,0,practice,NULL,PennController,10,_Trial_,End,1753594040632,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+# 14. Comments.
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,9,0,start,NULL,PennController,5,_Trial_,Start,1753594040637,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,9,0,start,NULL,PennController,5,_Header_,Start,1753594040637,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,9,0,start,NULL,PennController,5,_Header_,End,1753594040638,prolific_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,9,0,start,NULL,PennController,5,_Trial_,End,1753594043088,prolific_id,NULL
+# 14. ID.
+# 15. item.
+# 16. condition.
+# 17. group.
+# 18. image_left.
+# 19. image_right.
+# 20. participant_id.
+# 21. Comments.
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,PennController,11,_Trial_,Start,1753594043091,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,PennController,11,_Header_,Start,1753594043091,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,PennController,11,_Header_,End,1753594043091,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,EyeTracker,tracker,calibration,82,1753594047126,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r0,PressedKey, ,1753594053600,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r1,PressedKey, ,1753594054066,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r2,PressedKey, ,1753594054450,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r3,PressedKey, ,1753594054831,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r4,PressedKey, ,1753594055231,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r5,PressedKey, ,1753594055567,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r6,PressedKey, ,1753594055985,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,r7,PressedKey, ,1753594056390,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Key,ready,PressedKey, ,1753594057444,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,Selector,choice_selector,Selection,right_canvas,1753594059476,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,left_canvas;right_canvas
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/999f10fa-e3a3-031e-681b-97bc137c4401,1753594059989,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,10,0,experiment,NULL,PennController,11,_Trial_,End,1753594059990,prolific_id,undefined,1,contrastive,c,1a,1b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,PennController,13,_Trial_,Start,1753594059994,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,PennController,13,_Header_,Start,1753594059994,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,PennController,13,_Header_,End,1753594059994,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,EyeTracker,tracker,calibration,81,1753594064022,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r0,PressedKey, ,1753594069161,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r1,PressedKey, ,1753594069479,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r2,PressedKey, ,1753594069774,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r3,PressedKey, ,1753594070044,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r4,PressedKey, ,1753594070352,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r5,PressedKey, ,1753594070786,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,r7,PressedKey, ,1753594071533,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Text,question_text,Print,NA,1753594072039,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Key,ready,PressedKey, ,1753594073687,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,Selector,choice_selector,Selection,left_canvas,1753594077183,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,left_canvas;right_canvas
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/999f10fa-e3a3-031e-681b-97bc137c4401,1753594077698,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,12,0,experiment,NULL,PennController,13,_Trial_,End,1753594077700,prolific_id,undefined,19,self-directed-x,c,szakács,dolgozó,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,PennController,14,_Trial_,Start,1753594077704,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,PennController,14,_Header_,Start,1753594077704,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,PennController,14,_Header_,End,1753594077704,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,EyeTracker,tracker,calibration,73,1753594081765,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r0,PressedKey, ,1753594085534,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r1,PressedKey, ,1753594085905,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r2,PressedKey, ,1753594086266,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r3,PressedKey, ,1753594086718,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r4,PressedKey, ,1753594087247,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r5,PressedKey, ,1753594087898,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,r7,PressedKey, ,1753594088617,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Text,question_text,Print,NA,1753594089123,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Key,ready,PressedKey, ,1753594091379,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,Selector,choice_selector,Selection,right_canvas,1753594095213,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,left_canvas;right_canvas
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/999f10fa-e3a3-031e-681b-97bc137c4401,1753594095729,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,13,0,experiment,NULL,PennController,14,_Trial_,End,1753594095732,prolific_id,undefined,20,self-directed-x,c,programozó,rendező,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_PreloadFailed_,2a.png,1753594155750,prolific_id,undefined,2,focus,c,2a,2b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_PreloadFailed_,2b.png,1753594155750,prolific_id,undefined,2,focus,c,2a,2b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_PreloadFailed_,2a.png,1753594155750,prolific_id,undefined,2,focus,c,2a,2b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_PreloadFailed_,2b.png,1753594155750,prolific_id,undefined,2,focus,c,2a,2b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_Trial_,Start,1753594155751,prolific_id,undefined,2,focus,c,2a,2b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_Header_,Start,1753594155751,prolific_id,undefined,2,focus,c,2a,2b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_Header_,End,1753594155752,prolific_id,undefined,2,focus,c,2a,2b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,EyeTracker,tracker,calibration,81,1753594159771,prolific_id,undefined,2,focus,c,2a,2b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r0,PressedKey, ,1753594178637,prolific_id,undefined,2,focus,c,2a,2b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r1,PressedKey, ,1753594178914,prolific_id,undefined,2,focus,c,2a,2b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r2,PressedKey, ,1753594179121,prolific_id,undefined,2,focus,c,2a,2b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r3,PressedKey, ,1753594179303,prolific_id,undefined,2,focus,c,2a,2b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r4,PressedKey, ,1753594179483,prolific_id,undefined,2,focus,c,2a,2b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r5,PressedKey, ,1753594179652,prolific_id,undefined,2,focus,c,2a,2b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r6,PressedKey, ,1753594179839,prolific_id,undefined,2,focus,c,2a,2b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,r7,PressedKey, ,1753594180082,prolific_id,undefined,2,focus,c,2a,2b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Key,ready,PressedKey, ,1753594184258,prolific_id,undefined,2,focus,c,2a,2b,participant_id,Wait success
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,Selector,choice_selector,Selection,right_canvas,1753594186203,prolific_id,undefined,2,focus,c,2a,2b,participant_id,left_canvas;right_canvas
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/999f10fa-e3a3-031e-681b-97bc137c4401,1753594186714,prolific_id,undefined,2,focus,c,2a,2b,participant_id,NULL
+1753594187,4c435816b733b899c8179a3e0022201d,PennController,11,0,experiment,NULL,PennController,12,_Trial_,End,1753594186718,prolific_id,undefined,2,focus,c,2a,2b,participant_id,NULL
+#
+# Results on Sun, 27 Jul 2025 06:44:01 GMT
+# USER AGENT: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
+# Design number was non-random = 3
+#
+# Columns below this comment are as follows:
+# 1. Results reception time.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Order number of item.
+# 5. Inner element number.
+# 6. Label.
+# 7. Latin Square Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. prolific_id.
+# 14. Comments.
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,0,0,welcome,NULL,PennController,0,_Trial_,Start,1753598294876,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,0,0,welcome,NULL,PennController,0,_Header_,Start,1753598294876,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,0,0,welcome,NULL,PennController,0,_Header_,End,1753598294876,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,0,0,welcome,NULL,Html,consent_form,,checked,1753598332621,prolific_id,checkbox
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,0,0,welcome,NULL,PennController,0,_Trial_,End,1753598332622,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,1,0,calibration,NULL,PennController,1,_Trial_,Start,1753598332628,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,1,0,calibration,NULL,PennController,1,_Header_,Start,1753598332628,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,1,0,calibration,NULL,PennController,1,_Header_,End,1753598332629,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,1,0,calibration,NULL,EyeTracker,tracker,calibration,82,1753598395012,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,1,0,calibration,NULL,PennController,1,_Trial_,End,1753598398015,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,3,0,check_preloaded,NULL,PennController,2,_Trial_,Start,1753598398020,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,3,0,check_preloaded,NULL,PennController,2,_Header_,Start,1753598398020,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,3,0,check_preloaded,NULL,PennController,2,_Header_,End,1753598398020,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,3,0,check_preloaded,NULL,PennController,2,_Trial_,End,1753598399025,prolific_id,NULL
+# 14. participant.
+# 15. Comments.
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,PennController,3,_Trial_,Start,1753598399027,prolific_id,BABYYUNYUNYUN,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,PennController,3,_Header_,Start,1753598399027,prolific_id,BABYYUNYUNYUN,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,PennController,3,_Header_,End,1753598399027,prolific_id,BABYYUNYUNYUN,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,First,,1753598401880,prolific_id,BABYYUNYUNYUN,CapsLock
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,EnterReturn,BABYYUNYUNYUN,1753598415887,prolific_id,BABYYUNYUNYUN,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,Final,BABYYUNYUNYUN,1753598418950,prolific_id,BABYYUNYUNYUN,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,PennController,3,_Trial_,End,1753598418951,prolific_id,BABYYUNYUNYUN,NULL
+# 14. Comments.
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,5,0,instructions,NULL,PennController,4,_Trial_,Start,1753598418952,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,5,0,instructions,NULL,PennController,4,_Header_,Start,1753598418952,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,5,0,instructions,NULL,PennController,4,_Header_,End,1753598418952,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,5,0,instructions,NULL,PennController,4,_Trial_,End,1753598447574,prolific_id,NULL
+# 14. ID.
+# 15. item.
+# 16. condition.
+# 17. group.
+# 18. image_left.
+# 19. image_right.
+# 20. participant_id.
+# 21. Comments.
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,PennController,8,_Trial_,Start,1753598447578,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,PennController,8,_Header_,Start,1753598447578,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,PennController,8,_Header_,End,1753598447579,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,EyeTracker,tracker,calibration,82,1753598451595,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r0,PressedKey, ,1753598481990,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r1,PressedKey, ,1753598483303,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r2,PressedKey, ,1753598484825,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r3,PressedKey, ,1753598485488,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r4,PressedKey, ,1753598486511,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r5,PressedKey, ,1753598487202,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r6,PressedKey, ,1753598487966,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r7,PressedKey, ,1753598488493,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,ready,PressedKey, ,1753598491682,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Selector,choice_selector,Selection,left_canvas_practice,1753598508917,prolific_id,undefined,1,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/a09c69ff-c55a-a4e8-ad2e-573d1533f72a,1753598509428,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,PennController,8,_Trial_,End,1753598509429,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,PennController,9,_Trial_,Start,1753598509434,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,PennController,9,_Header_,Start,1753598509434,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,PennController,9,_Header_,End,1753598509434,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,EyeTracker,tracker,calibration,77,1753598513480,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r0,PressedKey, ,1753598522607,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r1,PressedKey, ,1753598523384,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r2,PressedKey, ,1753598524248,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r3,PressedKey, ,1753598524780,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r4,PressedKey, ,1753598525316,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r5,PressedKey, ,1753598525812,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r6,PressedKey, ,1753598526318,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r7,PressedKey, ,1753598526904,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,ready,PressedKey, ,1753598534919,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Selector,choice_selector,Selection,right_canvas_practice,1753598537291,prolific_id,undefined,2,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/a09c69ff-c55a-a4e8-ad2e-573d1533f72a,1753598537798,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,PennController,9,_Trial_,End,1753598537800,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,PennController,10,_Trial_,Start,1753598537810,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,PennController,10,_Header_,Start,1753598537810,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,PennController,10,_Header_,End,1753598537810,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,EyeTracker,tracker,calibration,84,1753598541847,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r0,PressedKey, ,1753598549186,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r1,PressedKey, ,1753598549801,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r2,PressedKey, ,1753598550293,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r3,PressedKey, ,1753598550774,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r4,PressedKey, ,1753598551176,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r5,PressedKey, ,1753598551582,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r6,PressedKey, ,1753598552009,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r7,PressedKey, ,1753598552411,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Text,question_text,Print,NA,1753598552932,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,ready,PressedKey, ,1753598553700,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Selector,choice_selector,Selection,left_canvas_practice,1753598555423,prolific_id,undefined,3,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/a09c69ff-c55a-a4e8-ad2e-573d1533f72a,1753598555939,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,PennController,10,_Trial_,End,1753598555945,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+# 14. Comments.
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,9,0,start,NULL,PennController,5,_Trial_,Start,1753598555950,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,9,0,start,NULL,PennController,5,_Header_,Start,1753598555950,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,9,0,start,NULL,PennController,5,_Header_,End,1753598555951,prolific_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,9,0,start,NULL,PennController,5,_Trial_,End,1753598558377,prolific_id,NULL
+# 14. ID.
+# 15. item.
+# 16. condition.
+# 17. group.
+# 18. image_left.
+# 19. image_right.
+# 20. participant_id.
+# 21. Comments.
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,PennController,11,_Trial_,Start,1753598558380,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,PennController,11,_Header_,Start,1753598558380,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,PennController,11,_Header_,End,1753598558380,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,EyeTracker,tracker,calibration,78,1753598562405,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r0,PressedKey, ,1753598573398,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r1,PressedKey, ,1753598573960,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r2,PressedKey, ,1753598574661,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r3,PressedKey, ,1753598575234,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r4,PressedKey, ,1753598575673,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r5,PressedKey, ,1753598576150,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r6,PressedKey, ,1753598576620,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r7,PressedKey, ,1753598577165,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,ready,PressedKey, ,1753598579216,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Selector,choice_selector,Selection,right_canvas,1753598581620,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,left_canvas;right_canvas
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/a09c69ff-c55a-a4e8-ad2e-573d1533f72a,1753598582137,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,PennController,11,_Trial_,End,1753598582138,prolific_id,undefined,1,exclusive,a,1a,1b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,PennController,13,_Trial_,Start,1753598582142,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,PennController,13,_Header_,Start,1753598582142,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,PennController,13,_Header_,End,1753598582142,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,EyeTracker,tracker,calibration,63,1753598586175,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r0,PressedKey, ,1753598596071,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r1,PressedKey, ,1753598596527,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r2,PressedKey, ,1753598596967,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r3,PressedKey, ,1753598597317,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r4,PressedKey, ,1753598597742,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r5,PressedKey, ,1753598598105,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r7,PressedKey, ,1753598598522,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Text,question_text,Print,NA,1753598599037,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,ready,PressedKey, ,1753598600421,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Selector,choice_selector,Selection,left_canvas,1753598602055,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,left_canvas;right_canvas
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/a09c69ff-c55a-a4e8-ad2e-573d1533f72a,1753598602583,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,PennController,13,_Trial_,End,1753598602586,prolific_id,undefined,19,self-directed,a,szakács,dolgozó,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,PennController,12,_Trial_,Start,1753598602592,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,PennController,12,_Header_,Start,1753598602592,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,PennController,12,_Header_,End,1753598602592,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,EyeTracker,tracker,calibration,85,1753598606631,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r0,PressedKey, ,1753598614887,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r1,PressedKey, ,1753598615349,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r2,PressedKey, ,1753598615720,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r3,PressedKey, ,1753598616088,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r4,PressedKey, ,1753598616429,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r5,PressedKey, ,1753598616776,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r6,PressedKey, ,1753598617170,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r7,PressedKey, ,1753598617535,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,ready,PressedKey, ,1753598620600,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Selector,choice_selector,Selection,left_canvas,1753598622297,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,left_canvas;right_canvas
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/a09c69ff-c55a-a4e8-ad2e-573d1533f72a,1753598622813,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,PennController,12,_Trial_,End,1753598622816,prolific_id,undefined,2,contrastive,a,2a,2b,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,PennController,14,_Trial_,Start,1753598622822,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,PennController,14,_Header_,Start,1753598622822,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,PennController,14,_Header_,End,1753598622822,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,EyeTracker,tracker,calibration,85,1753598626852,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r0,PressedKey, ,1753598632949,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r1,PressedKey, ,1753598633489,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r2,PressedKey, ,1753598633932,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r3,PressedKey, ,1753598634328,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r4,PressedKey, ,1753598634716,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r5,PressedKey, ,1753598635125,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r7,PressedKey, ,1753598635571,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Text,question_text,Print,NA,1753598636087,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,ready,PressedKey, ,1753598637461,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,Wait success
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Selector,choice_selector,Selection,left_canvas,1753598639213,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,left_canvas;right_canvas
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/a09c69ff-c55a-a4e8-ad2e-573d1533f72a,1753598639717,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,NULL
+1753598641,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,PennController,14,_Trial_,End,1753598639718,prolific_id,undefined,20,self-directed,a,programozó,rendező,participant_id,NULL
+#
+# Results on Sun, 27 Jul 2025 06:54:21 GMT
+# USER AGENT: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
+# Design number was non-random = 4
+#
+# Columns below this comment are as follows:
+# 1. Results reception time.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Order number of item.
+# 5. Inner element number.
+# 6. Label.
+# 7. Latin Square Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. prolific_id.
+# 14. Comments.
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,0,0,welcome,NULL,PennController,0,_Trial_,Start,1753599023922,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,0,0,welcome,NULL,PennController,0,_Header_,Start,1753599023922,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,0,0,welcome,NULL,PennController,0,_Header_,End,1753599023922,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,0,0,welcome,NULL,Html,consent_form,,checked,1753599049236,prolific_id,checkbox
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,0,0,welcome,NULL,PennController,0,_Trial_,End,1753599049237,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,1,0,calibration,NULL,PennController,1,_Trial_,Start,1753599049244,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,1,0,calibration,NULL,PennController,1,_Header_,Start,1753599049244,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,1,0,calibration,NULL,PennController,1,_Header_,End,1753599049244,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,1,0,calibration,NULL,EyeTracker,tracker,calibration,79,1753599118566,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,1,0,calibration,NULL,PennController,1,_Trial_,End,1753599120954,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,3,0,check_preloaded,NULL,PennController,2,_Trial_,Start,1753599120959,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,3,0,check_preloaded,NULL,PennController,2,_Header_,Start,1753599120959,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,3,0,check_preloaded,NULL,PennController,2,_Header_,End,1753599120959,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,3,0,check_preloaded,NULL,PennController,2,_Trial_,End,1753599121969,prolific_id,NULL
+# 14. participant.
+# 15. Comments.
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,PennController,3,_Trial_,Start,1753599121973,prolific_id,babyyunyun,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,PennController,3,_Header_,Start,1753599121973,prolific_id,babyyunyun,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,PennController,3,_Header_,End,1753599121973,prolific_id,babyyunyun,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,First,,1753599124140,prolific_id,babyyunyun,b
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,EnterReturn,babyyunyun,1753599127624,prolific_id,babyyunyun,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,TextInput,input_participant_id,Final,babyyunyun,1753599130626,prolific_id,babyyunyun,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,4,0,participant_data,NULL,PennController,3,_Trial_,End,1753599130626,prolific_id,babyyunyun,NULL
+# 14. Comments.
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,5,0,instructions,NULL,PennController,4,_Trial_,Start,1753599130628,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,5,0,instructions,NULL,PennController,4,_Header_,Start,1753599130628,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,5,0,instructions,NULL,PennController,4,_Header_,End,1753599130629,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,5,0,instructions,NULL,PennController,4,_Trial_,End,1753599134368,prolific_id,NULL
+# 14. ID.
+# 15. item.
+# 16. condition.
+# 17. group.
+# 18. image_left.
+# 19. image_right.
+# 20. participant_id.
+# 21. Comments.
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,PennController,8,_Trial_,Start,1753599134370,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,PennController,8,_Header_,Start,1753599134370,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,PennController,8,_Header_,End,1753599134370,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,EyeTracker,tracker,calibration,86,1753599138410,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r0,PressedKey, ,1753599146952,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r1,PressedKey, ,1753599147375,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r2,PressedKey, ,1753599147810,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r3,PressedKey, ,1753599148181,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r4,PressedKey, ,1753599148552,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r5,PressedKey, ,1753599149052,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r6,PressedKey, ,1753599149499,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,r7,PressedKey, ,1753599149871,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Key,ready,PressedKey, ,1753599151793,prolific_id,undefined,1,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,Selector,choice_selector,Selection,left_canvas_practice,1753599155523,prolific_id,undefined,1,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/87e0854b-58f9-de9e-2a14-7f65bee47227,1753599156035,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,6,0,practice,NULL,PennController,8,_Trial_,End,1753599156038,prolific_id,undefined,1,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,PennController,9,_Trial_,Start,1753599156042,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,PennController,9,_Header_,Start,1753599156042,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,PennController,9,_Header_,End,1753599156042,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,EyeTracker,tracker,calibration,81,1753599160076,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r0,PressedKey, ,1753599165568,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r1,PressedKey, ,1753599165907,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r2,PressedKey, ,1753599166248,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r3,PressedKey, ,1753599166589,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r4,PressedKey, ,1753599166920,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r5,PressedKey, ,1753599167284,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r6,PressedKey, ,1753599167604,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,r7,PressedKey, ,1753599167907,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Key,ready,PressedKey, ,1753599170983,prolific_id,undefined,2,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,Selector,choice_selector,Selection,right_canvas_practice,1753599172569,prolific_id,undefined,2,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/87e0854b-58f9-de9e-2a14-7f65bee47227,1753599173073,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,7,0,practice,NULL,PennController,9,_Trial_,End,1753599173075,prolific_id,undefined,2,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,PennController,10,_Trial_,Start,1753599173076,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,PennController,10,_Header_,Start,1753599173076,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,PennController,10,_Header_,End,1753599173077,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,EyeTracker,tracker,calibration,86,1753599177115,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r0,PressedKey, ,1753599180545,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r1,PressedKey, ,1753599180962,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r2,PressedKey, ,1753599181248,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r3,PressedKey, ,1753599181533,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r4,PressedKey, ,1753599181828,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r5,PressedKey, ,1753599182125,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r6,PressedKey, ,1753599182435,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,r7,PressedKey, ,1753599182737,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Text,question_text,Print,NA,1753599183243,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Key,ready,PressedKey, ,1753599183797,prolific_id,undefined,3,,,pa,pb,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,Selector,choice_selector,Selection,right_canvas_practice,1753599188182,prolific_id,undefined,3,,,pa,pb,participant_id,left_canvas_practice;right_canvas_practice
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/87e0854b-58f9-de9e-2a14-7f65bee47227,1753599188701,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,8,0,practice,NULL,PennController,10,_Trial_,End,1753599188702,prolific_id,undefined,3,,,pa,pb,participant_id,NULL
+# 14. Comments.
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,9,0,start,NULL,PennController,5,_Trial_,Start,1753599188707,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,9,0,start,NULL,PennController,5,_Header_,Start,1753599188707,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,9,0,start,NULL,PennController,5,_Header_,End,1753599188707,prolific_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,9,0,start,NULL,PennController,5,_Trial_,End,1753599191941,prolific_id,NULL
+# 14. ID.
+# 15. item.
+# 16. condition.
+# 17. group.
+# 18. image_left.
+# 19. image_right.
+# 20. participant_id.
+# 21. Comments.
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,PennController,11,_Trial_,Start,1753599191942,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,PennController,11,_Header_,Start,1753599191942,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,PennController,11,_Header_,End,1753599191942,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,EyeTracker,tracker,calibration,86,1753599195958,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r0,PressedKey, ,1753599203603,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r1,PressedKey, ,1753599203951,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r2,PressedKey, ,1753599204214,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r3,PressedKey, ,1753599204553,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r4,PressedKey, ,1753599204887,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r5,PressedKey, ,1753599205230,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r6,PressedKey, ,1753599205577,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,r7,PressedKey, ,1753599205982,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Key,ready,PressedKey, ,1753599206781,prolific_id,undefined,1,focus,b,1a,1b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,Selector,choice_selector,Selection,left_canvas,1753599208580,prolific_id,undefined,1,focus,b,1a,1b,participant_id,left_canvas;right_canvas
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/87e0854b-58f9-de9e-2a14-7f65bee47227,1753599209082,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,10,0,experiment,NULL,PennController,11,_Trial_,End,1753599209085,prolific_id,undefined,1,focus,b,1a,1b,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,PennController,14,_Trial_,Start,1753599209091,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,PennController,14,_Header_,Start,1753599209091,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,PennController,14,_Header_,End,1753599209091,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,EyeTracker,tracker,calibration,84,1753599213111,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r0,PressedKey, ,1753599218979,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r1,PressedKey, ,1753599219301,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r2,PressedKey, ,1753599219574,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r3,PressedKey, ,1753599219815,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r4,PressedKey, ,1753599220086,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r5,PressedKey, ,1753599220345,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,r7,PressedKey, ,1753599220626,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Text,question_text,Print,NA,1753599221131,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Key,ready,PressedKey, ,1753599221763,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,Selector,choice_selector,Selection,right_canvas,1753599223976,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,left_canvas;right_canvas
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/87e0854b-58f9-de9e-2a14-7f65bee47227,1753599224483,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,13,0,experiment,NULL,PennController,14,_Trial_,End,1753599224484,prolific_id,undefined,20,other-directed,b,programozó,rendező,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,PennController,13,_Trial_,Start,1753599224487,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,PennController,13,_Header_,Start,1753599224487,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,PennController,13,_Header_,End,1753599224487,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,EyeTracker,tracker,calibration,87,1753599228536,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r0,PressedKey, ,1753599231846,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r1,PressedKey, ,1753599232186,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r2,PressedKey, ,1753599232468,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r3,PressedKey, ,1753599232757,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r4,PressedKey, ,1753599233053,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r5,PressedKey, ,1753599233364,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,r7,PressedKey, ,1753599233652,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Text,question_text,Print,NA,1753599234155,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Key,ready,PressedKey, ,1753599238222,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,Selector,choice_selector,Selection,right_canvas,1753599241796,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,left_canvas;right_canvas
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/87e0854b-58f9-de9e-2a14-7f65bee47227,1753599242300,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,12,0,experiment,NULL,PennController,13,_Trial_,End,1753599242302,prolific_id,undefined,19,other-directed,b,szakács,dolgozó,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,PennController,12,_Trial_,Start,1753599242304,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,PennController,12,_Header_,Start,1753599242304,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,PennController,12,_Header_,End,1753599242304,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,EyeTracker,tracker,calibration,87,1753599246350,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r0,PressedKey, ,1753599254108,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r1,PressedKey, ,1753599254405,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r2,PressedKey, ,1753599254671,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r3,PressedKey, ,1753599254915,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r4,PressedKey, ,1753599255125,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r5,PressedKey, ,1753599255324,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r6,PressedKey, ,1753599255659,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,r7,PressedKey, ,1753599256119,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Key,ready,PressedKey, ,1753599257754,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,Wait success
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,Selector,choice_selector,Selection,right_canvas,1753599259186,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,left_canvas;right_canvas
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,EyeTracker,tracker,Filename,httpsfarmpcibexnetrDigcCS/87e0854b-58f9-de9e-2a14-7f65bee47227,1753599259688,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL
+1753599261,216d96a257b205bfaf4ef8565b284fb4,PennController,11,0,experiment,NULL,PennController,12,_Trial_,End,1753599259690,prolific_id,undefined,2,exclusive,b,2a,2b,participant_id,NULL

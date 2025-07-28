@@ -9,5 +9,5 @@ item,condition,group,cb,r1,r2,r3,r4,r5,r6,r7,image_left,image_right,question,vpx
 19,other-directed,b,,A szakács,említette,hogy,a dolgozó,megdicsérte,,a főzőtudását.,szakács,dolgozó,Kinek a főzőtudásáról van szó?,,,,,,
 19,self-directed-x,c,,A dolgozó,említette,hogy,a szakács,kérkedett,,a főzőtudásával.,szakács,dolgozó,Kinek a főzőtudásáról van szó?,,,,,,
 20,self-directed,a,,A programozó,megemlítette,hogy,a rendező,elgondolkozott,,az ügyességéről.,programozó,rendező,Kinek az ügyességéről van szó?,,,,,,
-20,other-directed,b,,A programozó,megemlítette,hogy,a rendező, ,,az ügyességén.,programozó,rendező,Kinek az ügyességéről van szó?,,,,,,
+20,other-directed,b,,A programozó,megemlítette,hogy,a rendező,ámult,,az ügyességén.,programozó,rendező,Kinek az ügyességéről van szó?,,,,,,
 20,self-directed-x,c,,A rendező,megemlítette,hogy,a programozó,elgondolkozott,,az ügyességéről.,programozó,rendező,Kinek az ügyességéről van szó?,,,,,,

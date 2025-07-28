@@ -7,10 +7,10 @@ with open("words.txt", "r", encoding="utf-8") as file:
 # Image settings
 image_size = (500, 500)
 bg_color = "white"
-text_color = "#022F4E"
+text_color = "#095276"
 # font_path = "arial.ttf"
 font_path = "C:/Windows/Fonts/times.ttf"
-font_size = 100
+font_size = 80
 
 # Generate image for each word
 for word in words:
