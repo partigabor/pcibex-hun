@@ -24,6 +24,7 @@ EyeTrackerURL("https://mondo1.dreamhosters.com/script.php")
 
 // // Define the sequence of the experiment blocks
 Sequence("welcome", "calibration", "check_preloaded", "participant_data", "instructions", "practice", "start", randomize("experiment"), "send_results", "thank_you");
+// Sequence("practice", "start", randomize("experiment"), "send_results", "thank_you");
 
 
 
@@ -122,7 +123,9 @@ newTrial("calibration",
     newText(
         `<p>Ez a kísérlet hozzáférést kér a webkamerádhoz, hogy nyomon követhesse a szemmozgásodat.</p>
         <p>Ahhoz, hogy ez működjön, kérjük, egy fényes jól megvilágított helyen végezd el a kísérletet.</p>
-        <p>Csak arra vonatkozóan gyűjtünk adatokat, hogy az oldalon belül hová nézel a kísérlet során.</p>`)
+        <p>Kövesse majd a megjelenő zöld gombot a szemével!</p>
+        <p>Csak arra vonatkozóan gyűjtünk adatokat, hogy az oldalon belül hová nézel a kísérlet során.</p>
+        `)
         .center()
         .print()
         ,
@@ -171,7 +174,7 @@ newTrial("check_preloaded",
         
     newTimer("1000", 1000).start().wait(),
     ),
-    
+
 
 
 // Participant data
@@ -259,15 +262,16 @@ newTrial("instructions",
     // ),
     newText(
     "<p>Ebben a kísérletben magyar mondatokat fogsz olvasni.</p>" + 
-    "<p>A mondatok előtt egy fikszáló keresztet (+) fogsz látni a képernyő közepén.</p>" + 
+    "<p>A mondatok <b>előtt</b> egy képpárt fogsz látni, amely némi kontextust ad.</p>" + 
+    "<p>Minden mondat előtt egy fikszáló keresztet (+) is fogsz látni a képernyő közepén.</p>" + 
     "<p>Nem fogod látni a teljes mondatot egyben, hanem egyszerre csak egy-egy szót.</p>" + 
-    "<p>Használd a <b>szóköz/space billentyűt (␣)</b> a továbblépéshez!</p>" + 
-    "<p>Győződj meg róla, hogy megértetted a képernyőn lévő szót, mielőtt továbbmész a következőre!</p>" +
+    "<p><u>Használd a <b>szóköz/space billentyűt (␣)</b> a következő szóhoz!</u></p>" + 
+    "<p>Győződj meg róla, hogy megértetted a képernyőn lévő szót, mielőtt továbbmész.</p>" +
+    "<p>Néhány mondat <b>után</b> egy kérdést is felteszünk.</p>" +  
+    "<p>Használd a szóközt a továbblépéshez.</p>" +
     "<p>Minden mondat után <b>két képet vagy két szót</b> fogsz látni a képernyő bal és jobb oldalán.</p>" + 
-    "<p>A feladatod az, hogy <b>kiválaszd</b> azt a képet, amelyik a legjobban illik az éppen látott mondatra.</p>" + 
-    "<p>Néhány mondat előtt egy képpárt fogsz látni, amely némi kontextust ad.</p>" +  
-    "<p>Néhány mondat után pedig egy kérdést teszünk fel amire válaszul kell meghoznod a döntést.</p>" +  
-    "<p>Döntésedet az egérrel kell jelezned, csak <b>kattints</b> arra a képre/szóra amelyiket választottad.</p>"
+    "<p>A feladatod az, hogy <b>kiválaszd</b> azt a képet, amelyik a legjobban illik az éppen látott mondatra, vagy megválaszolja a kérdést.</p>" + 
+    "<p>Döntésedet az <b>egérrel</b> kell jelezned, csak <b>kattints</b> arra a képre/szóra amelyiket választottad.</p>"
     ),
     
     newText("newline", "<p>...</p>").hidden(),
@@ -279,7 +283,7 @@ newTrial("instructions",
     
     getText("newline").hidden(),
         
-    newText("space", "_________"),
+    newText("space", "______"),
     // newText("<p> (Press the space bar to continue) </p>"),
     newText("<p> (Nyomd meg a szóközt a folytatáshoz) </p>"),
     newKey("space", " ").wait()
@@ -326,12 +330,13 @@ Template("practice.csv", row =>
     // Fixation
     newTimer("500", 500).start().wait(),
     newText("fixation_cross", "+").center().css("font-size", "250%").print("center at 50vw", "middle at 50vh"),
-    getTimer("500").start().wait(),
+    getTimer("1000").start().wait(),
     getText("fixation_cross").remove(),
+    getTimer("500").start().wait(),
     
-    //Show regions
-    newText("vspace", "").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey("r0", " ").log().wait(),
+    // //Show regions
+    // newText("vspace", "").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    // newKey("r0", " ").log().wait(),
     
     newText("r1", row.r1).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
     newKey("r1", " ").log().wait(),
@@ -485,7 +490,7 @@ Template("experiment_data.csv", row =>
     
     // Check/recalibrate the tracker before every trial  ////////
     newEyeTracker("tracker").calibrate(60,2),            ////////
-    
+
     // Show image pair
     defaultImage.size("40vh", "40vh"),
 
@@ -500,21 +505,22 @@ Template("experiment_data.csv", row =>
     newTimer("1000", 1000).start().wait(),
 
     // newText("spacebar","<p> (Press the space bar to continue) </p>").center().print("center at 50vw", "middle at 50vh"),
-    // newText("spacebar","<p> (Nyomd meg a szóközt a folytatáshoz) </p>").center().print("center at 50vw", "middle at 50vh"),
+    newText("space","<p> (Szóköz a folytatáshoz) </p>").center().print("center at 50vw", "middle at 75vh"),
     newKey(" ").wait(),
-    getText("spacebar").remove(),
+    getText("space").remove(),
     getCanvas("left_canvas_pv").remove(),
     getCanvas("right_canvas_pv").remove(),
     
     // Fixation
     newTimer("500", 500).start().wait(),
     newText("fixation_cross", "+").center().css("font-size", "250%").print("center at 50vw", "middle at 50vh"),
-    getTimer("500").start().wait(),
+    getTimer("1000").start().wait(),
     getText("fixation_cross").remove(),
+    getTimer("500").start().wait(),
     
     //Show regions
-    newText("vspace", "").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
-    newKey("r0", " ").log().wait(),
+    // newText("vspace", "").css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
+    // newKey("r0", " ").log().wait(),
     
     newText("r1", row.r1).css("font-size", "200%").print("center at 50vw", "middle at 50vh"),
     newKey("r1", " ").log().wait(),
