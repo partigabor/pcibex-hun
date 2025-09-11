@@ -1,5 +1,12 @@
 from PIL import Image, ImageDraw, ImageFont
 
+# Read xlsx file
+import pandas as pd
+df = pd.read_excel("experiment.xlsx")
+
+# Get a list of all words in the column 'left' starting with row 164
+# words = df["left"].dropna().astype(str).tolist() # DANGER, OVERWRITES CURRENT IMAGES
+
 # Read words from words.txt
 with open("words.txt", "r", encoding="utf-8") as file:
     words = [line.strip() for line in file if line.strip()]
