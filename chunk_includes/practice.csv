@@ -1,4 +1,4 @@
-item,condition,group,r1,r2,r3,r4,r5,r6,r7,image_left,image_right,question
-1,,,Ez,egy példamondat,kérlek,válaszd,majd,az A betűs,képet.,A,B,
-2,,,Ez is,csak gyakorlás,kérlek,majd,válaszd,a D betűs,képet.,C,D,
-3,,,Itt,pedig,válaszd,azt a képet,amelyik,jobboldalt,van.,E,F,Melyik van a jobb oldalon?
+no,item,condition,group,cb,r1,r2,r3,r4,r5,r6,r7,left,right,question
+,1,,,,Ez,"egy példamondat,",kérlek,válaszd,majd,az A betűs,képet.,A,B,
+,2,,,,Ez is,"csak gyakorlás,",kérlek,majd,válaszd,a D betűs,képet.,C,D,
+,3,,,,Itt,pedig,válaszd,azt a képet,amelyik,jobboldalt,van.,E,F,Melyik van a jobb oldalon?
