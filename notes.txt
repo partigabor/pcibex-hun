@@ -76,3 +76,94 @@ verbs, self or other directed verbs
 
 if we change the gender or status of subjects, would the interpretation of the sentence change?
 examining verbal ambiguitz
+
+
+
+I have an eye tracking experiment built in PCIbex (https://doc.pcibex.net/), which is an experiment controller based on JavasSript. The experiment is about reading Hungarian sentences in a self-paced reading, then making a binary choice by selecting the appropriate image from two choices. During the selection phase, the eye-tracker is activated. My experiment code is in #file:main.js, the data is in #file:experiment_data.csv. After participants finish my experiment, I have the results in a terrible, hard-to-read format, unreadable for humans in #file:results_dev.csv. This is not a true csv, so it needs some refactoring. For example, before some data rows for a specific "trial", there are some metadata and column names commented out with #, such as the beginning of the file:
+# Columns below this comment are as follows:
+# 1. Results reception time.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Order number of item.
+# 5. Inner element number.
+# 6. Label.
+# 7. Latin Square Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. prolific_id.
+# 14. Comments.
+From these, the important ones are: The results reception time, save it as a timestamp value. The MD5 has of participant's IP address, save it also as 'MD5'. The Label, save it as label, this helps to know where we are in the experiment. Save also the row where the PennElement is EyeTracker, and return the calibration value, and when did this happen (EventTime).
+
+After these initial data rows, I have other trial pages, such as where the participant enters the participant Id known as prolific_id, in this case "Gabor001". 
+
+When the experiments start, I have additional logged info on:
+# 14. ID.
+# 15. item.
+# 16. condition.
+# 17. group.
+# 18. image_left.
+# 19. image_right.
+# 20. participant_id.
+# 21. Comments.
+
+So when the practice starts at "Order number item 6", I wanna see columns with the Participant ID, the item (=the stimuli sentence number), the condition, the group (every participants should be assigned to only one group autoatically), and the left and right images, (these are taken directly from the csv by pcibex, please return these as well...)
+
+From the rows under the experiments, get me eyetracking calibration events and their timestamp and value, the key events/reading times of the regions (time between r1, r2, r3, r4, r5, r6, r7; every button/key push marks the end of the region's reading), the question RT (the time it took to understand the question), and the Selector's choice selection's time and selection result. These should be the same for practice and live trials.
+
+I need python code in this new notebook I just made called #file:results.ipynb that can parse the results file, and transform it into a meaningful format, preferably to a pandas dataframe, so that I can study every participants' events (the reading times of word regions - r1, r2, r3, r4, r5, r6, r7, question; the choices they make after the sentences (left or right) for every item and condition that is assigned to their group. In this example, the file has data for only one complete submission from a participant named "Gabor001". So in the dataframe I want to see the participant_id/Prolific ID (Gabor001), as well as the group, the items, the conditions, and the choices. 
+
+Eye tracking data is in a separate file for each participant, it records gaze times on the left and right canvasses (AOIs, corresponding to the left and right images and consequent choices), please find this one in #et-Gabor001.csv. 
+There are several data points for every trial, please process these so we can extract key metrics typical for eye-tracking experiments. You can clean the data first by removing data points where both the left and right canvasses are 0. The data supposedly shows in miliseconds where did the participant gaze, the gazed upon AOI will have a 1 value, the ungazed will have 0. 
+I want to fist, present this in a meaningful format, so it's easy to see in a progressing timeline, and I want to extract key metrics for each AOI (left and right images).
+
+For example: Key Metrics
+For each AOI, calculate:
+- Fixation Count: Number of times the gaze landed within the AOI.
+- Total Dwell Time: Total time spent looking at the AOI.
+- Time to First Fixation: How quickly the AOI was noticed.
+- Revisit Count: How often participants returned to the AOI.
+- Average Fixation Duration: Indicates depth of processing.
+
+It would be amazing if the eyetracking data in the end could be somehow aggregated to the main experiment results dataframe somehow, but not crucial, so that we can inspect all in one place. Can you help me with this? Please see the results file I mentioned.
+
+Later we can compare Across AOIs, and look for patterns by visualizing the data (heatmaps, gaze plots, bar charts, boxplots), interpret the findings, and report the results.
+
+###
+
+
+Later we can compare Across AOIs
+- Use statistical tests (e.g., t-tests, ANOVA) to compare metrics between AOIs.
+- Look for patterns like one AOI consistently attracting more attention or faster recognition.
+4. Visualize the Data
+- Heatmaps: Show where attention was concentrated.
+- Gaze Plots / Scanpaths: Reveal the sequence and flow of visual attention.
+- Bar Charts or Boxplots: Compare metrics like dwell time or fixation count across AOIs.
+5. Interpret the Findings
+- Relate metrics to your research questions. For example:
+- Did AOI 1 receive more attention because it was more visually salient?
+- Was AOI 2 ignored due to poor placement or design?
+6. Report the Results
+Include:
+- Methodology: Describe your eye-tracking setup, participant details, and AOI definitions.
+- Descriptive Statistics: Means, standard deviations, etc.
+- Inferential Statistics: Significance tests and p-values.
+- Visuals: Heatmaps, gaze plots, and comparative charts.
+- Discussion: Interpret findings, limitations, and implications.
+
+🛠 Tools You Might Consider
+- Gazealytics: A flexible toolkit for visual and comparative gaze analysis.
+- iMotions Guide to AOIs offers best practices for defining and analyzing AOIs.
+
+If you’d like, I can help you build a sample report structure or even walk through your dataset. Just let me know what format your data is in or what kind of insights you're hoping to uncover.
+
+
+
+
+
+
+
+
+Make sure the eye tracking data is cleaned of instances where both the _right_canvas,_left_canvas, are 0, meaning that there was no gaze on neither of them picked up.
