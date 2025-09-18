@@ -294,8 +294,8 @@ Template("practice.csv", row =>
     // Delay before the trial starts
     newTimer("1000", 1000).start().wait(),
     
-    // Check/recalibrate the tracker before every trial  // ET //
-    newEyeTracker("tracker").calibrate(60,2),            // ET //
+    // Check/recalibrate the tracker before every trial 
+    newEyeTracker("tracker").calibrate(60,2),  // ET //
     
     // Text
     newText("practice_text", "Gyakorlás " + row.item + "/3")
@@ -421,7 +421,7 @@ Template("practice.csv", row =>
             .log() // Log which element was selected (its ID) and the reaction time //"all"?
             .wait(), // Wait for a selection (click)
             
-        // Stop tracker to prevent collecting unnecessary data // ET //
+        // Stop tracker to prevent collecting unnecessary data
         getEyeTracker("tracker").stop(), // ET //
     
     )
@@ -482,8 +482,8 @@ Template("experiment_data.csv", row =>
         .center()
         .print(),
     
-    // Check/recalibrate the tracker before every trial  // ET //
-    newEyeTracker("tracker").calibrate(60,2),            // ET //
+    // Check/recalibrate the tracker before every trial
+    newEyeTracker("tracker").calibrate(60,2),  // ET //
 
     // Delay before the trial starts
     newTimer("1000", 1000).start().wait(),
@@ -603,7 +603,7 @@ Template("experiment_data.csv", row =>
         // newText("spacebar","<p> (Press the space bar to continue) </p>").center().print("center at 50vw", "middle at 50vh"),
         newText("click_reminder","<p> (Kattints az egyikre a folytatáshoz) </p>").center().print("center at 50vw", "middle at 75vh"),
         
-        // Stop tracker to prevent collecting unnecessary data // ET //
+        // Stop tracker to prevent collecting unnecessary data
         getEyeTracker("tracker").stop(), // ET //
     
     )
@@ -656,12 +656,10 @@ newTrial( "redirect",
     newText("redirect_text", "<p>Kattints az alábbi linkre, hogy a kísérlet befejezését a Prolific oldalon is jelezd!")
     .print(),
     newText("redirect_link", '<p><a href="https://app.prolific.com/submissions/complete?cc=C1KD1A87" target="_blank" rel="noopener noreferrer">https://app.prolific.com/submissions/complete?cc=C1KD1A87</a></p>')
-    .css("font-size", "150%")
-    .print(),
-    newText("...", '<p> </p>')
-    .print(),
-    
-    newButton("Kész!").center().print().wait().log(),
+    .css("font-size", "150%").print(),
+    newTimer("wait_before_done", 2000).start().wait(),
+    newText("newline", "<p>...</p>").hidden(),
+    newButton("done_button","Kész!").center().print().wait().log(),
 )
 
 // Thank you screen and end of the experiment

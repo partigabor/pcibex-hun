@@ -79,7 +79,13 @@ examining verbal ambiguitz
 
 
 
-I have an eye tracking experiment built in PCIbex (https://doc.pcibex.net/), which is an experiment controller based on JavasSript. The experiment is about reading Hungarian sentences in a self-paced reading, then making a binary choice by selecting the appropriate image from two choices. During the selection phase, the eye-tracker is activated. My experiment code is in #file:main.js, the data is in #file:experiment_data.csv. After participants finish my experiment, I have the results in a terrible, hard-to-read format, unreadable for humans in #file:results_dev.csv. This is not a true csv, so it needs some refactoring. For example, before some data rows for a specific "trial", there are some metadata and column names commented out with #, such as the beginning of the file:
+I have an eye tracking experiment built in PCIbex (https://doc.pcibex.net/), which is an experiment controller based on JavasSript. The experiment is about reading Hungarian sentences in a self-paced reading, then making a binary choice by selecting the appropriate image from two choices on the left and right sides of the screen. During the selection phase, the eye-tracker is activated. My experiment code is in #file:main.js, the data is in #file:experiment_data.csv. After participants finish my experiment, I have the results in a terrible, hard-to-read format, unreadable for humans in #file:results_dev.csv. This is not a true csv, so it needs some refactoring. For example, before some data rows for a specific "trial", there are some metadata, e.g.:
+
+# Results on Thu, 18 Sep 2025 11:52:32 GMT
+# USER AGENT: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+# Design number was non-random = 15
+
+and column names are in comments before the data, such as:
 # Columns below this comment are as follows:
 # 1. Results reception time.
 # 2. MD5 hash of participant's IP address.
@@ -95,32 +101,39 @@ I have an eye tracking experiment built in PCIbex (https://doc.pcibex.net/), whi
 # 12. EventTime.
 # 13. prolific_id.
 # 14. Comments.
-From these, the important ones are: The results reception time, save it as a timestamp value. The MD5 has of participant's IP address, save it also as 'MD5'. The Label, save it as label, this helps to know where we are in the experiment. Save also the row where the PennElement is EyeTracker, and return the calibration value, and when did this happen (EventTime).
 
-After these initial data rows, I have other trial pages, such as where the participant enters the participant Id known as prolific_id, in this case "Gabor001". 
+From these, the important ones are: The results reception time, save it as a timestamp value. The MD5 has of participant's IP address, save it also as 'MD5'. The Label, save it as label, this helps to know where we are in the experiment. Save also the rows where the PennElement is EyeTracker, and return the calibration or file value, and when did this happen (EventTime). (The file value will help us later to automatically download the eyetracking data from the server, for now it is provided here in root.)
 
-When the experiments start, I have additional logged info on:
-# 14. ID.
-# 15. item.
-# 16. condition.
-# 17. group.
-# 18. image_left.
-# 19. image_right.
-# 20. participant_id.
-# 21. Comments.
+After these initial data rows, I have the trial pages, such as where the participant enters the participant_id known, in this case "roro101". 
 
-So when the practice starts at "Order number item 6", I wanna see columns with the Participant ID, the item (=the stimuli sentence number), the condition, the group (every participants should be assigned to only one group autoatically), and the left and right images, (these are taken directly from the csv by pcibex, please return these as well...)
+When the experiments start, I have additional logged info for every event, such as:
+# 14. participant_id.
+# 15. group.
+# 16. no.
+# 17. item.
+# 18. condition.
+# 19. counterbalancing.
+# 20. left.
+# 21. right.
+# 22. participant_id.
+# 23. Comments.
+
+So when the practice starts at "Order number item 6", I wanna see columns with the participant_id, the group the participant is in (every participants should be assigned to only one group autoatically), the number (no) of the sentence, the item number (the stimuli number), the condition, counterbalancing (y/n) and the left and right values in the experimental dataset (these are taken directly from the csv by pcibex, please return these as well...)
 
 From the rows under the experiments, get me eyetracking calibration events and their timestamp and value, the key events/reading times of the regions (time between r1, r2, r3, r4, r5, r6, r7; every button/key push marks the end of the region's reading), the question RT (the time it took to understand the question), and the Selector's choice selection's time and selection result. These should be the same for practice and live trials.
 
-I need python code in this new notebook I just made called #file:results.ipynb that can parse the results file, and transform it into a meaningful format, preferably to a pandas dataframe, so that I can study every participants' events (the reading times of word regions - r1, r2, r3, r4, r5, r6, r7, question; the choices they make after the sentences (left or right) for every item and condition that is assigned to their group. In this example, the file has data for only one complete submission from a participant named "Gabor001". So in the dataframe I want to see the participant_id/Prolific ID (Gabor001), as well as the group, the items, the conditions, and the choices. 
+So, after the metadata, there should be RTs for every region (r1 to r7), the question RT, and the choice RT and result (left or right).
 
-Eye tracking data is in a separate file for each participant, it records gaze times on the left and right canvasses (AOIs, corresponding to the left and right images and consequent choices), please find this one in #et-Gabor001.csv. 
-There are several data points for every trial, please process these so we can extract key metrics typical for eye-tracking experiments. You can clean the data first by removing data points where both the left and right canvasses are 0. The data supposedly shows in miliseconds where did the participant gaze, the gazed upon AOI will have a 1 value, the ungazed will have 0. 
+I need python code in this new notebook I just made called #file:results.ipynb that can parse the results file, and transform it into a meaningful format, preferably to a pandas dataframe, so that I can study every participants' events: the reading times of word regions; the question reading time; the choice time; and the choice they make (left or right) for every item and condition that is assigned to their group. 
+In this example, the file has data for only one complete submission from a participant named "roro101". So in the dataframe I want to see the this name as participant_id for every event (row). 
+
+Eye tracking data is in a separate file for each participant, it records gaze times on the left and right canvasses (AOIs, corresponding to the left and right images and consequent choices), please find this one in #roro101.csv. 
+
+There are several data points for every trial, please process these so we can extract key metrics typical for eye-tracking experiments. (You can clean the data first by removing data points where both the left and right canvasses are 0.) The data supposedly shows in miliseconds where did the participant gaze, and the gazed upon AOI will have a 1 value, the ungazed will have 0. 
 I want to fist, present this in a meaningful format, so it's easy to see in a progressing timeline, and I want to extract key metrics for each AOI (left and right images).
 
-For example: Key Metrics
-For each AOI, calculate:
+For example, for each decision event, for each AOI, calculate:
+- Dominant AOI: Which AOI (left or right) received more attention overall.
 - Fixation Count: Number of times the gaze landed within the AOI.
 - Total Dwell Time: Total time spent looking at the AOI.
 - Time to First Fixation: How quickly the AOI was noticed.
@@ -132,7 +145,6 @@ It would be amazing if the eyetracking data in the end could be somehow aggregat
 Later we can compare Across AOIs, and look for patterns by visualizing the data (heatmaps, gaze plots, bar charts, boxplots), interpret the findings, and report the results.
 
 ###
-
 
 Later we can compare Across AOIs
 - Use statistical tests (e.g., t-tests, ANOVA) to compare metrics between AOIs.
