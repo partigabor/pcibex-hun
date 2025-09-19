@@ -8,7 +8,7 @@ no,item,condition,group,cb,r1,r2,r3,r4,r5,r6,r7,left,right,question
 47,16,focus,b,n,Ami,az ebédet,"illeti,",a nagyi,ma,levest,tálalt fel.,16a,16b,
 81,25,self-directed-x,c,n,A tudós,"számított rá,",hogy,az ügyész,felolvassa,,a vallomását.,tudós,ügyész,Kinek a vallomásáról van szó?
 112,33,attention-check,b,y,Ez a mondat,"nem igazi,",úgyhogy,kérlek,válaszd,,a burgonyát.,paradicsom,burgonya,
-116,34,attention-check,c,y,Ez a mondat,"egy figyelmi próba,",itt,válaszd,a kisebb,,állatot.,hangya,elefánt,
+116,34,attention-check,c,y,Ez a mondat,"egy figyelmi próba,",itt,válaszd,a kisebb,,állatot.,hangya,jegesmedve,
 10,4,exclusive,a,y,Ami,a harci eszközöket,"illeti,",a katonaság,csak,a helikoptert,tesztelte.,4b,4a,
 48,16,contrastive,c,y,Ma,ebédre,a nagyi,többek,között,levest,tálalt fel.,16b,16a,
 108,32,other-directed,c,y,Az újságíró,"meglepődött,",hogy,a politikus,kifogásolta,,a nyilatkozatát.,politikus,újságíró,Kinek a nyilatkozatáról van szó?
@@ -55,7 +55,7 @@ no,item,condition,group,cb,r1,r2,r3,r4,r5,r6,r7,left,right,question
 102,30,other-directed-x,c,y,A diák,"nem bánta,",hogy,a tanár,elutasította,,a segítségét.,tanár,diák,Kinek a segítségéről van szó?
 119,35,attention-check,c,n,Ha,"figyelsz arra,",hogy,mit olvasol,válaszd,,a madarat.,pelikán,tigris,
 106,31,self-directed-x,a,y,Az üzletember,"mondta,",hogy,a művész,szervezte meg,,a kiállítását.,művész,üzletember,Kinek a kiállításáról van szó?
-114,34,attention-check,a,y,Ez a mondat,"egy figyelmi próba,",itt,válaszd,a kisebb,,állatot.,hangya,elefánt,
+114,34,attention-check,a,y,Ez a mondat,"egy figyelmi próba,",itt,válaszd,a kisebb,,állatot.,hangya,jegesmedve,
 4,2,exclusive,b,y,Ami,az írószereket,"illeti,",a kisfiú,csak,egy ceruzát,kapott.,2b,2a,
 33,11,contrastive,a,n,Múlt,hétvégén,a turisták,többek,között,egy robogót,béreltek ki.,11a,11b,
 72,23,other-directed,c,y,A rendőr,"tudta,",hogy,a biztonsági őr,ellopta,,a fizetését.,biztonsági őr,rendőr,Kinek a fizetésről van szó?
@@ -68,7 +68,7 @@ no,item,condition,group,cb,r1,r2,r3,r4,r5,r6,r7,left,right,question
 61,20,self-directed-x,a,n,A rendező,"megemlítette,",hogy,a programozó,töprengett,,a képességein.,rendező,programozó,Kinek a képességeiről van szó?
 97,29,self-directed-x,a,n,A munkás,"azt hitte,",hogy,a földműves,befejezte,,a munkáját.,munkás,földműves,Kinek a munkájáról van szó?
 21,7,contrastive,c,n,Tegnap,este,mi,többek,között,ásványvizet,vettünk.,7a,7b,
-115,34,attention-check,b,n,Ez a mondat,"egy figyelmi próba,",itt,válaszd,a kisebb,,állatot.,elefánt,hangya,
+115,34,attention-check,b,n,Ez a mondat,"egy figyelmi próba,",itt,válaszd,a kisebb,,állatot.,jegesmedve,hangya,
 52,18,exclusive,c,y,Ami,a táncot,"illeti,",Péter,csak,Marit,kérte fel.,18b,18a,
 6,2,contrastive,a,y,Tegnap,reggel,a kisfiú,többek,között,egy ceruzát,kapott.,2b,2a,
 31,11,exclusive,b,n,Ami,a járműveket,"illeti,",a turisták,csak,egy robogót,béreltek ki.,11a,11b,

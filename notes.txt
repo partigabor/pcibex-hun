@@ -78,15 +78,15 @@ if we change the gender or status of subjects, would the interpretation of the s
 examining verbal ambiguitz
 
 
+###########################################
 
-I have an eye tracking experiment built in PCIbex (https://doc.pcibex.net/), which is an experiment controller based on JavasSript. The experiment is about reading Hungarian sentences in a self-paced reading, then making a binary choice by selecting the appropriate image from two choices on the left and right sides of the screen. During the selection phase, the eye-tracker is activated. My experiment code is in #file:main.js, the data is in #file:experiment_data.csv. After participants finish my experiment, I have the results in a terrible, hard-to-read format, unreadable for humans in #file:results_dev.csv. This is not a true csv, so it needs some refactoring. For example, before some data rows for a specific "trial", there are some metadata, e.g.:
+I have an eye tracking experiment built in PCIbex (https://doc.pcibex.net/), which is an experiment controller based on JavasSript. The experiment is about reading Hungarian sentences in a self-paced reading, then making a binary choice by selecting the appropriate image from two choices on the left and right sides of the screen. During the selection phase, the eye-tracker is activated. The behavioral data and the eyetracking data are in different files, let's handle the behavioral data first. My experiment code is in #file:main.js, the data is in #file:experiment_data.csv. After participants finish my experiment, I have the results in a terrible, hard-to-read format, in #file:results_dev.csv. This is not a true csv, so it needs some refactoring. I want python code that can parse the results in the #file:results.ipynb that turns this csv into a pandas dataframe, and transform it into a meaningful format, so that I can study every participants' events so it's easier to read. For example, before every submission, I have some metadata as comment like this:
 
 # Results on Thu, 18 Sep 2025 11:52:32 GMT
 # USER AGENT: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
 # Design number was non-random = 15
 
-and column names are in comments before the data, such as:
-# Columns below this comment are as follows:
+Then, before rows for specific "trial" events, there are the column names in comments before the data, such as:
 # 1. Results reception time.
 # 2. MD5 hash of participant's IP address.
 # 3. Controller name.
@@ -118,14 +118,15 @@ When the experiments start, I have additional logged info for every event, such 
 # 22. participant_id.
 # 23. Comments.
 
-So when the practice starts at "Order number item 6", I wanna see columns with the participant_id, the group the participant is in (every participants should be assigned to only one group autoatically), the number (no) of the sentence, the item number (the stimuli number), the condition, counterbalancing (y/n) and the left and right values in the experimental dataset (these are taken directly from the csv by pcibex, please return these as well...)
+I wanna see rows with the participant_id, the group the participant is in (every participants should be assigned to only one group autoatically), the number (no) of the sentence, the item number (the stimuli number), the condition, counterbalancing (y/n) and the left and right values in the experimental dataset (these are taken directly from the csv by pcibex, please return these as well...)
 
 From the rows under the experiments, get me eyetracking calibration events and their timestamp and value, the key events/reading times of the regions (time between r1, r2, r3, r4, r5, r6, r7; every button/key push marks the end of the region's reading), the question RT (the time it took to understand the question), and the Selector's choice selection's time and selection result. These should be the same for practice and live trials.
 
-So, after the metadata, there should be RTs for every region (r1 to r7), the question RT, and the choice RT and result (left or right).
-
-I need python code in this new notebook I just made called #file:results.ipynb that can parse the results file, and transform it into a meaningful format, preferably to a pandas dataframe, so that I can study every participants' events: the reading times of word regions; the question reading time; the choice time; and the choice they make (left or right) for every item and condition that is assigned to their group. 
 In this example, the file has data for only one complete submission from a participant named "roro101". So in the dataframe I want to see the this name as participant_id for every event (row). 
+
+I will tell you about eye tracking data later, first let's do the behavioral data.
+
+####
 
 Eye tracking data is in a separate file for each participant, it records gaze times on the left and right canvasses (AOIs, corresponding to the left and right images and consequent choices), please find this one in #roro101.csv. 
 
