@@ -100,3 +100,23 @@ b	5
 c	5				
 
 Target: 7 people per condition = 21
+
+
+
+
+
+
+
+For ana ET, create a new metric that is combination conditionxchoice (6), run the lmer with that, which should tell me how do these affect the total dwell time
+
+model1 <- lmer(ET ~ newvariable + (condition | item) + (condition | participant), df, REML = FALSE)
+
+pairwise emmeans for this
+
+
+
+define variables first as "factor"
+
+
+
+var <- as.factor(var, c("focus", "contrastive", "exhaustive"))

@@ -34,8 +34,14 @@ model <- glmer(
 )
 
 # Summaries and inferential statistics
-anova_lines <- capture.output(car::Anova(model, type = "III"))
+# anova_lines <- capture.output(car::Anova(model, type = "III"))
+summary(model)
+
 emm <- emmeans(model, ~ condition)
+summary(emm)
+
+emmeans(model, list(pairwise ~ condition), adjust = "tukey")
+
 emm_logit <- capture.output(emm)
 emm_prob <- capture.output(summary(emm, type = "response"))
 
