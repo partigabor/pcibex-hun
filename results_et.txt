@@ -1,245 +1,9 @@
 Linear mixed-effects model comparisons
-Generated: 2025-11-14 08:52:06 UTC
+Generated: 2025-11-14 10:18:10 UTC
 
 =============================================
 ============ Metric: total_dwell ============
 =============================================
-
-
----------------------------------------------
------- Model 1 Summary [total_dwell]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ condition + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-    317.3     343.0    -152.6     305.3       534 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--2.6544 -0.6039 -0.1027  0.4327  4.4786 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.03468  0.1862  
- item        (Intercept) 0.02361  0.1537  
- Residual                0.08529  0.2920  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                     Estimate Std. Error t value
-(Intercept)           0.65975    0.05424  12.164
-conditionfocus       -0.02222    0.03078  -0.722
-conditioncontrastive  0.04422    0.03078   1.436
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf
-conditinfcs -0.284       
-cndtncntrst -0.284  0.500
-
-----------------------------------------------------
------- Type III Anova (Model 1) [total_dwell] ------
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-               Chisq Df Pr(>Chisq)    
-(Intercept) 147.9651  1    < 2e-16 ***
-condition     4.8273  2    0.08949 .  
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 2 Summary [total_dwell]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: 
-ET ~ condition + chosen_type:condition + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-    294.1     332.7    -138.0     276.1       531 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--2.7299 -0.6351 -0.0843  0.4417  4.7839 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.03755  0.1938  
- item        (Intercept) 0.02377  0.1542  
- Residual                0.08007  0.2830  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                                   Estimate Std. Error t value
-(Intercept)                        0.629490   0.055241  11.395
-conditionfocus                    -0.002027   0.030830  -0.066
-conditioncontrastive               0.112037   0.041511   2.699
-conditionexclusive:chosen_typeB    0.495153   0.096048   5.155
-conditionfocus:chosen_typeB        0.181281   0.099360   1.824
-conditioncontrastive:chosen_typeB -0.064389   0.048235  -1.335
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf cndtnc cndtnx:_B cndtnf:_B
-conditinfcs -0.280                                  
-cndtncntrst -0.211  0.375                           
-cndtnxcl:_B -0.106  0.179  0.156                    
-cndtnfcs:_B -0.007 -0.167  0.012  0.064             
-cndtncnt:_B  0.002 -0.003 -0.681 -0.022    -0.004   
-
-----------------------------------------------------
---- Type III Anova (Model 2) [total_dwell] ---
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-                         Chisq Df Pr(>Chisq)    
-(Intercept)           129.8524  1  < 2.2e-16 ***
-condition               8.6383  2    0.01331 *  
-condition:chosen_type  30.3006  3  1.193e-06 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 3 Summary [total_dwell]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-    316.6     346.6    -151.3     302.6       533 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--2.6007 -0.5946 -0.1006  0.4428  4.3827 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.03431  0.1852  
- item        (Intercept) 0.02296  0.1515  
- Residual                0.08495  0.2915  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                     Estimate Std. Error t value
-(Intercept)           0.65566    0.05383  12.180
-conditionfocus       -0.02184    0.03072  -0.711
-conditioncontrastive  0.00925    0.03736   0.248
-chosen_typeB          0.06696    0.04071   1.645
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf cndtnc
-conditinfcs -0.286              
-cndtncntrst -0.208  0.407       
-chosen_typB -0.046  0.007 -0.569
-
-----------------------------------------------------
------- Type III Anova (Model 3) [total_dwell] ------
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-               Chisq Df Pr(>Chisq)    
-(Intercept) 148.3540  1     <2e-16 ***
-condition     0.8510  2     0.6534    
-chosen_type   2.7056  1     0.1000 .  
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 4 Summary [total_dwell]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ chosen_type + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-    313.5     334.9    -151.7     303.5       535 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--2.5609 -0.6054 -0.0966  0.4470  4.4065 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.03424  0.1850  
- item        (Intercept) 0.02281  0.1510  
- Residual                0.08512  0.2918  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-             Estimate Std. Error t value
-(Intercept)   0.64791    0.05120  12.654
-chosen_typeB  0.08218    0.03177   2.587
-
-Correlation of Fixed Effects:
-            (Intr)
-chosen_typB -0.145
-
-----------------------------------------------------
------- Type III Anova (Model 4) [total_dwell] ------
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-               Chisq Df Pr(>Chisq)    
-(Intercept) 160.1322  1  < 2.2e-16 ***
-chosen_type   6.6931  1   0.009679 ** 
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 5 Summary [total_dwell]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ combined + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-    294.1     332.7    -138.0     276.1       531 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--2.7299 -0.6351 -0.0843  0.4417  4.7839 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.03755  0.1938  
- item        (Intercept) 0.02377  0.1542  
- Residual                0.08007  0.2830  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                       Estimate Std. Error t value
-(Intercept)            0.629490   0.055241  11.395
-combinedexclusive_B    0.495153   0.096048   5.155
-combinedfocus_A       -0.002027   0.030830  -0.066
-combinedfocus_B        0.179254   0.098999   1.811
-combinedcontrastive_A  0.112037   0.041511   2.699
-combinedcontrastive_B  0.047648   0.036372   1.310
-
-Correlation of Fixed Effects:
-            (Intr) cmbndx_B cmbndf_A cmbndf_B cmbndc_A
-cmbndxcls_B -0.106                                    
-combndfcs_A -0.280  0.179                             
-combndfcs_B -0.094  0.120    0.144                    
-cmbndcntr_A -0.211  0.156    0.375    0.129           
-cmbndcntr_B -0.237  0.149    0.424    0.140    0.238  
-
-----------------------------------------------------
------- Type III Anova (Model 5) [total_dwell] ------
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-              Chisq Df Pr(>Chisq)    
-(Intercept) 129.852  1  < 2.2e-16 ***
-combined     35.442  5  1.228e-06 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 ----------------------------------------------------
 ------ Model Comparison (1, 2, 3) (Likelihood-ratio tests) [total_dwell] ------
@@ -247,12 +11,12 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 Data: df
 Models:
 model1: ET ~ condition + (1 | item) + (1 | participant)
-model3: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
-model2: ET ~ condition + chosen_type:condition + (1 | item) + (1 | participant)
+model2: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
+model3: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
        npar    AIC    BIC  logLik -2*log(L)   Chisq Df Pr(>Chisq)    
 model1    6 317.30 343.05 -152.65    305.30                          
-model3    7 316.60 346.65 -151.30    302.61  2.6945  1     0.1007    
-model2    9 294.06 332.68 -138.03    276.06 26.5456  2  1.721e-06 ***
+model2    7 316.60 346.65 -151.30    302.61  2.6945  1     0.1007    
+model3    9 294.06 332.68 -138.03    276.06 26.5456  2  1.721e-06 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -383,254 +147,18 @@ ________________________________________________________________________________
 ============ Metric: ffd ============
 =============================================
 
-
----------------------------------------------
------- Model 1 Summary [ffd]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ condition + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-   -477.8    -452.1     244.9    -489.8       534 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--1.3881 -0.7924 -0.2722  0.5300  2.7937 
-
-Random effects:
- Groups      Name        Variance  Std.Dev.
- participant (Intercept) 0.0010032 0.03167 
- item        (Intercept) 0.0003912 0.01978 
- Residual                0.0225666 0.15022 
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                     Estimate Std. Error t value
-(Intercept)           0.23570    0.01344  17.542
-conditionfocus        0.01029    0.01583   0.650
-conditioncontrastive  0.01867    0.01583   1.179
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf
-conditinfcs -0.589       
-cndtncntrst -0.589  0.500
-
-----------------------------------------------------
------- Type III Anova (Model 1) [ffd] ------
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-               Chisq Df Pr(>Chisq)    
-(Intercept) 307.7071  1     <2e-16 ***
-condition     1.3947  2     0.4979    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 2 Summary [ffd]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: 
-ET ~ condition + chosen_type:condition + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-   -472.7    -434.1     245.4    -490.7       531 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--1.3936 -0.7938 -0.2720  0.5263  2.7957 
-
-Random effects:
- Groups      Name        Variance  Std.Dev.
- participant (Intercept) 0.0010187 0.03192 
- item        (Intercept) 0.0004053 0.02013 
- Residual                0.0225106 0.15004 
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                                   Estimate Std. Error t value
-(Intercept)                        0.232986   0.013796  16.888
-conditionfocus                     0.013436   0.016318   0.823
-conditioncontrastive               0.022583   0.021331   1.059
-conditionexclusive:chosen_typeB    0.044389   0.048546   0.914
-conditionfocus:chosen_typeB       -0.007707   0.050506  -0.153
-conditioncontrastive:chosen_typeB -0.002061   0.023956  -0.086
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf cndtnc cndtnx:_B cndtnf:_B
-conditinfcs -0.593                                  
-cndtncntrst -0.456  0.385                           
-cndtnxcl:_B -0.215  0.176  0.146                    
-cndtnfcs:_B -0.007 -0.166  0.006  0.031             
-cndtncnt:_B  0.002 -0.001 -0.656 -0.010    -0.003   
-
-----------------------------------------------------
---- Type III Anova (Model 2) [ffd] ---
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-                         Chisq Df Pr(>Chisq)    
-(Intercept)           285.1918  1     <2e-16 ***
-condition               1.3240  2     0.5158    
-condition:chosen_type   0.8748  3     0.8315    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 3 Summary [ffd]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-   -475.9    -445.9     244.9    -489.9       533 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--1.3996 -0.7894 -0.2833  0.5326  2.7966 
-
-Random effects:
- Groups      Name        Variance  Std.Dev.
- participant (Intercept) 0.0010055 0.03171 
- item        (Intercept) 0.0003803 0.01950 
- Residual                0.0225700 0.15023 
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                     Estimate Std. Error t value
-(Intercept)          0.235400   0.013472  17.473
-conditionfocus       0.010322   0.015836   0.652
-conditioncontrastive 0.016120   0.018911   0.852
-chosen_typeB         0.004879   0.019794   0.247
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf cndtnc
-conditinfcs -0.588              
-cndtncntrst -0.443  0.415       
-chosen_typB -0.090  0.007 -0.547
-
-----------------------------------------------------
------- Type III Anova (Model 3) [ffd] ------
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-               Chisq Df Pr(>Chisq)    
-(Intercept) 305.3151  1     <2e-16 ***
-condition     0.8339  2     0.6590    
-chosen_type   0.0608  1     0.8053    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 4 Summary [ffd]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ chosen_type + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-   -479.1    -457.6     244.5    -489.1       535 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--1.3852 -0.8017 -0.2720  0.5329  2.8177 
-
-Random effects:
- Groups      Name        Variance  Std.Dev.
- participant (Intercept) 0.0010088 0.03176 
- item        (Intercept) 0.0003623 0.01904 
- Residual                0.0226164 0.15039 
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-             Estimate Std. Error t value
-(Intercept)   0.24243    0.01045  23.198
-chosen_typeB  0.01251    0.01579   0.792
-
-Correlation of Fixed Effects:
-            (Intr)
-chosen_typB -0.353
-
-----------------------------------------------------
------- Type III Anova (Model 4) [ffd] ------
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-               Chisq Df Pr(>Chisq)    
-(Intercept) 538.1630  1     <2e-16 ***
-chosen_type   0.6273  1     0.4283    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 5 Summary [ffd]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ combined + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-   -472.7    -434.1     245.4    -490.7       531 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--1.3936 -0.7938 -0.2720  0.5263  2.7957 
-
-Random effects:
- Groups      Name        Variance  Std.Dev.
- participant (Intercept) 0.0010187 0.03192 
- item        (Intercept) 0.0004053 0.02013 
- Residual                0.0225106 0.15004 
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                      Estimate Std. Error t value
-(Intercept)           0.232986   0.013796  16.888
-combinedexclusive_B   0.044389   0.048546   0.914
-combinedfocus_A       0.013436   0.016318   0.823
-combinedfocus_B       0.005728   0.050428   0.114
-combinedcontrastive_A 0.022583   0.021331   1.059
-combinedcontrastive_B 0.020522   0.018920   1.085
-
-Correlation of Fixed Effects:
-            (Intr) cmbndx_B cmbndf_A cmbndf_B cmbndc_A
-cmbndxcls_B -0.215                                    
-combndfcs_A -0.593  0.176                             
-combndfcs_B -0.199  0.088    0.157                    
-cmbndcntr_A -0.456  0.146    0.385    0.131           
-cmbndcntr_B -0.512  0.152    0.432    0.143    0.296  
-
-----------------------------------------------------
------- Type III Anova (Model 5) [ffd] ------
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-              Chisq Df Pr(>Chisq)    
-(Intercept) 285.192  1     <2e-16 ***
-combined      2.273  5     0.8102    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
 ----------------------------------------------------
 ------ Model Comparison (1, 2, 3) (Likelihood-ratio tests) [ffd] ------
 ----------------------------------------------------
 Data: df
 Models:
 model1: ET ~ condition + (1 | item) + (1 | participant)
-model3: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
-model2: ET ~ condition + chosen_type:condition + (1 | item) + (1 | participant)
+model2: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
+model3: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
        npar     AIC     BIC logLik -2*log(L)  Chisq Df Pr(>Chisq)
 model1    6 -477.83 -452.08 244.92   -489.83                     
-model3    7 -475.89 -445.85 244.95   -489.89 0.0599  1     0.8066
-model2    9 -472.70 -434.08 245.35   -490.70 0.8119  2     0.6663
+model2    7 -475.89 -445.85 244.95   -489.89 0.0599  1     0.8066
+model3    9 -472.70 -434.08 245.35   -490.70 0.8119  2     0.6663
 
 ----------------------------------------------------
 ------ Model 4 Summary (chosen_type) [ffd]: ------
@@ -755,248 +283,151 @@ P value adjustment: tukey method for comparing a family of 6 estimates
 
 ________________________________________________________________________________
 
-====== Metric: fixation_total ======
-[ERROR] Missing column 'fixation_total' in results.csv
-
 =============================================
-============ Metric: transitions ============
+============ Metric: total_fixation ============
 =============================================
 
-
----------------------------------------------
------- Model 1 Summary [transitions]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ condition + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-    900.4     926.1    -444.2     888.4       534 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--2.4232 -0.7168 -0.1594  0.6139  3.5283 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.09035  0.3006  
- item        (Intercept) 0.04970  0.2229  
- Residual                0.25531  0.5053  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                     Estimate Std. Error t value
-(Intercept)           0.55316    0.08480   6.523
-conditionfocus       -0.05995    0.05326  -1.126
-conditioncontrastive  0.06344    0.05326   1.191
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf
-conditinfcs -0.314       
-cndtncntrst -0.314  0.500
-
 ----------------------------------------------------
------- Type III Anova (Model 1) [transitions] ------
+------ Model Comparison (1, 2, 3) (Likelihood-ratio tests) [total_fixation] ------
 ----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-              Chisq Df Pr(>Chisq)    
-(Intercept) 42.5492  1  6.893e-11 ***
-condition    5.3686  2    0.06827 .  
+Data: df
+Models:
+model1: ET ~ condition + (1 | item) + (1 | participant)
+model2: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
+model3: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
+       npar    AIC    BIC  logLik -2*log(L)   Chisq Df Pr(>Chisq)    
+model1    6 772.87 798.62 -380.43    760.87                          
+model2    7 773.87 803.91 -379.93    759.87  0.9992  1     0.3175    
+model3    9 759.10 797.73 -370.55    741.10 18.7670  2   8.41e-05 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
----------------------------------------------
------- Model 2 Summary [transitions]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: 
-ET ~ condition + chosen_type:condition + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-    903.4     942.1    -442.7     885.4       531 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--2.4200 -0.7064 -0.1587  0.6194  3.6243 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.09196  0.3032  
- item        (Intercept) 0.05057  0.2249  
- Residual                0.25344  0.5034  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                                  Estimate Std. Error t value
-(Intercept)                        0.53867    0.08597   6.266
-conditionfocus                    -0.04892    0.05484  -0.892
-conditioncontrastive               0.12841    0.07369   1.743
-conditionexclusive:chosen_typeB    0.23702    0.17032   1.392
-conditionfocus:chosen_typeB        0.06226    0.17626   0.353
-conditioncontrastive:chosen_typeB -0.08655    0.08544  -1.013
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf cndtnc cndtnx:_B cndtnf:_B
-conditinfcs -0.320                                  
-cndtncntrst -0.241  0.376                           
-cndtnxcl:_B -0.121  0.179  0.156                    
-cndtnfcs:_B -0.008 -0.167  0.012  0.062             
-cndtncnt:_B  0.003 -0.003 -0.679 -0.021    -0.004   
-
 ----------------------------------------------------
---- Type III Anova (Model 2) [transitions] ---
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-                        Chisq Df Pr(>Chisq)    
-(Intercept)           39.2607  1  3.708e-10 ***
-condition              5.8241  2    0.05436 .  
-condition:chosen_type  2.9744  3    0.39559    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 3 Summary [transitions]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-    902.4     932.4    -444.2     888.4       533 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--2.4223 -0.7189 -0.1599  0.6152  3.5266 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.09038  0.3006  
- item        (Intercept) 0.04980  0.2232  
- Residual                0.25528  0.5053  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                      Estimate Std. Error t value
-(Intercept)           0.553762   0.084946   6.519
-conditionfocus       -0.060005   0.053260  -1.127
-conditioncontrastive  0.068627   0.064712   1.061
-chosen_typeB         -0.009932   0.070389  -0.141
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf cndtnc
-conditinfcs -0.314              
-cndtncntrst -0.229  0.407       
-chosen_typB -0.051  0.007 -0.568
-
-----------------------------------------------------
------- Type III Anova (Model 3) [transitions] ------
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-              Chisq Df Pr(>Chisq)    
-(Intercept) 42.4975  1  7.077e-11 ***
-condition    4.0372  2     0.1328    
-chosen_type  0.0199  1     0.8878    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 4 Summary [transitions]: ------
----------------------------------------------
+------ Model 4 Summary (chosen_type) [total_fixation]: ------
 Linear mixed model fit by maximum likelihood  ['lmerMod']
 Formula: ET ~ chosen_type + (1 | item) + (1 | participant)
    Data: df
 
       AIC       BIC    logLik -2*log(L)  df.resid 
-    902.4     923.8    -446.2     892.4       535 
+    770.6     792.1    -380.3     760.6       535 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--2.3989 -0.7291 -0.1563  0.6338  3.5451 
+-2.2176 -0.6706 -0.1108  0.5765  3.9120 
 
 Random effects:
  Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.09017  0.3003  
- item        (Intercept) 0.04904  0.2215  
- Residual                0.25749  0.5074  
+ participant (Intercept) 0.10444  0.3232  
+ item        (Intercept) 0.03477  0.1865  
+ Residual                0.19823  0.4452  
 Number of obs: 540, groups:  participant, 30; item, 18
 
 Fixed effects:
              Estimate Std. Error t value
-(Intercept)   0.53940    0.07983   6.757
-chosen_typeB  0.06395    0.05516   1.159
+(Intercept)   1.36303    0.07686  17.733
+chosen_typeB  0.06328    0.04853   1.304
 
 Correlation of Fixed Effects:
             (Intr)
-chosen_typB -0.161
+chosen_typB -0.147
 
 ----------------------------------------------------
------- Type III Anova (Model 4) [transitions] ------
+Emmeans (model 4) [total_fixation]:
+$`emmeans of chosen_type`
+ chosen_type emmean     SE   df lower.CL upper.CL
+ A             1.36 0.0778 44.7     1.21     1.52
+ B             1.43 0.0855 65.1     1.26     1.60
+
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$`pairwise differences of chosen_type`
+ 1     estimate     SE  df t.ratio p.value
+ A - B  -0.0633 0.0487 510  -1.301  0.1940
+
+Degrees-of-freedom method: kenward-roger 
+
+
 ----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
-
-Response: ET
-              Chisq Df Pr(>Chisq)    
-(Intercept) 45.6567  1  1.409e-11 ***
-chosen_type  1.3441  1     0.2463    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 5 Summary [transitions]: ------
+------ Model 5 Summary (combined new variable) [total_fixation]: ------
 ---------------------------------------------
 Linear mixed model fit by maximum likelihood  ['lmerMod']
 Formula: ET ~ combined + (1 | item) + (1 | participant)
    Data: df
 
       AIC       BIC    logLik -2*log(L)  df.resid 
-    903.4     942.1    -442.7     885.4       531 
+    759.1     797.7    -370.6     741.1       531 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--2.4200 -0.7064 -0.1587  0.6194  3.6243 
+-2.3638 -0.6673 -0.0713  0.5416  4.1574 
 
 Random effects:
  Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.09196  0.3032  
- item        (Intercept) 0.05057  0.2249  
- Residual                0.25344  0.5034  
+ participant (Intercept) 0.10686  0.3269  
+ item        (Intercept) 0.03565  0.1888  
+ Residual                0.19023  0.4362  
 Number of obs: 540, groups:  participant, 30; item, 18
 
 Fixed effects:
-                      Estimate Std. Error t value
-(Intercept)            0.53867    0.08597   6.266
-combinedexclusive_B    0.23702    0.17032   1.392
-combinedfocus_A       -0.04892    0.05484  -0.892
-combinedfocus_B        0.01333    0.17564   0.076
-combinedcontrastive_A  0.12841    0.07369   1.743
-combinedcontrastive_B  0.04186    0.06462   0.648
+                        Estimate Std. Error t value
+(Intercept)            1.3518482  0.0817392  16.539
+combinedexclusive_B    0.5817448  0.1480788   3.929
+combinedfocus_A       -0.0221004  0.0475157  -0.465
+combinedfocus_B        0.2656330  0.1525935   1.741
+combinedcontrastive_A  0.1157626  0.0640123   1.808
+combinedcontrastive_B  0.0003123  0.0560746   0.006
 
 Correlation of Fixed Effects:
             (Intr) cmbndx_B cmbndf_A cmbndf_B cmbndc_A
-cmbndxcls_B -0.121                                    
-combndfcs_A -0.320  0.179                             
-combndfcs_B -0.108  0.118    0.145                    
-cmbndcntr_A -0.241  0.156    0.376    0.129           
-cmbndcntr_B -0.272  0.149    0.424    0.140    0.242  
+cmbndxcls_B -0.111                                    
+combndfcs_A -0.292  0.179                             
+combndfcs_B -0.098  0.122    0.144                    
+cmbndcntr_A -0.219  0.157    0.375    0.130           
+cmbndcntr_B -0.247  0.149    0.424    0.140    0.237  
 
 ----------------------------------------------------
------- Type III Anova (Model 5) [transitions] ------
-----------------------------------------------------
-Analysis of Deviance Table (Type III Wald chisquare tests)
+Emmeans (model 5) [total_fixation]:
+---------------------------------------------
+$`emmeans of combined`
+ combined      emmean     SE    df lower.CL upper.CL
+ exclusive_A     1.35 0.0827  55.2     1.19     1.52
+ exclusive_B     1.93 0.1620 403.0     1.61     2.25
+ focus_A         1.33 0.0826  55.0     1.16     1.50
+ focus_B         1.62 0.1670 422.2     1.29     1.95
+ contrastive_A   1.47 0.0931  86.5     1.28     1.65
+ contrastive_B   1.35 0.0879  69.8     1.18     1.53
 
-Response: ET
-              Chisq Df Pr(>Chisq)    
-(Intercept) 39.2607  1  3.708e-10 ***
-combined     8.3825  5     0.1364    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$`pairwise differences of combined`
+ 1                              estimate     SE  df t.ratio p.value
+ exclusive_A - exclusive_B     -0.581745 0.1490 518  -3.901  0.0015
+ exclusive_A - focus_A          0.022100 0.0478 499   0.463  0.9973
+ exclusive_A - focus_B         -0.265633 0.1540 515  -1.729  0.5131
+ exclusive_A - contrastive_A   -0.115763 0.0644 512  -1.797  0.4685
+ exclusive_A - contrastive_B   -0.000312 0.0564 507  -0.006  1.0000
+ exclusive_B - focus_A          0.603845 0.1480 517   4.074  0.0008
+ exclusive_B - focus_B          0.316112 0.2010 510   1.577  0.6145
+ exclusive_B - contrastive_A    0.465982 0.1530 516   3.048  0.0291
+ exclusive_B - contrastive_B    0.581433 0.1510 517   3.841  0.0019
+ focus_A - focus_B             -0.287733 0.1540 516  -1.866  0.4244
+ focus_A - contrastive_A       -0.137863 0.0642 511  -2.146  0.2652
+ focus_A - contrastive_B       -0.022413 0.0564 507  -0.397  0.9987
+ focus_B - contrastive_A        0.149870 0.1590 515   0.944  0.9347
+ focus_B - contrastive_B        0.265321 0.1560 515   1.700  0.5325
+ contrastive_A - contrastive_B  0.115450 0.0750 524   1.540  0.6387
+
+Degrees-of-freedom method: kenward-roger 
+P value adjustment: tukey method for comparing a family of 6 estimates 
+
+
+________________________________________________________________________________
+
+=============================================
+============ Metric: transitions ============
+=============================================
 
 ----------------------------------------------------
 ------ Model Comparison (1, 2, 3) (Likelihood-ratio tests) [transitions] ------
@@ -1004,12 +435,12 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 Data: df
 Models:
 model1: ET ~ condition + (1 | item) + (1 | participant)
-model3: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
-model2: ET ~ condition + chosen_type:condition + (1 | item) + (1 | participant)
+model2: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
+model3: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
        npar    AIC    BIC  logLik -2*log(L)  Chisq Df Pr(>Chisq)
 model1    6 900.39 926.14 -444.20    888.39                     
-model3    7 902.37 932.41 -444.19    888.37 0.0199  1     0.8879
-model2    9 903.44 942.06 -442.72    885.44 2.9366  2     0.2303
+model2    7 902.37 932.41 -444.19    888.37 0.0199  1     0.8879
+model3    9 903.44 942.06 -442.72    885.44 2.9366  2     0.2303
 
 ----------------------------------------------------
 ------ Model 4 Summary (chosen_type) [transitions]: ------
