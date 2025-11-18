@@ -69,43 +69,77 @@ for (metric in metrics) {
     model_comp <- anova(model1, model2, model3)
     comp_lines <- capture.output(print(model_comp))
 
-    
-    # Plot: EMMs (with 95% CI) + raw means, back-transformed via expm1
-    emm_tbl <- as.data.frame(emmeans(model3, ~ condition * chosen_type))
-    emm_tbl$pred  <- expm1(emm_tbl$emmean)
-    emm_tbl$lower <- expm1(emm_tbl$lower.CL)
-    emm_tbl$upper <- expm1(emm_tbl$upper.CL)
+    # ---- Additional log-scale plots per metric (condition × chosen_type) ----
+    # Y = log1p(ET), X = condition, groups = chosen_type (A/B)
+    for (metric in metrics) {
+        if (!metric %in% names(df)) next
 
-    # Choose y on raw scale for plotting
-    has_raw <- "ET_raw" %in% names(df)
-    if (!has_raw) df$ET_bt <- expm1(df$ET)
-    y_var <- if (has_raw) "ET_raw" else "ET_bt"
+        dfp <- droplevels(df[!is.na(df[[metric]]), ])
+        dfp$ET_log <- log1p(dfp[[metric]])
 
-    # EMMs back-transformed
-    emm_tbl <- as.data.frame(emmeans(model3, ~ condition * chosen_type))
-    emm_tbl$pred  <- expm1(emm_tbl$emmean)
-    emm_tbl$lower <- expm1(emm_tbl$lower.CL)
-    emm_tbl$upper <- expm1(emm_tbl$upper.CL)
+        pd <- position_dodge(width = 0.75)
+        p_log <- ggplot(dfp, aes(x = condition, y = ET_log, fill = chosen_type)) +
+            geom_boxplot(position = pd, width = 0.7, outlier.shape = NA) +
+            geom_jitter(
+                aes(color = chosen_type),
+                position = position_jitterdodge(jitter.width = 0.15, dodge.width = 0.75),
+                size = 1, alpha = 0.35, show.legend = FALSE
+            ) +
+            stat_summary(
+                aes(group = chosen_type),
+                fun = mean, geom = "point",
+                position = pd, shape = 23, size = 3, color = "black"
+            ) +
+            labs(
+                title = paste0("Log-scale ET by condition × chosen_type (", metric, ")"),
+                x = "Condition",
+                y = paste0("log1p(", metric, ")"),
+                fill = "Chosen type"
+            ) +
+            theme_minimal(base_size = 12)
 
-    pd <- position_dodge(width = 0.85)
-    p <- ggplot(df, aes(x = condition, y = .data[[y_var]], fill = chosen_type)) +
-        geom_boxplot(position = pd, width = 0.7, outlier.shape = NA) +
-        geom_jitter(aes(color = chosen_type),
-                    position = position_jitterdodge(jitter.width = 0.15, dodge.width = 0.85),
-                    size = 1, alpha = 0.3, show.legend = FALSE) +
-        geom_errorbar(data = emm_tbl,
-                    aes(x = condition, y = pred, ymin = lower, ymax = upper, group = chosen_type),
-                    position = pd, width = 0.15, color = "black", inherit.aes = FALSE) +
-        geom_point(data = emm_tbl,
-                aes(x = condition, y = pred, fill = chosen_type, group = chosen_type),
-                position = pd, shape = 23, size = 3, color = "black", inherit.aes = FALSE) +
-        labs(title = paste0("Boxplots + EMMs: condition × chosen_type (", metric, ")"),
-            x = "Condition",
-            y = paste0(metric, " (raw scale)"),
-            fill = "Chosen type") +
-        theme_minimal(base_size = 12)
+        ggsave(
+            filename = paste0("log_boxplot_", metric, ".png"),
+            plot = p_log, width = 7.5, height = 5, dpi = 300, bg = "white"
+        )
+    }
 
-    ggsave(filename = paste0("boxplot_", metric, ".png"), plot = p, width = 7.5, height = 5, dpi = 300, bg = "white")
+    # # Plot: EMMs (with 95% CI) + raw means, back-transformed via expm1
+    # emm_tbl <- as.data.frame(emmeans(model3, ~ condition * chosen_type))
+    # emm_tbl$pred  <- expm1(emm_tbl$emmean)
+    # emm_tbl$lower <- expm1(emm_tbl$lower.CL)
+    # emm_tbl$upper <- expm1(emm_tbl$upper.CL)
+
+    # # Choose y on raw scale for plotting
+    # has_raw <- "ET_raw" %in% names(df)
+    # if (!has_raw) df$ET_bt <- expm1(df$ET)
+    # y_var <- if (has_raw) "ET_raw" else "ET_bt"
+
+    # # EMMs back-transformed
+    # emm_tbl <- as.data.frame(emmeans(model3, ~ condition * chosen_type))
+    # emm_tbl$pred  <- expm1(emm_tbl$emmean)
+    # emm_tbl$lower <- expm1(emm_tbl$lower.CL)
+    # emm_tbl$upper <- expm1(emm_tbl$upper.CL)
+
+    # pd <- position_dodge(width = 0.85)
+    # p <- ggplot(df, aes(x = condition, y = .data[[y_var]], fill = chosen_type)) +
+    #     geom_boxplot(position = pd, width = 0.7, outlier.shape = NA) +
+    #     geom_jitter(aes(color = chosen_type),
+    #                 position = position_jitterdodge(jitter.width = 0.15, dodge.width = 0.85),
+    #                 size = 1, alpha = 0.3, show.legend = FALSE) +
+    #     geom_errorbar(data = emm_tbl,
+    #                 aes(x = condition, y = pred, ymin = lower, ymax = upper, group = chosen_type),
+    #                 position = pd, width = 0.15, color = "black", inherit.aes = FALSE) +
+    #     geom_point(data = emm_tbl,
+    #             aes(x = condition, y = pred, fill = chosen_type, group = chosen_type),
+    #             position = pd, shape = 23, size = 3, color = "black", inherit.aes = FALSE) +
+    #     labs(title = paste0("Boxplots + EMMs: condition × chosen_type (", metric, ")"),
+    #         x = "Condition",
+    #         y = paste0(metric, " (raw scale)"),
+    #         fill = "Chosen type") +
+    #     theme_minimal(base_size = 12)
+
+    # ggsave(filename = paste0("boxplot_", metric, ".png"), plot = p, width = 7.5, height = 5, dpi = 300, bg = "white")
 
     # Report
     report <- c(
