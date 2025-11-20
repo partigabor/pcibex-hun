@@ -1,12 +1,12 @@
 Linear mixed-effects model comparisons
-Generated: 2025-11-14 10:18:10 UTC
+Generated: 2025-11-20 04:50:50 UTC
 
 =============================================
-============ Metric: total_dwell ============
+============ Metric: transitions ============
 =============================================
 
 ----------------------------------------------------
------- Model Comparison (1, 2, 3) (Likelihood-ratio tests) [total_dwell] ------
+------ Model Comparison (1, 2, 3) (Likelihood-ratio tests) [transitions] ------
 ----------------------------------------------------
 Data: df
 Models:
@@ -21,7 +21,7 @@ model3    9 294.06 332.68 -138.03    276.06 26.5456  2  1.721e-06 ***
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 ----------------------------------------------------
------- Model 4 Summary (chosen_type) [total_dwell]: ------
+------ Model 4 Summary (chosen_type) [transitions]: ------
 Linear mixed model fit by maximum likelihood  ['lmerMod']
 Formula: ET ~ chosen_type + (1 | item) + (1 | participant)
    Data: df
@@ -50,7 +50,7 @@ Correlation of Fixed Effects:
 chosen_typB -0.145
 
 ----------------------------------------------------
-Emmeans (model 4) [total_dwell]:
+Emmeans (model 4) [transitions]:
 $`emmeans of chosen_type`
  chosen_type emmean     SE   df lower.CL upper.CL
  A            0.648 0.0519 40.7    0.543    0.753
@@ -67,7 +67,7 @@ Degrees-of-freedom method: kenward-roger
 
 
 ----------------------------------------------------
------- Model 5 Summary (combined new variable) [total_dwell]: ------
+------ Model 5 Summary (combined new variable) [transitions]: ------
 ---------------------------------------------
 Linear mixed model fit by maximum likelihood  ['lmerMod']
 Formula: ET ~ combined + (1 | item) + (1 | participant)
@@ -105,7 +105,7 @@ cmbndcntr_A -0.211  0.156    0.375    0.129
 cmbndcntr_B -0.237  0.149    0.424    0.140    0.238  
 
 ----------------------------------------------------
-Emmeans (model 5) [total_dwell]:
+Emmeans (model 5) [transitions]:
 ---------------------------------------------
 $`emmeans of combined`
  combined      emmean     SE    df lower.CL upper.CL
@@ -144,11 +144,11 @@ P value adjustment: tukey method for comparing a family of 6 estimates
 ________________________________________________________________________________
 
 =============================================
-============ Metric: ffd ============
+============ Metric: transitions ============
 =============================================
 
 ----------------------------------------------------
------- Model Comparison (1, 2, 3) (Likelihood-ratio tests) [ffd] ------
+------ Model Comparison (1, 2, 3) (Likelihood-ratio tests) [transitions] ------
 ----------------------------------------------------
 Data: df
 Models:
@@ -161,7 +161,7 @@ model2    7 -475.89 -445.85 244.95   -489.89 0.0599  1     0.8066
 model3    9 -472.70 -434.08 245.35   -490.70 0.8119  2     0.6663
 
 ----------------------------------------------------
------- Model 4 Summary (chosen_type) [ffd]: ------
+------ Model 4 Summary (chosen_type) [transitions]: ------
 Linear mixed model fit by maximum likelihood  ['lmerMod']
 Formula: ET ~ chosen_type + (1 | item) + (1 | participant)
    Data: df
@@ -190,7 +190,7 @@ Correlation of Fixed Effects:
 chosen_typB -0.353
 
 ----------------------------------------------------
-Emmeans (model 4) [ffd]:
+Emmeans (model 4) [transitions]:
 $`emmeans of chosen_type`
  chosen_type emmean     SE    df lower.CL upper.CL
  A            0.242 0.0107  31.1    0.221    0.264
@@ -207,7 +207,7 @@ Degrees-of-freedom method: kenward-roger
 
 
 ----------------------------------------------------
------- Model 5 Summary (combined new variable) [ffd]: ------
+------ Model 5 Summary (combined new variable) [transitions]: ------
 ---------------------------------------------
 Linear mixed model fit by maximum likelihood  ['lmerMod']
 Formula: ET ~ combined + (1 | item) + (1 | participant)
@@ -245,7 +245,7 @@ cmbndcntr_A -0.456  0.146    0.385    0.131
 cmbndcntr_B -0.512  0.152    0.432    0.143    0.296  
 
 ----------------------------------------------------
-Emmeans (model 5) [ffd]:
+Emmeans (model 5) [transitions]:
 ---------------------------------------------
 $`emmeans of combined`
  combined      emmean     SE    df lower.CL upper.CL
@@ -284,11 +284,11 @@ P value adjustment: tukey method for comparing a family of 6 estimates
 ________________________________________________________________________________
 
 =============================================
-============ Metric: total_fixation ============
+============ Metric: transitions ============
 =============================================
 
 ----------------------------------------------------
------- Model Comparison (1, 2, 3) (Likelihood-ratio tests) [total_fixation] ------
+------ Model Comparison (1, 2, 3) (Likelihood-ratio tests) [transitions] ------
 ----------------------------------------------------
 Data: df
 Models:
@@ -303,7 +303,7 @@ model3    9 759.10 797.73 -370.55    741.10 18.7670  2   8.41e-05 ***
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 ----------------------------------------------------
------- Model 4 Summary (chosen_type) [total_fixation]: ------
+------ Model 4 Summary (chosen_type) [transitions]: ------
 Linear mixed model fit by maximum likelihood  ['lmerMod']
 Formula: ET ~ chosen_type + (1 | item) + (1 | participant)
    Data: df
@@ -332,7 +332,7 @@ Correlation of Fixed Effects:
 chosen_typB -0.147
 
 ----------------------------------------------------
-Emmeans (model 4) [total_fixation]:
+Emmeans (model 4) [transitions]:
 $`emmeans of chosen_type`
  chosen_type emmean     SE   df lower.CL upper.CL
  A             1.36 0.0778 44.7     1.21     1.52
@@ -349,7 +349,7 @@ Degrees-of-freedom method: kenward-roger
 
 
 ----------------------------------------------------
------- Model 5 Summary (combined new variable) [total_fixation]: ------
+------ Model 5 Summary (combined new variable) [transitions]: ------
 ---------------------------------------------
 Linear mixed model fit by maximum likelihood  ['lmerMod']
 Formula: ET ~ combined + (1 | item) + (1 | participant)
@@ -387,7 +387,7 @@ cmbndcntr_A -0.219  0.157    0.375    0.130
 cmbndcntr_B -0.247  0.149    0.424    0.140    0.237  
 
 ----------------------------------------------------
-Emmeans (model 5) [total_fixation]:
+Emmeans (model 5) [transitions]:
 ---------------------------------------------
 $`emmeans of combined`
  combined      emmean     SE    df lower.CL upper.CL
