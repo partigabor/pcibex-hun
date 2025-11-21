@@ -71,38 +71,50 @@ for (metric in metrics) {
 
     # ---- Additional log-scale plots per metric (condition × chosen_type) ----
     # Y = log1p(ET), X = condition, groups = chosen_type (A/B)
-    for (metric in metrics) {
-        if (!metric %in% names(df)) next
 
-        dfp <- droplevels(df[!is.na(df[[metric]]), ])
-        dfp$ET_log <- log1p(dfp[[metric]])
+    dfp <- droplevels(df[!is.na(df[[metric]]), ])
+    dfp$ET_log <- log1p(dfp[[metric]])
 
-        pd <- position_dodge(width = 0.75)
-        p_log <- ggplot(dfp, aes(x = condition, y = ET_log, fill = chosen_type)) +
-            geom_boxplot(position = pd, width = 0.7, outlier.shape = NA) +
-            geom_jitter(
-                aes(color = chosen_type),
-                position = position_jitterdodge(jitter.width = 0.15, dodge.width = 0.75),
-                size = 1, alpha = 0.35, show.legend = FALSE
-            ) +
-            stat_summary(
-                aes(group = chosen_type),
-                fun = mean, geom = "point",
-                position = pd, shape = 23, size = 3, color = "black"
-            ) +
-            labs(
-                title = paste0("Log-scale ET by condition × chosen_type (", metric, ")"),
-                x = "Condition",
-                y = paste0("log1p(", metric, ")"),
-                fill = "Chosen type"
-            ) +
-            theme_minimal(base_size = 12)
+    # Counts per condition × chosen_type
+    count_df <- as.data.frame(table(dfp$condition, dfp$chosen_type))
+    colnames(count_df) <- c("condition","chosen_type","n")
+    y_range <- range(dfp$ET_log, na.rm = TRUE)
+    count_df$y <- y_range[2] + 0.06 * diff(y_range)  # place labels above boxes
 
-        ggsave(
-            filename = paste0("log_boxplot_", metric, ".png"),
-            plot = p_log, width = 7.5, height = 5, dpi = 300, bg = "white"
-        )
-    }
+    pd <- position_dodge(width = 0.75)
+    p_log <- ggplot(dfp, aes(x = condition, y = ET_log, fill = chosen_type)) +
+        geom_boxplot(position = pd, width = 0.7, outlier.shape = NA) +
+        geom_jitter(
+            aes(color = chosen_type),
+            position = position_jitterdodge(jitter.width = 0.15, dodge.width = 0.75),
+            size = 1, alpha = 0.35, show.legend = FALSE
+        ) +
+        stat_summary(
+            aes(group = chosen_type),
+            fun = mean, geom = "point",
+            position = pd, shape = 23, size = 3, color = "black"
+        ) +
+        geom_text(
+            data = count_df,
+            aes(x = condition, y = y, group = chosen_type,
+                label = paste0(chosen_type, ": n=", n)),
+            position = pd, vjust = 0, size = 3.3, color = "black",
+            inherit.aes = FALSE
+        ) +
+        scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
+        labs(
+            title = paste0("Log-scale ET by condition × chosen_type (", metric, ")"),
+            x = "Condition",
+            y = paste0("log1p(", metric, ")"),
+            fill = "Chosen type"
+        ) +
+        theme_minimal(base_size = 12)
+
+    ggsave(
+        filename = paste0("log_boxplot_", metric, ".png"),
+        plot = p_log, width = 7.5, height = 5, dpi = 300, bg = "white"
+    )
+
 
     # # Plot: EMMs (with 95% CI) + raw means, back-transformed via expm1
     # emm_tbl <- as.data.frame(emmeans(model3, ~ condition * chosen_type))
@@ -168,11 +180,11 @@ for (metric in metrics) {
         # paste0("----------------------------------------------------"),
         # aov2_lines,
         # "",
-        # paste0("---------------------------------------------"),
-        # paste0("------ Model 3 Summary [", metric, "]: ------"),
-        # paste0("---------------------------------------------"),
-        # capture.output(summary(model3)),
-        # "",
+        paste0("---------------------------------------------"),
+        paste0("------ Model 3 Summary [", metric, "]: ------"),
+        paste0("---------------------------------------------"),
+        capture.output(summary(model3)),
+        "",
         # paste0("----------------------------------------------------"),
         # paste0("------ Type III Anova (Model 3) [", metric, "] ------"),
         # paste0("----------------------------------------------------"),
@@ -203,14 +215,14 @@ for (metric in metrics) {
         paste0("----------------------------------------------------"),
         comp_lines,
         "",
-        paste0("----------------------------------------------------"),
-        paste0("------ Model 4 Summary (chosen_type) [", metric, "]: ------"),
-        capture.output(summary(model4)),
-        "",
-        paste0("----------------------------------------------------"),
-        paste0("Emmeans (model 4) [", metric, "]:"),
-        emmeans4_lines,
-        "",
+        # paste0("----------------------------------------------------"),
+        # paste0("------ Model 4 Summary (chosen_type) [", metric, "]: ------"),
+        # capture.output(summary(model4)),
+        # "",
+        # paste0("----------------------------------------------------"),
+        # paste0("Emmeans (model 4) [", metric, "]:"),
+        # emmeans4_lines,
+        # "",
         paste0("----------------------------------------------------"),
         paste0("------ Model 5 Summary (combined new variable) [", metric, "]: ------"),
         paste0("---------------------------------------------"),
