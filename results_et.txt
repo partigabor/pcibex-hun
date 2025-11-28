@@ -1,299 +1,5 @@
 Linear mixed-effects model comparisons
-Generated: 2025-11-26 11:58:27 UTC
-
-=============================================
-============ Metric: choice_rt ============
-=============================================
-
-----------------------------------------------------
------- Model Comparison (1, 2, 3, 4) (Likelihood-ratio tests) [choice_rt] ------
-----------------------------------------------------
-Data: df
-Models:
-model1: ET ~ chosen_type + (1 | item) + (1 | participant)
-model2: ET ~ condition + (1 | item) + (1 | participant)
-model3: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
-model4: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
-       npar    AIC    BIC  logLik -2*log(L)   Chisq Df Pr(>Chisq)   
-model1    5 858.14 879.60 -424.07    848.14                         
-model2    6 863.08 888.82 -425.54    851.08  0.0000  1   1.000000   
-model3    7 861.53 891.57 -423.77    847.53  3.5437  1   0.059771 . 
-model4    9 854.21 892.84 -418.11    836.21 11.3169  2   0.003488 **
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 4 Summary [choice_rt]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-    854.2     892.8    -418.1     836.2       531 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--2.4585 -0.5942 -0.1056  0.3870  4.2333 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.21203  0.4605  
- item        (Intercept) 0.06012  0.2452  
- Residual                0.21824  0.4672  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                                  Estimate Std. Error t value
-(Intercept)                        7.12905    0.10824  65.866
-conditionfocus                     0.01408    0.05090   0.277
-conditioncontrastive               0.14435    0.06876   2.099
-chosen_typeB                       0.59827    0.15926   3.757
-conditionfocus:chosen_typeB       -0.39316    0.22097  -1.779
-conditioncontrastive:chosen_typeB -0.60751    0.17998  -3.376
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf cndtnc chsn_B cndtnf:_B
-conditinfcs -0.236                               
-cndtncntrst -0.177  0.374                        
-chosen_typB -0.090  0.179  0.158                 
-cndtnfcs:_B  0.060 -0.253 -0.103 -0.669          
-cndtncnt:_B  0.081 -0.160 -0.444 -0.895  0.598   
-
-----------------------------------------------------
-Emmeans (Model 5, cxt, condition by type) [choice_rt]:
----------------------------------------------
-$`emmeans of cxt`
- cxt           emmean    SE    df lower.CL upper.CL
- exclusive.A     7.13 0.109  52.3     6.91     7.35
- exclusive.B     7.73 0.186 304.7     7.36     8.09
- focus.A         7.14 0.109  52.2     6.92     7.36
- focus.B         7.35 0.191 323.9     6.97     7.72
- contrastive.A   7.27 0.119  71.7     7.04     7.51
- contrastive.B   7.26 0.114  61.5     7.04     7.49
-
-Degrees-of-freedom method: kenward-roger 
-Confidence level used: 0.95 
-
-$`pairwise differences of cxt`
- 1                             estimate     SE  df t.ratio p.value
- exclusive.A - exclusive.B     -0.59827 0.1600 511  -3.733  0.0029
- exclusive.A - focus.A         -0.01408 0.0512 498  -0.275  0.9998
- exclusive.A - focus.B         -0.21919 0.1650 510  -1.328  0.7692
- exclusive.A - contrastive.A   -0.14435 0.0692 507  -2.087  0.2956
- exclusive.A - contrastive.B   -0.13511 0.0605 504  -2.233  0.2243
- exclusive.B - focus.A          0.58419 0.1590 511   3.668  0.0037
- exclusive.B - focus.B          0.37908 0.2150 506   1.762  0.4914
- exclusive.B - contrastive.A    0.45392 0.1640 510   2.764  0.0651
- exclusive.B - contrastive.B    0.46316 0.1630 511   2.847  0.0519
- focus.A - focus.B             -0.20511 0.1660 510  -1.238  0.8178
- focus.A - contrastive.A       -0.13027 0.0690 507  -1.889  0.4100
- focus.A - contrastive.B       -0.12103 0.0605 504  -2.000  0.3436
- focus.B - contrastive.A        0.07484 0.1700 510   0.439  0.9979
- focus.B - contrastive.B        0.08408 0.1680 509   0.501  0.9961
- contrastive.A - contrastive.B  0.00924 0.0807 515   0.114  1.0000
-
-Degrees-of-freedom method: kenward-roger 
-P value adjustment: tukey method for comparing a family of 6 estimates 
-
-
-________________________________________________________________________________
-
-=============================================
-============ Metric: total_dwell ============
-=============================================
-
-----------------------------------------------------
------- Model Comparison (1, 2, 3, 4) (Likelihood-ratio tests) [total_dwell] ------
-----------------------------------------------------
-Data: df
-Models:
-model1: ET ~ chosen_type + (1 | item) + (1 | participant)
-model2: ET ~ condition + (1 | item) + (1 | participant)
-model3: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
-model4: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
-       npar    AIC    BIC  logLik -2*log(L)   Chisq Df Pr(>Chisq)    
-model1    5 1090.7 1112.2 -540.36    1080.7                          
-model2    6 1091.1 1116.8 -539.54    1079.1  1.6367  1     0.2008    
-model3    7 1093.0 1123.0 -539.47    1079.0  0.1397  1     0.7086    
-model4    9 1073.7 1112.3 -527.85    1055.7 23.2523  2   8.93e-06 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 4 Summary [total_dwell]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-   1073.7    1112.3    -527.8    1055.7       531 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--3.5191 -0.6003  0.0398  0.5264  3.6814 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.1564   0.3955  
- item        (Intercept) 0.0719   0.2681  
- Residual                0.3431   0.5858  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                                  Estimate Std. Error t value
-(Intercept)                        6.62687    0.10612  62.448
-conditionfocus                     0.04050    0.06381   0.635
-conditioncontrastive               0.28759    0.08588   3.349
-chosen_typeB                       0.87734    0.19861   4.417
-conditionfocus:chosen_typeB       -0.68844    0.27643  -2.490
-conditioncontrastive:chosen_typeB -1.09136    0.22419  -4.868
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf cndtnc chsn_B cndtnf:_B
-conditinfcs -0.302                               
-cndtncntrst -0.227  0.375                        
-chosen_typB -0.114  0.179  0.156                 
-cndtnfcs:_B  0.077 -0.252 -0.103 -0.671          
-cndtncnt:_B  0.102 -0.160 -0.441 -0.896  0.600   
-
-----------------------------------------------------
-Emmeans (Model 5, cxt, condition by type) [total_dwell]:
----------------------------------------------
-$`emmeans of cxt`
- cxt           emmean    SE    df lower.CL upper.CL
- exclusive.A     6.63 0.107  54.6     6.41     6.84
- exclusive.B     7.50 0.216 413.1     7.08     7.93
- focus.A         6.67 0.107  54.4     6.45     6.88
- focus.B         6.86 0.223 431.9     6.42     7.29
- contrastive.A   6.91 0.122  87.6     6.67     7.16
- contrastive.B   6.70 0.115  70.0     6.47     6.93
-
-Degrees-of-freedom method: kenward-roger 
-Confidence level used: 0.95 
-
-$`pairwise differences of cxt`
- 1                             estimate     SE  df t.ratio p.value
- exclusive.A - exclusive.B      -0.8773 0.2000 520  -4.386  0.0002
- exclusive.A - focus.A          -0.0405 0.0641 499  -0.632  0.9886
- exclusive.A - focus.B          -0.2294 0.2060 517  -1.113  0.8760
- exclusive.A - contrastive.A    -0.2876 0.0864 513  -3.327  0.0120
- exclusive.A - contrastive.B    -0.0736 0.0757 508  -0.972  0.9267
- exclusive.B - focus.A           0.8368 0.1990 519   4.208  0.0004
- exclusive.B - focus.B           0.6479 0.2690 510   2.406  0.1559
- exclusive.B - contrastive.A     0.5897 0.2050 517   2.875  0.0480
- exclusive.B - contrastive.B     0.8038 0.2030 519   3.958  0.0012
- focus.A - focus.B              -0.1889 0.2070 518  -0.913  0.9431
- focus.A - contrastive.A        -0.2471 0.0862 513  -2.867  0.0491
- focus.A - contrastive.B        -0.0331 0.0757 508  -0.437  0.9980
- focus.B - contrastive.A        -0.0582 0.2130 517  -0.273  0.9998
- focus.B - contrastive.B         0.1558 0.2090 517   0.744  0.9763
- contrastive.A - contrastive.B   0.2140 0.1010 526   2.129  0.2738
-
-Degrees-of-freedom method: kenward-roger 
-P value adjustment: tukey method for comparing a family of 6 estimates 
-
-
-________________________________________________________________________________
-
-=============================================
-============ Metric: fvd ============
-=============================================
-
-----------------------------------------------------
------- Model Comparison (1, 2, 3, 4) (Likelihood-ratio tests) [fvd] ------
-----------------------------------------------------
-Data: df
-Models:
-model1: ET ~ chosen_type + (1 | item) + (1 | participant)
-model2: ET ~ condition + (1 | item) + (1 | participant)
-model3: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
-model4: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
-       npar    AIC    BIC  logLik -2*log(L)   Chisq Df Pr(>Chisq)   
-model1    5 1403.9 1425.4 -696.96    1393.9                         
-model2    6 1404.5 1430.2 -696.23    1392.5  1.4581  1   0.227236   
-model3    7 1405.2 1435.2 -695.58    1391.2  1.3049  1   0.253313   
-model4    9 1396.6 1435.2 -689.31    1378.6 12.5303  2   0.001901 **
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
----------------------------------------------
------- Model 4 Summary [fvd]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-   1396.6    1435.2    -689.3    1378.6       531 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--2.2601 -0.7616  0.1367  0.7663  2.4056 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.05286  0.22990 
- item        (Intercept) 0.00910  0.09539 
- Residual                0.70990  0.84255 
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                                  Estimate Std. Error t value
-(Intercept)                        5.56348    0.08058  69.042
-conditionfocus                     0.16328    0.09164   1.782
-conditioncontrastive               0.08331    0.12051   0.691
-chosen_typeB                       1.02434    0.27479   3.728
-conditionfocus:chosen_typeB       -1.07520    0.38761  -2.774
-conditioncontrastive:chosen_typeB -1.07088    0.30829  -3.474
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf cndtnc chsn_B cndtnf:_B
-conditinfcs -0.571                               
-cndtncntrst -0.437  0.383                        
-chosen_typB -0.208  0.176  0.148                 
-cndtnfcs:_B  0.141 -0.246 -0.098 -0.678          
-cndtncnt:_B  0.187 -0.157 -0.424 -0.897  0.606   
-
-----------------------------------------------------
-Emmeans (Model 5, cxt, condition by type) [fvd]:
----------------------------------------------
-$`emmeans of cxt`
- cxt           emmean     SE    df lower.CL upper.CL
- exclusive.A     5.56 0.0818  87.3     5.40     5.73
- exclusive.B     6.59 0.2730 518.9     6.05     7.13
- focus.A         5.73 0.0816  86.7     5.56     5.89
- focus.B         5.68 0.2840 528.9     5.12     6.23
- contrastive.A   5.65 0.1140 211.7     5.42     5.87
- contrastive.B   5.60 0.0986 150.2     5.41     5.80
-
-Degrees-of-freedom method: kenward-roger 
-Confidence level used: 0.95 
-
-$`pairwise differences of cxt`
- 1                             estimate     SE  df t.ratio p.value
- exclusive.A - exclusive.B      -1.0243 0.2790 545  -3.677  0.0035
- exclusive.A - focus.A          -0.1633 0.0921 500  -1.773  0.4842
- exclusive.A - focus.B          -0.1124 0.2880 546  -0.390  0.9988
- exclusive.A - contrastive.A    -0.0833 0.1220 538  -0.685  0.9836
- exclusive.A - contrastive.B    -0.0368 0.1070 527  -0.342  0.9994
- exclusive.B - focus.A           0.8611 0.2770 545   3.103  0.0245
- exclusive.B - focus.B           0.9119 0.3800 532   2.400  0.1579
- exclusive.B - contrastive.A     0.9410 0.2870 546   3.281  0.0140
- exclusive.B - contrastive.B     0.9876 0.2830 545   3.489  0.0069
- focus.A - focus.B               0.0509 0.2890 546   0.176  1.0000
- focus.A - contrastive.A         0.0800 0.1210 537   0.658  0.9863
- focus.A - contrastive.B         0.1265 0.1070 529   1.178  0.8473
- focus.B - contrastive.A         0.0291 0.2980 545   0.098  1.0000
- focus.B - contrastive.B         0.0757 0.2930 545   0.258  0.9998
- contrastive.A - contrastive.B   0.0465 0.1380 528   0.336  0.9994
-
-Degrees-of-freedom method: kenward-roger 
-P value adjustment: tukey method for comparing a family of 6 estimates 
-
-
-________________________________________________________________________________
+Generated: 2025-11-28 18:33:08 UTC
 
 =============================================
 ============ Metric: total_fixation ============
@@ -319,174 +25,86 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ---------------------------------------------
 ------ Model 4 Summary [total_fixation]: ------
 ---------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
-   Data: df
+Analysis of Deviance Table (Type III Wald chisquare tests)
 
-      AIC       BIC    logLik -2*log(L)  df.resid 
-    886.4     925.0    -434.2     868.4       531 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--3.1024 -0.6686 -0.0361  0.5852  3.9363 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.15039  0.3878  
- item        (Intercept) 0.03057  0.1749  
- Residual                0.24209  0.4920  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                                  Estimate Std. Error t value
-(Intercept)                        1.53437    0.09034  16.985
-conditionfocus                    -0.01098    0.05360  -0.205
-conditioncontrastive               0.12456    0.07220   1.725
-chosen_typeB                       0.49117    0.16695   2.942
-conditionfocus:chosen_typeB       -0.27300    0.23185  -1.177
-conditioncontrastive:chosen_typeB -0.60450    0.18855  -3.206
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf cndtnc chsn_B cndtnf:_B
-conditinfcs -0.298                               
-cndtncntrst -0.224  0.375                        
-chosen_typB -0.113  0.178  0.157                 
-cndtnfcs:_B  0.076 -0.252 -0.103 -0.670          
-cndtncnt:_B  0.101 -0.159 -0.442 -0.896  0.598   
-
-----------------------------------------------------
-Emmeans (Model 5, cxt, condition by type) [total_fixation]:
----------------------------------------------
-$`emmeans of cxt`
- cxt           emmean     SE    df lower.CL upper.CL
- exclusive.A     1.53 0.0914  53.8     1.35     1.72
- exclusive.B     2.03 0.1820 405.6     1.67     2.38
- focus.A         1.52 0.0914  53.6     1.34     1.71
- focus.B         1.74 0.1880 424.7     1.37     2.11
- contrastive.A   1.66 0.1030  85.7     1.45     1.86
- contrastive.B   1.55 0.0975  68.7     1.35     1.74
-
-Degrees-of-freedom method: kenward-roger 
-Confidence level used: 0.95 
-
-$`pairwise differences of cxt`
- 1                             estimate     SE  df t.ratio p.value
- exclusive.A - exclusive.B      -0.4912 0.1680 519  -2.921  0.0422
- exclusive.A - focus.A           0.0110 0.0539 499   0.204  1.0000
- exclusive.A - focus.B          -0.2072 0.1730 516  -1.196  0.8387
- exclusive.A - contrastive.A    -0.1246 0.0727 512  -1.714  0.5230
- exclusive.A - contrastive.B    -0.0112 0.0636 507  -0.177  1.0000
- exclusive.B - focus.A           0.5022 0.1670 518   3.004  0.0331
- exclusive.B - focus.B           0.2840 0.2260 512   1.257  0.8082
- exclusive.B - contrastive.A     0.3666 0.1720 517   2.127  0.2751
- exclusive.B - contrastive.B     0.4799 0.1710 518   2.811  0.0572
- focus.A - focus.B              -0.2182 0.1740 517  -1.255  0.8092
- focus.A - contrastive.A        -0.1355 0.0725 511  -1.871  0.4215
- focus.A - contrastive.B        -0.0222 0.0636 507  -0.349  0.9993
- focus.B - contrastive.A         0.0826 0.1790 517   0.462  0.9974
- focus.B - contrastive.B         0.1960 0.1760 516   1.113  0.8758
- contrastive.A - contrastive.B   0.1133 0.0846 524   1.340  0.7626
-
-Degrees-of-freedom method: kenward-roger 
-P value adjustment: tukey method for comparing a family of 6 estimates 
-
-
-________________________________________________________________________________
-
-=============================================
-============ Metric: transitions ============
-=============================================
-
-----------------------------------------------------
------- Model Comparison (1, 2, 3, 4) (Likelihood-ratio tests) [transitions] ------
-----------------------------------------------------
-Data: df
-Models:
-model1: ET ~ chosen_type + (1 | item) + (1 | participant)
-model2: ET ~ condition + (1 | item) + (1 | participant)
-model3: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
-model4: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
-       npar    AIC    BIC  logLik -2*log(L)  Chisq Df Pr(>Chisq)  
-model1    5 1090.5 1112.0 -540.26    1080.5                       
-model2    6 1088.0 1113.7 -538.00    1076.0 4.5275  1    0.03335 *
-model3    7 1089.8 1119.9 -537.91    1075.8 0.1622  1    0.68714  
-model4    9 1090.6 1129.2 -536.30    1072.6 3.2233  2    0.19956  
+Response: ET
+                         Chisq Df Pr(>Chisq)    
+(Intercept)           288.4941  1  < 2.2e-16 ***
+condition               3.8200  2   0.148083    
+chosen_type             8.6561  1   0.003260 ** 
+condition:chosen_type  11.1315  2   0.003827 ** 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
----------------------------------------------
------- Model 4 Summary [transitions]: ------
----------------------------------------------
-Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
-   Data: df
-
-      AIC       BIC    logLik -2*log(L)  df.resid 
-   1090.6    1129.2    -536.3    1072.6       531 
-
-Scaled residuals: 
-    Min      1Q  Median      3Q     Max 
--3.3492 -0.6984 -0.0757  0.6414  3.3060 
-
-Random effects:
- Groups      Name        Variance Std.Dev.
- participant (Intercept) 0.17361  0.4167  
- item        (Intercept) 0.04668  0.2161  
- Residual                0.35743  0.5979  
-Number of obs: 540, groups:  participant, 30; item, 18
-
-Fixed effects:
-                                  Estimate Std. Error t value
-(Intercept)                        0.73621    0.10256   7.178
-conditionfocus                    -0.05249    0.06512  -0.806
-conditioncontrastive               0.16330    0.08762   1.864
-chosen_typeB                       0.29416    0.20252   1.453
-conditionfocus:chosen_typeB       -0.31549    0.28161  -1.120
-conditioncontrastive:chosen_typeB -0.41149    0.22862  -1.800
-
-Correlation of Fixed Effects:
-            (Intr) cndtnf cndtnc chsn_B cndtnf:_B
-conditinfcs -0.319                               
-cndtncntrst -0.240  0.375                        
-chosen_typB -0.121  0.178  0.156                 
-cndtnfcs:_B  0.081 -0.252 -0.103 -0.670          
-cndtncnt:_B  0.108 -0.159 -0.441 -0.896  0.599   
-
 ----------------------------------------------------
-Emmeans (Model 5, cxt, condition by type) [transitions]:
+Emmeans (Model 4, cxt, condition by type) [total_fixation]:
 ---------------------------------------------
-$`emmeans of cxt`
- cxt           emmean    SE    df lower.CL upper.CL
- exclusive.A    0.736 0.104  56.5    0.528    0.944
- exclusive.B    1.030 0.218 437.3    0.603    1.458
- focus.A        0.684 0.104  56.3    0.476    0.891
- focus.B        0.662 0.224 454.9    0.222    1.103
- contrastive.A  0.900 0.119  94.5    0.663    1.136
- contrastive.B  0.782 0.112  74.2    0.560    1.004
+$`emmeans of condition | chosen_type`
+chosen_type = A:
+ condition   emmean     SE    df lower.CL upper.CL
+ exclusive     1.53 0.0914  53.8     1.35     1.72
+ focus         1.52 0.0914  53.6     1.34     1.71
+ contrastive   1.66 0.1030  85.7     1.45     1.86
+
+chosen_type = B:
+ condition   emmean     SE    df lower.CL upper.CL
+ exclusive     2.03 0.1820 405.6     1.67     2.38
+ focus         1.74 0.1880 424.7     1.37     2.11
+ contrastive   1.55 0.0975  68.7     1.35     1.74
 
 Degrees-of-freedom method: kenward-roger 
 Confidence level used: 0.95 
 
-$`pairwise differences of cxt`
- 1                             estimate     SE  df t.ratio p.value
- exclusive.A - exclusive.B      -0.2942 0.2040 522  -1.442  0.7014
- exclusive.A - focus.A           0.0525 0.0655 499   0.802  0.9671
- exclusive.A - focus.B           0.0738 0.2100 518   0.351  0.9993
- exclusive.A - contrastive.A    -0.1633 0.0882 514  -1.852  0.4335
- exclusive.A - contrastive.B    -0.0460 0.0773 508  -0.595  0.9913
- exclusive.B - focus.A           0.3467 0.2030 520   1.709  0.5264
- exclusive.B - focus.B           0.3680 0.2740 513   1.341  0.7621
- exclusive.B - contrastive.A     0.1309 0.2090 519   0.625  0.9891
- exclusive.B - contrastive.B     0.2482 0.2070 521   1.198  0.8377
- focus.A - focus.B               0.0213 0.2110 520   0.101  1.0000
- focus.A - contrastive.A        -0.2158 0.0879 513  -2.454  0.1401
- focus.A - contrastive.B        -0.0985 0.0773 509  -1.275  0.7988
- focus.B - contrastive.A        -0.2371 0.2170 519  -1.092  0.8846
- focus.B - contrastive.B        -0.1198 0.2140 518  -0.561  0.9934
- contrastive.A - contrastive.B   0.1173 0.1030 527   1.144  0.8627
+$`pairwise differences of condition | chosen_type`
+chosen_type = A:
+ 2                       estimate     SE  df t.ratio p.value
+ exclusive - focus          0.011 0.0539 499   0.204  0.9774
+ exclusive - contrastive   -0.125 0.0727 512  -1.714  0.2008
+ focus - contrastive       -0.136 0.0725 511  -1.871  0.1483
+
+chosen_type = B:
+ 2                       estimate     SE  df t.ratio p.value
+ exclusive - focus          0.284 0.2260 512   1.257  0.4204
+ exclusive - contrastive    0.480 0.1710 518   2.811  0.0142
+ focus - contrastive        0.196 0.1760 516   1.113  0.5063
 
 Degrees-of-freedom method: kenward-roger 
-P value adjustment: tukey method for comparing a family of 6 estimates 
+P value adjustment: tukey method for comparing a family of 3 estimates 
+
+
+$`emmeans of chosen_type | condition`
+condition = exclusive:
+ chosen_type emmean     SE    df lower.CL upper.CL
+ A             1.53 0.0914  53.8     1.35     1.72
+ B             2.03 0.1820 405.6     1.67     2.38
+
+condition = focus:
+ chosen_type emmean     SE    df lower.CL upper.CL
+ A             1.52 0.0914  53.6     1.34     1.71
+ B             1.74 0.1880 424.7     1.37     2.11
+
+condition = contrastive:
+ chosen_type emmean     SE    df lower.CL upper.CL
+ A             1.66 0.1030  85.7     1.45     1.86
+ B             1.55 0.0975  68.7     1.35     1.74
+
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+$`pairwise differences of chosen_type | condition`
+condition = exclusive:
+ 2     estimate     SE  df t.ratio p.value
+ A - B   -0.491 0.1680 519  -2.921  0.0036
+
+condition = focus:
+ 2     estimate     SE  df t.ratio p.value
+ A - B   -0.218 0.1740 517  -1.255  0.2100
+
+condition = contrastive:
+ 2     estimate     SE  df t.ratio p.value
+ A - B    0.113 0.0846 524   1.340  0.1809
+
+Degrees-of-freedom method: kenward-roger 
 
 
 ________________________________________________________________________________

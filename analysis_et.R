@@ -24,7 +24,8 @@ df$cxt <- interaction(df$condition, df$chosen_type)
 df$cxt <- factor(df$cxt, levels = c("exclusive.A","exclusive.B","focus.A","focus.B","contrastive.A","contrastive.B"))
 
 # Define metrics to evaluate (numeric only)
-metrics <- c("total_dwell", "fvd", "total_fixation", "transitions")
+metrics <- c("total_fixation")
+# metrics <- c("total_dwell", "fvd", "total_fixation", "transitions")
 
 # Iterate through each metric, log transform, fit models, and record outputs
 for (metric in metrics) {
@@ -54,9 +55,14 @@ for (metric in metrics) {
     aov4_lines <- capture.output(car::Anova(model4, type = "III"))
 
     # Emmeans
-    emmeans(model5, list(pairwise ~ cxt), adjust = "tukey")
+    # emmeans(model4, pairwise ~ condition)    
+    emmeans(model4, pairwise ~ chosen_type|condition, adjust = "tukey") 
+    # emmeans(model4, list(pairwise ~ condition|chosen_type), adjust = "tukey")
+    # emmeans(model5, list(pairwise ~ cxt), adjust = "tukey")
 
-    emmeans5_lines <- capture.output(emmeans(model5, list(pairwise ~ cxt), adjust = "tukey"))
+    emmeans4_lines1 <- capture.output(emmeans(model4, list(pairwise ~ condition|chosen_type), adjust = "tukey"))
+    emmeans4_lines2 <- capture.output(emmeans(model4, list(pairwise ~ chosen_type|condition), adjust = "tukey"))
+    # emmeans5_lines <- capture.output(emmeans(model5, list(pairwise ~ cxt), adjust = "tukey"))
 
     # Compare models 1, 2, and 3
     model_comp <- anova(model1, model2, model3, model4)
@@ -77,12 +83,15 @@ for (metric in metrics) {
         paste0("---------------------------------------------"),
         paste0("------ Model 4 Summary [", metric, "]: ------"),
         paste0("---------------------------------------------"),
-        capture.output(summary(model4)),
+        # capture.output(summary(model4)),
+        paste0(aov4_lines),
         "",
         paste0("----------------------------------------------------"),
-        paste0("Emmeans (Model 5, cxt, condition by type) [", metric, "]:"),
+        paste0("Emmeans (Model 4, cxt, condition by type) [", metric, "]:"),
         paste0("---------------------------------------------"),
-        emmeans5_lines,
+        emmeans4_lines1,
+        "",
+        emmeans4_lines2,
         "",
         paste0("________________________________________________________________________________")
     )
