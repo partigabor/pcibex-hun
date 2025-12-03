@@ -31,8 +31,7 @@ based on the accepted participants only. These figures give a quick visual check
 
 Example demographic plots (from `plots/`):
 
-- ![Gender distribution](plots/demographics_gender_pie.png)
-- ![Age distribution](plots/demographics_age_pie.png)
+- ![Gender distribution](plots/demographics_gender_pie.png) ![Age distribution](plots/demographics_age_pie.png)
 
 ## Data Processing
 
