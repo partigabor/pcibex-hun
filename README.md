@@ -11,13 +11,28 @@ This repository contains the pipeline for a PCIbex-based psycholinguistic experi
 - **Stimulus CSV for PCIbex**: The main experimental items are written to `chunk_includes/experiment_data.csv`, while practice items are written to `chunk_includes/practice.csv`.
 - **PCIbex experiment code**: The core JavaScript for the experiment lives in `data_includes/` (e.g., `data_includes/main.js`), which loads the stimulus CSVs from `chunk_includes/`.
 
+You can inspect the final stimulus set (by condition, group, etc.) directly in the notebook `experiment_data_preparation.ipynb`, or by opening the exported CSVs. For quick browsing in a browser you can, for example, use a CSV viewer extension or upload `chunk_includes/experiment_data.csv` to a spreadsheet tool.
+
 ## Data Collection
 
 - **PCIbex logs**: After running the experiment on PCIbex, raw response logs are downloaded as `results_prod.csv`.
 - **Eyetracking recordings**: Concurrent eyetracking data from the experiment is stored in `eyetracking_data/` as one CSV per participant.
 
 ## Demographic Data
-- **Demographic data processing notebook**: `demographics.ipynb` reads and aggregates demographic CSV files from the `demographic_data/` folder, generating summary statistics and visualizations of participant demographics.
+
+- **Demographic data processing notebook**: `demographics.ipynb` reads and aggregates demographic CSV files from the `demographics/` folder (multiple Prolific exports), generating summary statistics and visualizations of participant demographics.
+
+The notebook currently includes:
+
+- a **gender donut chart** and
+- an **age-band donut chart**
+
+based on the accepted participants only. These figures give a quick visual check that the sample is balanced in terms of gender and age.
+
+Example demographic plots (from `plots/`):
+
+- ![Gender distribution](plots/demographics_gender_pie.png)
+- ![Age distribution](plots/demographics_age_pie.png)
 
 ## Data Processing
 
@@ -29,8 +44,11 @@ This repository contains the pipeline for a PCIbex-based psycholinguistic experi
 
 ## Statistical Analysis
 
-- **R analysis script**: `analysis_et.R` fits linear mixed-effects models and related statistics to `et_data.csv`.
-- **Model output**: The key model summaries and result tables are written to `results_et.txt`.
+- **R analysis script**: `analysis.R` fits linear mixed-effects models and related statistics to `et_data.csv`.
+- **Model output**: The key model summaries and result tables are written to `analysis_results.txt`.
+
+- ![Choice type per condition](plots/choice_type_per_condition.png)
+- ![Log total dwell by condition and chosen type](plots/log_total_dwell_by_condition_chosen_type.png)
 
 ## File and Folder Summary
 
