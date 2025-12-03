@@ -29,7 +29,8 @@ The notebook currently includes:
 
 based on the accepted participants only. These figures give a quick visual check that the sample is balanced in terms of gender and age.
 
-- ![Gender distribution](plots/demographics_gender_pie.png) ![Age distribution](plots/demographics_age_pie.png)
+- ![Gender distribution](plots/demographics_gender_pie.png) 
+- ![Age distribution](plots/demographics_age_pie.png)
 
 ## Data Processing
 
