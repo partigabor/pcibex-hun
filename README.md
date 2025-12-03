@@ -29,8 +29,6 @@ The notebook currently includes:
 
 based on the accepted participants only. These figures give a quick visual check that the sample is balanced in terms of gender and age.
 
-Example demographic plots (from `plots/`):
-
 - ![Gender distribution](plots/demographics_gender_pie.png) ![Age distribution](plots/demographics_age_pie.png)
 
 ## Data Processing
@@ -41,13 +39,16 @@ Example demographic plots (from `plots/`):
 	then merges, cleans, and reshapes them into a trial-level eyetracking dataset.
 - **Processed eyetracking dataset**: The main analysis-ready table is saved as `et_data.csv`.
 
+The choice type and dwell time visualizations below are generated within `experiment_data_processing.ipynb` as quick checks of the processed data.
+- ![Choice type per condition](plots/choice_type_per_condition.png)
+- ![Log total dwell by condition and chosen type](plots/log_total_dwell_by_condition_chosen_type.png)
+
 ## Statistical Analysis
 
 - **R analysis script**: `analysis.R` fits linear mixed-effects models and related statistics to `et_data.csv`.
 - **Model output**: The key model summaries and result tables are written to `analysis_results.txt`.
 
-- ![Choice type per condition](plots/choice_type_per_condition.png)
-- ![Log total dwell by condition and chosen type](plots/log_total_dwell_by_condition_chosen_type.png)
+
 
 ## File and Folder Summary
 
