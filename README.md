@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository contains the pipeline for a PCIbex-based psycholinguistic experiment, from stimulus creation through data collection, processing, and statistical analysis.
+This repository contains the pipeline for a psycholinguistic experiment, from stimulus creation through data collection, processing, and statistical analysis.
 
 ## Stimuli and Experiment Setup
 
@@ -11,26 +11,23 @@ This repository contains the pipeline for a PCIbex-based psycholinguistic experi
 - **Stimulus CSV for PCIbex**: The main experimental items are written to `chunk_includes/experiment_data.csv`, while practice items are written to `chunk_includes/practice.csv`.
 - **PCIbex experiment code**: The core JavaScript for the experiment lives in `data_includes/` (e.g., `data_includes/main.js`), which loads the stimulus CSVs from `chunk_includes/`.
 
-You can inspect the final stimulus set (by condition, group, etc.) directly in the notebook `experiment_data_preparation.ipynb`, or by opening the exported CSVs. For quick browsing in a browser you can, for example, use a CSV viewer extension or upload `chunk_includes/experiment_data.csv` to a spreadsheet tool.
+Here is an overview of the experiment design:
+
+![Experiment design](design.png)
+
+You can inspect the final stimulus set by opening the exported CSVs. For quick browsing in a browser you can, for example, use a CSV viewer extension or load `chunk_includes/experiment_data.csv` to some spreadsheet tool (Excel).
 
 ## Data Collection
 
 - **PCIbex logs**: After running the experiment on PCIbex, raw response logs are downloaded as `results_prod.csv`.
-- **Eyetracking recordings**: Concurrent eyetracking data from the experiment is stored in `eyetracking_data/` as one CSV per participant.
+- **Eyetracking recordings**: Concurrent eyetracking data from the experiment is stored in `eyetracking_data/` as one CSV per experiment.
 
 ## Demographic Data
 
 - **Demographic data processing notebook**: `demographics.ipynb` reads and aggregates demographic CSV files from the `demographics/` folder (multiple Prolific exports), generating summary statistics and visualizations of participant demographics.
 
-The notebook currently includes:
-
-- a **gender donut chart** and
-- an **age-band donut chart**
-
-based on the accepted participants only. These figures give a quick visual check that the sample is balanced in terms of gender and age.
-
-- ![Gender distribution](plots/demographics_gender_pie.png) 
-- ![Age distribution](plots/demographics_age_pie.png)
+![Gender distribution](plots/demographics_gender_pie.png) 
+![Age distribution](plots/demographics_age_pie.png)
 
 ## Data Processing
 
@@ -42,14 +39,15 @@ based on the accepted participants only. These figures give a quick visual check
 
 The choice type and dwell time visualizations below are generated within `experiment_data_processing.ipynb` as quick checks of the processed data.
 - ![Choice type per condition](plots/choice_type_per_condition.png)
-- ![Log total dwell by condition and chosen type](plots/log_total_dwell_by_condition_chosen_type.png)
+- ![Log total dwell by condition](plots/log_total_dwell_by_condition_chosen_type.png)
+- ![Log first visit duration by condition](plots/log_fvd_by_condition_chosen_type.png)
+- ![Log total fixation counts by condition](plots/log_total_fixation_by_condition_chosen_type.png)
+- ![Log total transition counts by condition](plots/log_transitions_by_condition_chosen_type.png)
 
 ## Statistical Analysis
 
 - **R analysis script**: `analysis.R` fits linear mixed-effects models and related statistics to `et_data.csv`.
 - **Model output**: The key model summaries and result tables are written to `analysis_results.txt`.
-
-
 
 ## File and Folder Summary
 

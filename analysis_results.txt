@@ -1,5 +1,5 @@
 Linear mixed-effects model comparisons
-Generated: 2025-11-28 18:50:49 UTC
+Generated: 2025-12-14 15:14:04 UTC
 
 =============================================
 ============ Metric: total_dwell ============
@@ -15,10 +15,10 @@ model2: ET ~ condition + (1 | item) + (1 | participant)
 model3: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
 model4: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
        npar    AIC    BIC  logLik -2*log(L)   Chisq Df Pr(>Chisq)    
-model1    5 1090.7 1112.2 -540.36    1080.7                          
-model2    6 1091.1 1116.8 -539.54    1079.1  1.6367  1     0.2008    
-model3    7 1093.0 1123.0 -539.47    1079.0  0.1397  1     0.7086    
-model4    9 1073.7 1112.3 -527.85    1055.7 23.2523  2   8.93e-06 ***
+model1    5 2386.9 2412.7 -1188.4    2376.9                          
+model2    6 2383.9 2414.8 -1185.9    2371.9  5.0183  1    0.02508 *  
+model3    7 2385.1 2421.1 -1185.5    2371.1  0.8230  1    0.36430    
+model4    9 2368.3 2414.7 -1175.2    2350.3 20.7307  2  3.151e-05 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -28,11 +28,11 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 Analysis of Deviance Table (Type III Wald chisquare tests)
 
 Response: ET
-                         Chisq Df Pr(>Chisq)    
-(Intercept)           3899.741  1  < 2.2e-16 ***
-condition               11.665  2   0.002931 ** 
-chosen_type             19.513  1  9.992e-06 ***
-condition:chosen_type   23.984  2  6.193e-06 ***
+                          Chisq Df Pr(>Chisq)    
+(Intercept)           10181.192  1  < 2.2e-16 ***
+condition                17.755  2  0.0001395 ***
+chosen_type              18.886  1  1.388e-05 ***
+condition:chosen_type    20.916  2  2.873e-05 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -41,32 +41,32 @@ Emmeans (Model 4, cxt, condition by type) [total_dwell]:
 ---------------------------------------------
 $`emmeans of condition | chosen_type`
 chosen_type = A:
- condition   emmean    SE    df lower.CL upper.CL
- exclusive     6.63 0.107  54.6     6.41     6.84
- focus         6.67 0.107  54.4     6.45     6.88
- contrastive   6.91 0.122  87.6     6.67     7.16
+ condition   emmean     SE    df lower.CL upper.CL
+ exclusive     6.63 0.0665  55.7     6.50     6.77
+ focus         6.67 0.0664  55.4     6.54     6.80
+ contrastive   6.87 0.0775 101.3     6.72     7.02
 
 chosen_type = B:
- condition   emmean    SE    df lower.CL upper.CL
- exclusive     7.50 0.216 413.1     7.08     7.93
- focus         6.86 0.223 431.9     6.42     7.29
- contrastive   6.70 0.115  70.0     6.47     6.93
+ condition   emmean     SE    df lower.CL upper.CL
+ exclusive     7.22 0.1450 737.6     6.94     7.51
+ focus         6.86 0.1620 892.3     6.54     7.18
+ contrastive   6.78 0.0703  69.4     6.64     6.92
 
 Degrees-of-freedom method: kenward-roger 
 Confidence level used: 0.95 
 
 $`pairwise differences of condition | chosen_type`
 chosen_type = A:
- 2                       estimate     SE  df t.ratio p.value
- exclusive - focus        -0.0405 0.0641 499  -0.632  0.8028
- exclusive - contrastive  -0.2876 0.0864 513  -3.327  0.0027
- focus - contrastive      -0.2471 0.0862 513  -2.867  0.0120
+ 2                       estimate     SE   df t.ratio p.value
+ exclusive - focus        -0.0366 0.0398 1196  -0.920  0.6280
+ exclusive - contrastive  -0.2349 0.0565 1241  -4.157  0.0001
+ focus - contrastive      -0.1983 0.0563 1240  -3.521  0.0013
 
 chosen_type = B:
- 2                       estimate     SE  df t.ratio p.value
- exclusive - focus         0.6479 0.2690 510   2.406  0.0434
- exclusive - contrastive   0.8038 0.2030 519   3.958  0.0003
- focus - contrastive       0.1558 0.2090 517   0.744  0.7374
+ 2                       estimate     SE   df t.ratio p.value
+ exclusive - focus         0.3658 0.1960 1223   1.868  0.1484
+ exclusive - contrastive   0.4480 0.1380 1244   3.250  0.0034
+ focus - contrastive       0.0822 0.1540 1236   0.532  0.8555
 
 Degrees-of-freedom method: kenward-roger 
 P value adjustment: tukey method for comparing a family of 3 estimates 
@@ -74,35 +74,35 @@ P value adjustment: tukey method for comparing a family of 3 estimates
 
 $`emmeans of chosen_type | condition`
 condition = exclusive:
- chosen_type emmean    SE    df lower.CL upper.CL
- A             6.63 0.107  54.6     6.41     6.84
- B             7.50 0.216 413.1     7.08     7.93
+ chosen_type emmean     SE    df lower.CL upper.CL
+ A             6.63 0.0665  55.7     6.50     6.77
+ B             7.22 0.1450 737.6     6.94     7.51
 
 condition = focus:
- chosen_type emmean    SE    df lower.CL upper.CL
- A             6.67 0.107  54.4     6.45     6.88
- B             6.86 0.223 431.9     6.42     7.29
+ chosen_type emmean     SE    df lower.CL upper.CL
+ A             6.67 0.0664  55.4     6.54     6.80
+ B             6.86 0.1620 892.3     6.54     7.18
 
 condition = contrastive:
- chosen_type emmean    SE    df lower.CL upper.CL
- A             6.91 0.122  87.6     6.67     7.16
- B             6.70 0.115  70.0     6.47     6.93
+ chosen_type emmean     SE    df lower.CL upper.CL
+ A             6.87 0.0775 101.3     6.72     7.02
+ B             6.78 0.0703  69.4     6.64     6.92
 
 Degrees-of-freedom method: kenward-roger 
 Confidence level used: 0.95 
 
 $`pairwise differences of chosen_type | condition`
 condition = exclusive:
- 2     estimate    SE  df t.ratio p.value
- A - B   -0.877 0.200 520  -4.386  <.0001
+ 2     estimate     SE   df t.ratio p.value
+ A - B  -0.5895 0.1360 1243  -4.333  <.0001
 
 condition = focus:
- 2     estimate    SE  df t.ratio p.value
- A - B   -0.189 0.207 518  -0.913  0.3617
+ 2     estimate     SE   df t.ratio p.value
+ A - B  -0.1871 0.1540 1238  -1.218  0.2235
 
 condition = contrastive:
- 2     estimate    SE  df t.ratio p.value
- A - B    0.214 0.101 526   2.129  0.0337
+ 2     estimate     SE   df t.ratio p.value
+ A - B   0.0934 0.0641 1267   1.457  0.1454
 
 Degrees-of-freedom method: kenward-roger 
 
@@ -122,11 +122,11 @@ model1: ET ~ chosen_type + (1 | item) + (1 | participant)
 model2: ET ~ condition + (1 | item) + (1 | participant)
 model3: ET ~ condition + chosen_type + (1 | item) + (1 | participant)
 model4: ET ~ condition * chosen_type + (1 | item) + (1 | participant)
-       npar    AIC    BIC  logLik -2*log(L)   Chisq Df Pr(>Chisq)   
-model1    5 889.85 911.31 -439.93    879.85                         
-model2    6 891.70 917.45 -439.85    879.70  0.1540  1   0.694762   
-model3    7 893.40 923.44 -439.70    879.40  0.2971  1   0.585727   
-model4    9 886.40 925.02 -434.20    868.40 11.0007  2   0.004085 **
+       npar    AIC    BIC  logLik -2*log(L)  Chisq Df Pr(>Chisq)  
+model1    5 2043.8 2069.5 -1016.9    2033.8                       
+model2    6 2040.8 2071.7 -1014.4    2028.8 4.9374  1    0.02628 *
+model3    7 2042.8 2078.9 -1014.4    2028.8 0.0107  1    0.91759  
+model4    9 2037.8 2084.2 -1009.9    2019.8 9.0239  2    0.01098 *
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -137,10 +137,10 @@ Analysis of Deviance Table (Type III Wald chisquare tests)
 
 Response: ET
                          Chisq Df Pr(>Chisq)    
-(Intercept)           288.4941  1  < 2.2e-16 ***
-condition               3.8200  2   0.148083    
-chosen_type             8.6561  1   0.003260 ** 
-condition:chosen_type  11.1315  2   0.003827 ** 
+(Intercept)           706.1853  1  < 2.2e-16 ***
+condition              11.4913  2   0.003197 ** 
+chosen_type             5.6548  1   0.017408 *  
+condition:chosen_type   9.0599  2   0.010781 *  
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -149,32 +149,32 @@ Emmeans (Model 4, cxt, condition by type) [total_fixation]:
 ---------------------------------------------
 $`emmeans of condition | chosen_type`
 chosen_type = A:
- condition   emmean     SE    df lower.CL upper.CL
- exclusive     1.53 0.0914  53.8     1.35     1.72
- focus         1.52 0.0914  53.6     1.34     1.71
- contrastive   1.66 0.1030  85.7     1.45     1.86
+ condition   emmean     SE     df lower.CL upper.CL
+ exclusive     1.51 0.0575   73.5     1.40     1.63
+ focus         1.54 0.0574   73.2     1.43     1.66
+ contrastive   1.68 0.0673  134.6     1.55     1.81
 
 chosen_type = B:
- condition   emmean     SE    df lower.CL upper.CL
- exclusive     2.03 0.1820 405.6     1.67     2.38
- focus         1.74 0.1880 424.7     1.37     2.11
- contrastive   1.55 0.0975  68.7     1.35     1.74
+ condition   emmean     SE     df lower.CL upper.CL
+ exclusive     1.80 0.1270  863.6     1.55     2.05
+ focus         1.68 0.1420 1005.9     1.40     1.96
+ contrastive   1.59 0.0609   92.0     1.47     1.71
 
 Degrees-of-freedom method: kenward-roger 
 Confidence level used: 0.95 
 
 $`pairwise differences of condition | chosen_type`
 chosen_type = A:
- 2                       estimate     SE  df t.ratio p.value
- exclusive - focus          0.011 0.0539 499   0.204  0.9774
- exclusive - contrastive   -0.125 0.0727 512  -1.714  0.2008
- focus - contrastive       -0.136 0.0725 511  -1.871  0.1483
+ 2                       estimate     SE   df t.ratio p.value
+ exclusive - focus        -0.0272 0.0349 1196  -0.782  0.7145
+ exclusive - contrastive  -0.1660 0.0495 1236  -3.351  0.0024
+ focus - contrastive      -0.1387 0.0494 1234  -2.811  0.0139
 
 chosen_type = B:
- 2                       estimate     SE  df t.ratio p.value
- exclusive - focus          0.284 0.2260 512   1.257  0.4204
- exclusive - contrastive    0.480 0.1710 518   2.811  0.0142
- focus - contrastive        0.196 0.1760 516   1.113  0.5063
+ 2                       estimate     SE   df t.ratio p.value
+ exclusive - focus         0.1153 0.1710 1220   0.673  0.7794
+ exclusive - contrastive   0.2095 0.1210 1239   1.734  0.1929
+ focus - contrastive       0.0942 0.1350 1231   0.696  0.7659
 
 Degrees-of-freedom method: kenward-roger 
 P value adjustment: tukey method for comparing a family of 3 estimates 
@@ -182,35 +182,35 @@ P value adjustment: tukey method for comparing a family of 3 estimates
 
 $`emmeans of chosen_type | condition`
 condition = exclusive:
- chosen_type emmean     SE    df lower.CL upper.CL
- A             1.53 0.0914  53.8     1.35     1.72
- B             2.03 0.1820 405.6     1.67     2.38
+ chosen_type emmean     SE     df lower.CL upper.CL
+ A             1.51 0.0575   73.5     1.40     1.63
+ B             1.80 0.1270  863.6     1.55     2.05
 
 condition = focus:
- chosen_type emmean     SE    df lower.CL upper.CL
- A             1.52 0.0914  53.6     1.34     1.71
- B             1.74 0.1880 424.7     1.37     2.11
+ chosen_type emmean     SE     df lower.CL upper.CL
+ A             1.54 0.0574   73.2     1.43     1.66
+ B             1.68 0.1420 1005.9     1.40     1.96
 
 condition = contrastive:
- chosen_type emmean     SE    df lower.CL upper.CL
- A             1.66 0.1030  85.7     1.45     1.86
- B             1.55 0.0975  68.7     1.35     1.74
+ chosen_type emmean     SE     df lower.CL upper.CL
+ A             1.68 0.0673  134.6     1.55     1.81
+ B             1.59 0.0609   92.0     1.47     1.71
 
 Degrees-of-freedom method: kenward-roger 
 Confidence level used: 0.95 
 
 $`pairwise differences of chosen_type | condition`
 condition = exclusive:
- 2     estimate     SE  df t.ratio p.value
- A - B   -0.491 0.1680 519  -2.921  0.0036
+ 2     estimate     SE   df t.ratio p.value
+ A - B  -0.2827 0.1190 1238  -2.371  0.0179
 
 condition = focus:
- 2     estimate     SE  df t.ratio p.value
- A - B   -0.218 0.1740 517  -1.255  0.2100
+ 2     estimate     SE   df t.ratio p.value
+ A - B  -0.1402 0.1350 1233  -1.041  0.2980
 
 condition = contrastive:
- 2     estimate     SE  df t.ratio p.value
- A - B    0.113 0.0846 524   1.340  0.1809
+ 2     estimate     SE   df t.ratio p.value
+ A - B   0.0928 0.0563 1261   1.648  0.0995
 
 Degrees-of-freedom method: kenward-roger 
 
